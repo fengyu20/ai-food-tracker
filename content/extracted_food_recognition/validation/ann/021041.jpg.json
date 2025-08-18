@@ -1,0 +1,118 @@
+{
+    "description": "",
+    "tags": [],
+    "size": {
+        "height": 480,
+        "width": 480
+    },
+    "objects": [
+        {
+            "id": 1637547,
+            "classId": 3681,
+            "description": "",
+            "geometryType": "polygon",
+            "labelerLogin": "az@datasetninja.com",
+            "createdAt": "2023-06-07T13:00:49.096Z",
+            "updatedAt": "2023-06-07T13:00:49.096Z",
+            "tags": [],
+            "classTitle": "macaroon",
+            "points": {
+                "exterior": [
+                    [
+                        300,
+                        330
+                    ],
+                    [
+                        410,
+                        333
+                    ],
+                    [
+                        427,
+                        232
+                    ],
+                    [
+                        378,
+                        176
+                    ],
+                    [
+                        327,
+                        156
+                    ],
+                    [
+                        272,
+                        195
+                    ],
+                    [
+                        255,
+                        242
+                    ],
+                    [
+                        255,
+                        276
+                    ],
+                    [
+                        271,
+                        297
+                    ],
+                    [
+                        279,
+                        310
+                    ]
+                ],
+                "interior": []
+            }
+        },
+        {
+            "id": 1637546,
+            "classId": 3681,
+            "description": "",
+            "geometryType": "polygon",
+            "labelerLogin": "az@datasetninja.com",
+            "createdAt": "2023-06-07T13:00:49.095Z",
+            "updatedAt": "2023-06-07T13:00:49.095Z",
+            "tags": [],
+            "classTitle": "macaroon",
+            "points": {
+                "exterior": [
+                    [
+                        150,
+                        244
+                    ],
+                    [
+                        229,
+                        219
+                    ],
+                    [
+                        213,
+                        120
+                    ],
+                    [
+                        130,
+                        82
+                    ],
+                    [
+                        68,
+                        118
+                    ],
+                    [
+                        61,
+                        186
+                    ],
+                    [
+                        84,
+                        241
+                    ],
+                    [
+                        121,
+                        247
+                    ],
+                    [
+                        140,
+                        248
+                    ]
+                ],
+                "interior": []
+            }
+        }
+    ]
+}

@@ -1,0 +1,314 @@
+{
+    "description": "",
+    "tags": [],
+    "size": {
+        "height": 425,
+        "width": 426
+    },
+    "objects": [
+        {
+            "id": 1686839,
+            "classId": 3457,
+            "description": "",
+            "geometryType": "polygon",
+            "labelerLogin": "az@datasetninja.com",
+            "createdAt": "2023-06-07T13:34:31.938Z",
+            "updatedAt": "2023-06-07T13:34:31.938Z",
+            "tags": [],
+            "classTitle": "chips-french-fries",
+            "points": {
+                "exterior": [
+                    [
+                        62,
+                        97
+                    ],
+                    [
+                        104,
+                        185
+                    ],
+                    [
+                        123,
+                        341
+                    ],
+                    [
+                        110,
+                        413
+                    ],
+                    [
+                        173,
+                        418
+                    ],
+                    [
+                        314,
+                        321
+                    ],
+                    [
+                        328,
+                        215
+                    ],
+                    [
+                        307,
+                        146
+                    ],
+                    [
+                        280,
+                        145
+                    ],
+                    [
+                        250,
+                        106
+                    ],
+                    [
+                        219,
+                        115
+                    ],
+                    [
+                        153,
+                        115
+                    ],
+                    [
+                        124,
+                        80
+                    ],
+                    [
+                        61,
+                        100
+                    ]
+                ],
+                "interior": []
+            }
+        },
+        {
+            "id": 1686837,
+            "classId": 4195,
+            "description": "",
+            "geometryType": "polygon",
+            "labelerLogin": "az@datasetninja.com",
+            "createdAt": "2023-06-07T13:34:31.938Z",
+            "updatedAt": "2023-06-07T13:34:31.938Z",
+            "tags": [],
+            "classTitle": "hamburger",
+            "points": {
+                "exterior": [
+                    [
+                        35,
+                        248
+                    ],
+                    [
+                        95,
+                        208
+                    ],
+                    [
+                        113,
+                        333
+                    ],
+                    [
+                        3,
+                        378
+                    ],
+                    [
+                        3,
+                        256
+                    ],
+                    [
+                        30,
+                        248
+                    ]
+                ],
+                "interior": []
+            }
+        },
+        {
+            "id": 1686835,
+            "classId": 4197,
+            "description": "",
+            "geometryType": "polygon",
+            "labelerLogin": "az@datasetninja.com",
+            "createdAt": "2023-06-07T13:34:31.937Z",
+            "updatedAt": "2023-06-07T13:34:31.937Z",
+            "tags": [],
+            "classTitle": "hamburger-bun",
+            "points": {
+                "exterior": [
+                    [
+                        3,
+                        67
+                    ],
+                    [
+                        68,
+                        107
+                    ],
+                    [
+                        86,
+                        164
+                    ],
+                    [
+                        44,
+                        214
+                    ],
+                    [
+                        0,
+                        246
+                    ],
+                    [
+                        2,
+                        65
+                    ]
+                ],
+                "interior": []
+            }
+        },
+        {
+            "id": 1686834,
+            "classId": 4197,
+            "description": "",
+            "geometryType": "polygon",
+            "labelerLogin": "az@datasetninja.com",
+            "createdAt": "2023-06-07T13:34:31.937Z",
+            "updatedAt": "2023-06-07T13:34:31.937Z",
+            "tags": [],
+            "classTitle": "hamburger-bun",
+            "points": {
+                "exterior": [
+                    [
+                        0,
+                        407
+                    ],
+                    [
+                        0,
+                        392
+                    ],
+                    [
+                        38,
+                        342
+                    ],
+                    [
+                        128,
+                        324
+                    ],
+                    [
+                        124,
+                        362
+                    ],
+                    [
+                        63,
+                        412
+                    ],
+                    [
+                        27,
+                        420
+                    ],
+                    [
+                        1,
+                        407
+                    ],
+                    [
+                        9,
+                        406
+                    ]
+                ],
+                "interior": []
+            }
+        },
+        {
+            "id": 1686832,
+            "classId": 3599,
+            "description": "",
+            "geometryType": "polygon",
+            "labelerLogin": "az@datasetninja.com",
+            "createdAt": "2023-06-07T13:34:31.936Z",
+            "updatedAt": "2023-06-07T13:34:31.936Z",
+            "tags": [],
+            "classTitle": "salad-leaf-salad-green",
+            "points": {
+                "exterior": [
+                    [
+                        0,
+                        255
+                    ],
+                    [
+                        2,
+                        340
+                    ],
+                    [
+                        108,
+                        371
+                    ],
+                    [
+                        125,
+                        320
+                    ],
+                    [
+                        99,
+                        287
+                    ],
+                    [
+                        108,
+                        244
+                    ],
+                    [
+                        93,
+                        227
+                    ],
+                    [
+                        111,
+                        199
+                    ],
+                    [
+                        76,
+                        184
+                    ],
+                    [
+                        2,
+                        250
+                    ]
+                ],
+                "interior": []
+            }
+        },
+        {
+            "id": 1686830,
+            "classId": 4009,
+            "description": "",
+            "geometryType": "polygon",
+            "labelerLogin": "az@datasetninja.com",
+            "createdAt": "2023-06-07T13:34:31.935Z",
+            "updatedAt": "2023-06-07T13:34:31.935Z",
+            "tags": [],
+            "classTitle": "ketchup",
+            "points": {
+                "exterior": [
+                    [
+                        22,
+                        339
+                    ],
+                    [
+                        28,
+                        366
+                    ],
+                    [
+                        0,
+                        393
+                    ],
+                    [
+                        0,
+                        349
+                    ],
+                    [
+                        21,
+                        336
+                    ],
+                    [
+                        21,
+                        336
+                    ],
+                    [
+                        18,
+                        337
+                    ]
+                ],
+                "interior": []
+            }
+        }
+    ]
+}

@@ -1,0 +1,206 @@
+{
+    "description": "",
+    "tags": [],
+    "size": {
+        "height": 426,
+        "width": 426
+    },
+    "objects": [
+        {
+            "id": 1792066,
+            "classId": 3597,
+            "description": "",
+            "geometryType": "polygon",
+            "labelerLogin": "az@datasetninja.com",
+            "createdAt": "2023-06-07T14:47:37.024Z",
+            "updatedAt": "2023-06-07T14:47:37.024Z",
+            "tags": [],
+            "classTitle": "salad-lambs-ear",
+            "points": {
+                "exterior": [
+                    [
+                        277,
+                        83
+                    ],
+                    [
+                        138,
+                        75
+                    ],
+                    [
+                        108,
+                        140
+                    ],
+                    [
+                        123,
+                        167
+                    ],
+                    [
+                        308,
+                        219
+                    ],
+                    [
+                        350,
+                        168
+                    ],
+                    [
+                        339,
+                        140
+                    ],
+                    [
+                        288,
+                        103
+                    ]
+                ],
+                "interior": []
+            }
+        },
+        {
+            "id": 1792064,
+            "classId": 3623,
+            "description": "",
+            "geometryType": "polygon",
+            "labelerLogin": "az@datasetninja.com",
+            "createdAt": "2023-06-07T14:47:37.024Z",
+            "updatedAt": "2023-06-07T14:47:37.024Z",
+            "tags": [],
+            "classTitle": "quiche-with-cheese-baked-with-puff-pastry",
+            "points": {
+                "exterior": [
+                    [
+                        98,
+                        165
+                    ],
+                    [
+                        67,
+                        172
+                    ],
+                    [
+                        86,
+                        272
+                    ],
+                    [
+                        112,
+                        296
+                    ],
+                    [
+                        325,
+                        221
+                    ],
+                    [
+                        325,
+                        221
+                    ]
+                ],
+                "interior": []
+            }
+        },
+        {
+            "id": 1792062,
+            "classId": 3897,
+            "description": "",
+            "geometryType": "polygon",
+            "labelerLogin": "az@datasetninja.com",
+            "createdAt": "2023-06-07T14:47:37.023Z",
+            "updatedAt": "2023-06-07T14:47:37.023Z",
+            "tags": [],
+            "classTitle": "bacon-cooking",
+            "points": {
+                "exterior": [
+                    [
+                        99,
+                        164
+                    ],
+                    [
+                        114,
+                        273
+                    ],
+                    [
+                        282,
+                        218
+                    ],
+                    [
+                        282,
+                        218
+                    ]
+                ],
+                "interior": []
+            }
+        },
+        {
+            "id": 1792060,
+            "classId": 3753,
+            "description": "",
+            "geometryType": "polygon",
+            "labelerLogin": "az@datasetninja.com",
+            "createdAt": "2023-06-07T14:47:37.023Z",
+            "updatedAt": "2023-06-07T14:47:37.023Z",
+            "tags": [],
+            "classTitle": "cauliflower",
+            "points": {
+                "exterior": [
+                    [
+                        110,
+                        176
+                    ],
+                    [
+                        132,
+                        263
+                    ],
+                    [
+                        271,
+                        218
+                    ],
+                    [
+                        129,
+                        179
+                    ]
+                ],
+                "interior": []
+            }
+        },
+        {
+            "id": 1792058,
+            "classId": 3871,
+            "description": "",
+            "geometryType": "polygon",
+            "labelerLogin": "az@datasetninja.com",
+            "createdAt": "2023-06-07T14:47:37.022Z",
+            "updatedAt": "2023-06-07T14:47:37.022Z",
+            "tags": [],
+            "classTitle": "salad-dressing",
+            "points": {
+                "exterior": [
+                    [
+                        112,
+                        111
+                    ],
+                    [
+                        112,
+                        169
+                    ],
+                    [
+                        318,
+                        209
+                    ],
+                    [
+                        360,
+                        158
+                    ],
+                    [
+                        299,
+                        108
+                    ],
+                    [
+                        215,
+                        67
+                    ],
+                    [
+                        125,
+                        101
+                    ]
+                ],
+                "interior": []
+            }
+        }
+    ]
+}
