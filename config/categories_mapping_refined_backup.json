@@ -1,0 +1,362 @@
+{
+    "Beverage - Non-Alcoholic": [
+        {
+            "name": "white-coffee-with-caffeine",
+            "display_name": "white coffee",
+            "similar_items": [
+                "latte",
+                "flat white",
+                "cappuccino",
+                "black coffee",
+                "espresso"
+            ]
+        }
+    ],
+    "Beverage - Alcoholic": [
+        {
+            "name": "aperitif-with-alcohol-aperol-spritz",
+            "display_name": "aperol spritz",
+            "similar_items": [
+                "aperol spritz",
+                "campari spritz",
+                "negroni sbagliato",
+                "orange cocktail",
+                "aperitif",
+                "cocktail"
+            ]
+        },
+        {
+            "name": "beer",
+            "display_name": "beer",
+            "similar_items": [
+                "lager",
+                "ale",
+                "pilsner",
+                "stout",
+                "beer bottle"
+            ]
+        },
+        {
+            "name": "champagne",
+            "display_name": "champagne",
+            "similar_items": [
+                "prosecco",
+                "cava",
+                "sparkling wine",
+                "sparkling cider",
+                "white wine",
+                "champagne flute"
+            ]
+        },
+        {
+            "name": "cocktail",
+            "display_name": "cocktail",
+            "similar_items": [
+                "martini",
+                "mojito",
+                "mixed drink",
+                "cosmopolitan",
+                "whiskey sour",
+                "alcoholic beverage"
+            ]
+        },
+        {
+            "name": "light-beer",
+            "display_name": "light beer",
+            "similar_items": [
+                "lager",
+                "pilsner",
+                "ale",
+                "stout",
+                "beer",
+                "light lager"
+            ]
+        },
+        {
+            "name": "prosecco",
+            "display_name": "prosecco",
+            "similar_items": [
+                "champagne",
+                "cava",
+                "sparkling wine",
+                "sparkling white wine",
+                "sparkling ros\u00e9"
+            ]
+        },
+        {
+            "name": "sekt",
+            "display_name": "sekt",
+            "similar_items": [
+                "prosecco",
+                "champagne",
+                "cava",
+                "sparkling wine",
+                "sparkling cider"
+            ]
+        },
+        {
+            "name": "wine-red",
+            "display_name": "red wine",
+            "similar_items": [
+                "merlot",
+                "cabernet sauvignon",
+                "pinot noir",
+                "syrah",
+                "red wine",
+                "cabernet"
+            ]
+        },
+        {
+            "name": "wine-rose",
+            "display_name": "rose wine",
+            "similar_items": [
+                "ros\u00e9",
+                "blush wine",
+                "pink wine",
+                "ros\u00e9 champagne",
+                "white wine"
+            ]
+        },
+        {
+            "name": "wine-white",
+            "display_name": "white wine",
+            "similar_items": [
+                "chardonnay",
+                "sauvignon blanc",
+                "pinot grigio",
+                "riesling",
+                "white wine"
+            ]
+        }
+    ],
+    "Condiment - Sauces & Dressings": [
+        {
+            "name": "balsamic-salad-dressing",
+            "display_name": "balsamic dressing",
+            "similar_items": [
+                "balsamic vinaigrette",
+                "vinaigrette",
+                "caesar dressing",
+                "italian dressing",
+                "ranch dressing"
+            ]
+        },
+        {
+            "name": "balsamic-vinegar",
+            "display_name": "balsamic vinegar",
+            "similar_items": [
+                "red wine vinegar",
+                "apple cider vinegar",
+                "white wine vinegar",
+                "balsamic glaze",
+                "vinegar",
+                "soy sauce"
+            ]
+        },
+        {
+            "name": "bolognaise-sauce",
+            "display_name": "bolognaise sauce",
+            "similar_items": [
+                "rag\u00f9",
+                "marinara sauce",
+                "meat sauce",
+                "tomato sauce",
+                "spaghetti sauce"
+            ]
+        },
+        {
+            "name": "dips",
+            "display_name": "dips",
+            "similar_items": [
+                "hummus",
+                "guacamole",
+                "salsa",
+                "tzatziki",
+                "spinach dip",
+                "baba ganoush"
+            ]
+        },
+        {
+            "name": "french-salad-dressing",
+            "display_name": "french dressing",
+            "similar_items": [
+                "italian dressing",
+                "ranch dressing",
+                "thousand island",
+                "vinaigrette",
+                "catalina dressing",
+                "russian dressing"
+            ]
+        },
+        {
+            "name": "fruit-coulis",
+            "display_name": "fruit coulis",
+            "similar_items": [
+                "applesauce",
+                "berry compote",
+                "fruit puree",
+                "fruit sauce",
+                "berry coulis",
+                "jam"
+            ]
+        },
+        {
+            "name": "guacamole",
+            "display_name": "guacamole",
+            "similar_items": [
+                "avocado dip",
+                "avocado spread",
+                "salsa",
+                "pico de gallo",
+                "green salsa",
+                "avocado mash"
+            ]
+        },
+        {
+            "name": "hummus",
+            "display_name": "hummus",
+            "similar_items": [
+                "baba ganoush",
+                "muhammara",
+                "tahini",
+                "tzatziki",
+                "white bean dip",
+                "falafel"
+            ]
+        },
+        {
+            "name": "italian-salad-dressing",
+            "display_name": "italian salad dressing",
+            "similar_items": [
+                "balsamic dressing",
+                "caesar dressing",
+                "french dressing",
+                "ranch dressing",
+                "vinaigrette",
+                "balsamic vinaigrette"
+            ]
+        },
+        {
+            "name": "ketchup",
+            "display_name": "ketchup",
+            "similar_items": [
+                "bbq sauce",
+                "chili sauce",
+                "red sauce",
+                "salsa",
+                "tomato sauce",
+                "steak sauce"
+            ]
+        },
+        {
+            "name": "maple-syrup-concentrate",
+            "display_name": "maple syrup",
+            "similar_items": [
+                "maple syrup",
+                "pancake syrup",
+                "corn syrup",
+                "molasses",
+                "honey",
+                "syrup"
+            ]
+        },
+        {
+            "name": "mayonnaise",
+            "display_name": "mayonnaise",
+            "similar_items": [
+                "aioli",
+                "tartar sauce",
+                "sandwich spread",
+                "ranch dressing",
+                "sour cream",
+                "egg salad"
+            ]
+        },
+        {
+            "name": "mustard",
+            "display_name": "mustard",
+            "similar_items": [
+                "dijon mustard",
+                "honey mustard",
+                "spicy mustard",
+                "yellow mustard",
+                "whole grain mustard",
+                "stone ground mustard"
+            ]
+        },
+        {
+            "name": "mustard-dijon",
+            "display_name": "dijon mustard",
+            "similar_items": [
+                "dijon mustard",
+                "spicy mustard",
+                "stone ground mustard",
+                "whole grain mustard",
+                "yellow mustard",
+                "honey mustard"
+            ]
+        },
+        {
+            "name": "oil-vinegar-salad-dressing",
+            "display_name": "oil and vinegar dressing",
+            "similar_items": [
+                "vinaigrette",
+                "balsamic vinaigrette",
+                "italian dressing",
+                "french dressing",
+                "olive oil dressing",
+                "salad dressing"
+            ]
+        },
+        {
+            "name": "salad-dressing",
+            "display_name": "salad dressing",
+            "similar_items": [
+                "ranch dressing",
+                "italian dressing",
+                "vinaigrette",
+                "thousand island",
+                "caesar dressing",
+                "french dressing"
+            ]
+        },
+        {
+            "name": "sauce-carbonara",
+            "display_name": "carbonara sauce",
+            "similar_items": [
+                "alfredo sauce",
+                "bechamel sauce",
+                "cheese sauce",
+                "creamy pasta sauce",
+                "white sauce",
+                "pasta sauce"
+            ]
+        },
+        {
+            "name": "sauce-cocktail",
+            "display_name": "cocktail sauce",
+            "similar_items": [
+                "ketchup",
+                "thousand island",
+                "salsa",
+                "seafood sauce",
+                "marinara sauce",
+                "red sauce"
+            ]
+        }
+    ],
+    "Condiment - Spreads & Jams": [
+        {
+            "name": "eggplant-caviar",
+            "display_name": "eggplant caviar",
+            "similar_items": [
+                "baba ganoush",
+                "eggplant dip",
+                "eggplant spread",
+                "melitzanosalata",
+                "muhammara",
+                "ratatouille"
+            ]
+        }
+    ]
+}

@@ -2,14 +2,15 @@ import argparse
 import json
 
 from models.core.taxonomy import Taxonomy
-from models.providers import get_provider
-from models.core.classifier import classify_image
-from models.core.common import load_provider_settings
+from models.core.classifier import run_classification
+from models.core.common import load_provider_config
 
 def main():
 
-    provider_settings = load_provider_settings()
+    config = load_provider_config()
+    provider_settings = config['providers']
     available_providers = list(provider_settings.keys())
+    default_params = config.get('default_parameters', {})
     
     parser = argparse.ArgumentParser(description="Classify a single food image.")
     parser.add_argument("image_path", help="Path to the input image")
@@ -17,26 +18,45 @@ def main():
     parser.add_argument("--model", "-m", help="Specific model name to use (optional). If not provided, the first model listed for the provider will be used.")
     parser.add_argument("--api-key", "-k", help="API key for the provider")
     parser.add_argument("--output", "-o", help="Output file to save the JSON result")
-    parser.add_argument("--fuzzy_threshold", type=int, default=90, help="Fuzzy matching threshold for taxonomy (0-100).")
+    parser.add_argument("--temperature", type=float, help="Generation temperature. Overrides config file.")
+    parser.add_argument("--fuzzy_threshold", type=int, help="Fuzzy matching threshold. Overrides config file.")
+    parser.add_argument("--max_tokens", type=int, help="Max output tokens. Overrides config file.")
     args = parser.parse_args()
 
     model_name = args.model
     if model_name is None:
-        model_name = provider_settings[args.provider][0]
+        first_model_config = provider_settings[args.provider][0]
+        if isinstance(first_model_config, str):
+            model_name = first_model_config
+        else:
+            model_name = first_model_config['model']
         print(f"INFO: No model specified. Using default for '{args.provider}': {model_name}")
 
+    # Layer parameters: config default -> model-specific -> CLI override
+    params = default_params.copy()
+    for item in provider_settings[args.provider]:
+        if isinstance(item, dict) and item.get('model') == model_name:
+            params.update(item.get('parameters', {}))
+            break
+            
+    if args.temperature is not None:
+        params['temperature'] = args.temperature
+    if args.fuzzy_threshold is not None:
+        params['fuzzy_threshold'] = args.fuzzy_threshold
+    if args.max_tokens is not None:
+        params['max_tokens'] = args.max_tokens
 
     taxonomy = Taxonomy()
-    provider = get_provider(args.provider, args.api_key)
 
-    print(f"Classifying {args.image_path} with {model_name} via {args.provider}...")
+    print(f"Classifying {args.image_path} with {model_name} via {args.provider} using params: {params}")
 
-    final_result = classify_image(
+    final_result = run_classification(
         image_path=args.image_path,
-        provider=provider,
+        provider_name=args.provider,
         model_name=model_name,
         taxonomy=taxonomy,
-        fuzzy_threshold=args.fuzzy_threshold
+        api_key=args.api_key,
+        **params
     )
 
     if "error" in final_result:

@@ -1,0 +1,5450 @@
+{
+  "processed_items": {
+    "alfa-sprouts": {
+      "parent_category": "Raw Ingredient - Vegetables",
+      "similar_items": [
+        "alfalfa sprouts",
+        "bean sprouts",
+        "mung bean sprouts",
+        "sprouts",
+        "green sprouts"
+      ],
+      "display_name": "alfa sprouts"
+    },
+    "almonds": {
+      "parent_category": "Raw Ingredient - Legumes, Nuts & Seeds",
+      "similar_items": [
+        "blanched almonds",
+        "sliced almonds",
+        "almond pieces",
+        "nuts",
+        "pistachios"
+      ],
+      "display_name": "almonds"
+    },
+    "anchovies": {
+      "parent_category": "Raw Ingredient - Fish & Seafood",
+      "similar_items": [
+        "canned anchovies",
+        "anchovy fillets",
+        "sardines",
+        "small fish",
+        "silver fish"
+      ],
+      "display_name": "anchovies"
+    },
+    "aperitif-with-alcohol-aperol-spritz": {
+      "parent_category": "Beverage - Alcoholic",
+      "similar_items": [
+        "aperol spritz",
+        "cocktail",
+        "orange drink",
+        "alcoholic beverage",
+        "aperol"
+      ],
+      "display_name": "aperol spritz"
+    },
+    "apple": {
+      "parent_category": "Raw Ingredient - Fruits",
+      "similar_items": [
+        "red apple",
+        "green apple",
+        "apple slice",
+        "apple pieces",
+        "fruit"
+      ],
+      "display_name": "apple"
+    },
+    "apple-crumble": {
+      "parent_category": "Dessert - Cakes & Pastries",
+      "similar_items": [
+        "apple crisp",
+        "apple dessert",
+        "fruit crumble",
+        "baked apple",
+        "apple cobbler"
+      ],
+      "display_name": "apple crumble"
+    },
+    "apple-pie": {
+      "parent_category": "Dessert - Cakes & Pastries",
+      "similar_items": [
+        "apple tart",
+        "fruit pie",
+        "baked apple pie",
+        "apple dessert",
+        "pie"
+      ],
+      "display_name": "apple pie"
+    },
+    "applesauce-unsweetened-canned": {
+      "parent_category": "Processed Ingredient - Canned & Preserved",
+      "similar_items": [
+        "applesauce",
+        "canned applesauce",
+        "unsweetened applesauce",
+        "apple puree",
+        "apple sauce"
+      ],
+      "display_name": "applesauce"
+    },
+    "apricot-dried": {
+      "parent_category": "Raw Ingredient - Fruits",
+      "similar_items": [
+        "dried apricots",
+        "dried fruit",
+        "dried apricot halves",
+        "sun-dried apricots",
+        "fruit"
+      ],
+      "display_name": "dried apricot"
+    },
+    "apricots": {
+      "parent_category": "Raw Ingredient - Fruits",
+      "similar_items": [
+        "fresh apricots",
+        "ripe apricots",
+        "orange fruit",
+        "fruit",
+        "apricot halves"
+      ],
+      "display_name": "apricots"
+    },
+    "artichoke": {
+      "parent_category": "Raw Ingredient - Vegetables",
+      "similar_items": [
+        "broccoli",
+        "cauliflower",
+        "asparagus",
+        "romanesco"
+      ],
+      "display_name": "artichoke"
+    },
+    "avocado": {
+      "parent_category": "Raw Ingredient - Fruits",
+      "similar_items": [
+        "pear",
+        "mango",
+        "cucumber",
+        "zucchini"
+      ],
+      "display_name": "avocado"
+    },
+    "bacon": {
+      "parent_category": "Raw Ingredient - Meat & Poultry",
+      "similar_items": [
+        "bacon-cooking",
+        "bacon-frying",
+        "bacon-raw",
+        "ham",
+        "salami"
+      ],
+      "display_name": "bacon"
+    },
+    "bacon-cooking": {
+      "parent_category": "Raw Ingredient - Meat & Poultry",
+      "similar_items": [
+        "bacon",
+        "bacon-frying",
+        "bacon-raw",
+        "ham",
+        "salami"
+      ],
+      "display_name": "bacon"
+    },
+    "bacon-frying": {
+      "parent_category": "Raw Ingredient - Meat & Poultry",
+      "similar_items": [
+        "bacon",
+        "bacon-cooking",
+        "bacon-raw",
+        "ham",
+        "salami"
+      ],
+      "display_name": "frying bacon"
+    },
+    "bacon-raw": {
+      "parent_category": "Raw Ingredient - Meat & Poultry",
+      "similar_items": [
+        "bacon",
+        "bacon-cooking",
+        "bacon-frying",
+        "ham",
+        "salami"
+      ],
+      "display_name": "bacon"
+    },
+    "bagel-without-filling": {
+      "parent_category": "Bakery - Bread & Loaves",
+      "similar_items": [
+        "bagel",
+        "donut",
+        "muffin",
+        "roll",
+        "bun"
+      ],
+      "display_name": "bagel"
+    },
+    "baked-potato": {
+      "parent_category": "Raw Ingredient - Vegetables",
+      "similar_items": [
+        "potato",
+        "sweet potato",
+        "yam",
+        "baked sweet potato",
+        "baked yam"
+      ],
+      "display_name": "baked potato"
+    },
+    "balsamic-salad-dressing": {
+      "parent_category": "Condiment - Sauces & Dressings",
+      "similar_items": [
+        "vinaigrette",
+        "italian dressing",
+        "french dressing",
+        "ranch dressing",
+        "caesar dressing"
+      ],
+      "display_name": "balsamic dressing"
+    },
+    "balsamic-vinegar": {
+      "parent_category": "Condiment - Sauces & Dressings",
+      "similar_items": [
+        "vinegar",
+        "red wine vinegar",
+        "white wine vinegar",
+        "apple cider vinegar",
+        "rice vinegar"
+      ],
+      "display_name": "balsamic vinegar"
+    },
+    "banana": {
+      "parent_category": "Raw Ingredient - Fruits",
+      "similar_items": [
+        "plantain",
+        "cucumber",
+        "zucchini",
+        "yellow bell pepper",
+        "banana leaf"
+      ],
+      "display_name": "banana"
+    },
+    "banana-cake": {
+      "parent_category": "Dessert - Cakes & Pastries",
+      "similar_items": [
+        "banana bread",
+        "pound cake",
+        "carrot cake",
+        "pumpkin cake",
+        "loaf cake"
+      ],
+      "display_name": "banana cake"
+    },
+    "basil": {
+      "parent_category": "Raw Ingredient - Herbs & Spices",
+      "similar_items": [
+        "parsley",
+        "cilantro",
+        "spinach",
+        "lettuce",
+        "mint"
+      ],
+      "display_name": "basil"
+    },
+    "bean-seeds": {
+      "parent_category": "Raw Ingredient - Legumes, Nuts & Seeds",
+      "similar_items": [
+        "lentils",
+        "chickpeas",
+        "peas",
+        "soybeans",
+        "mung beans"
+      ],
+      "display_name": "beans"
+    },
+    "beans-kidney": {
+      "parent_category": "Raw Ingredient - Legumes, Nuts & Seeds",
+      "similar_items": [
+        "black beans",
+        "pinto beans",
+        "red beans",
+        "white beans",
+        "chickpeas"
+      ],
+      "display_name": "kidney beans"
+    },
+    "beans-white": {
+      "parent_category": "Raw Ingredient - Legumes, Nuts & Seeds",
+      "similar_items": [
+        "cannellini beans",
+        "navy beans",
+        "great northern beans",
+        "kidney beans",
+        "lima beans"
+      ],
+      "display_name": "white beans"
+    },
+    "beef": {
+      "parent_category": "Raw Ingredient - Meat & Poultry",
+      "similar_items": [
+        "pork",
+        "lamb",
+        "veal",
+        "bison",
+        "buffalo"
+      ],
+      "display_name": "beef"
+    },
+    "beef-cut-into-stripes-only-meat": {
+      "parent_category": "Raw Ingredient - Meat & Poultry",
+      "similar_items": [
+        "beef strips",
+        "beef slices",
+        "beef jerky",
+        "beef steak",
+        "beef tenderloin"
+      ],
+      "display_name": "beef strips"
+    },
+    "beef-filet": {
+      "parent_category": "Raw Ingredient - Meat & Poultry",
+      "similar_items": [
+        "beef tenderloin",
+        "beef steak",
+        "beef roast",
+        "beef ribeye",
+        "beef sirloin"
+      ],
+      "display_name": "beef filet"
+    },
+    "beef-minced-only-meat": {
+      "parent_category": "Raw Ingredient - Meat & Poultry",
+      "similar_items": [
+        "ground beef",
+        "minced meat",
+        "beef patty",
+        "beef crumble",
+        "beef hash"
+      ],
+      "display_name": "minced beef"
+    },
+    "beef-roast": {
+      "parent_category": "Raw Ingredient - Meat & Poultry",
+      "similar_items": [
+        "beef",
+        "roast beef",
+        "beef brisket",
+        "beef tenderloin",
+        "beef ribeye"
+      ],
+      "display_name": "roast beef"
+    },
+    "beef-sirloin-steak": {
+      "parent_category": "Raw Ingredient - Meat & Poultry",
+      "similar_items": [
+        "beef steak",
+        "sirloin steak",
+        "beef fillet",
+        "beef ribeye",
+        "beef tenderloin"
+      ],
+      "display_name": "sirloin steak"
+    },
+    "beer": {
+      "parent_category": "Beverage - Alcoholic",
+      "similar_items": [
+        "ale",
+        "lager",
+        "stout",
+        "pilsner",
+        "beverage"
+      ],
+      "display_name": "beer"
+    },
+    "beetroot-raw": {
+      "parent_category": "Raw Ingredient - Vegetables",
+      "similar_items": [
+        "beet",
+        "beetroot",
+        "raw beetroot",
+        "beetroot slice",
+        "beetroot chunks"
+      ],
+      "display_name": "raw beetroot"
+    },
+    "beetroot-steamed-without-addition-of-salt": {
+      "parent_category": "Raw Ingredient - Vegetables",
+      "similar_items": [
+        "steamed beetroot",
+        "cooked beetroot",
+        "beetroot",
+        "beet",
+        "beetroot slice"
+      ],
+      "display_name": "steamed beetroot"
+    },
+    "bell-pepper-red-raw": {
+      "parent_category": "Raw Ingredient - Vegetables",
+      "similar_items": [
+        "red bell pepper",
+        "red pepper",
+        "bell pepper",
+        "red capsicum",
+        "capsicum"
+      ],
+      "display_name": "red bell pepper"
+    },
+    "bell-pepper-red-stewed-without-addition-of-fat-without-addition-of-salt": {
+      "parent_category": "Raw Ingredient - Vegetables",
+      "similar_items": [
+        "stewed red bell pepper",
+        "cooked red bell pepper",
+        "red bell pepper",
+        "red pepper",
+        "bell pepper"
+      ],
+      "display_name": "stewed red bell pepper"
+    },
+    "berries": {
+      "parent_category": "Raw Ingredient - Fruits",
+      "similar_items": [
+        "strawberries",
+        "blueberries",
+        "raspberries",
+        "blackberries",
+        "mulberries"
+      ],
+      "display_name": "berries"
+    },
+    "birchermuesli-prepared-no-sugar-added": {
+      "parent_category": "Prepared Food - Main Courses",
+      "similar_items": [
+        "muesli",
+        "bircher muesli",
+        "oatmeal",
+        "granola",
+        "breakfast cereal"
+      ],
+      "display_name": "birchermuesli"
+    },
+    "biscuit-with-butter": {
+      "parent_category": "Bakery - Savory Baked Goods",
+      "similar_items": [
+        "buttered biscuit",
+        "biscuit",
+        "savory biscuit",
+        "butter biscuit",
+        "biscuit with spread"
+      ],
+      "display_name": "butter biscuit"
+    },
+    "biscuits": {
+      "parent_category": "Bakery - Savory Baked Goods",
+      "similar_items": [
+        "cookies",
+        "scones",
+        "muffins",
+        "rolls",
+        "bread"
+      ],
+      "display_name": "biscuits"
+    },
+    "black-forest-tart": {
+      "parent_category": "Dessert - Cakes & Pastries",
+      "similar_items": [
+        "black-forest-cake",
+        "chocolate-cake",
+        "cherry-tart",
+        "fruit-tart",
+        "layered-cake"
+      ],
+      "display_name": "black forest tart"
+    },
+    "black-olives": {
+      "parent_category": "Raw Ingredient - Vegetables",
+      "similar_items": [
+        "green-olives",
+        "kalamata-olives",
+        "olives",
+        "black-beans",
+        "black-peppercorns"
+      ],
+      "display_name": "black olives"
+    },
+    "blackberry": {
+      "parent_category": "Raw Ingredient - Fruits",
+      "similar_items": [
+        "raspberry",
+        "blueberry",
+        "mulberry",
+        "cherry",
+        "cranberry"
+      ],
+      "display_name": "blackberry"
+    },
+    "blue-mould-cheese": {
+      "parent_category": "Processed Ingredient - Cheese",
+      "similar_items": [
+        "gorgonzola",
+        "roquefort",
+        "stilton",
+        "bleu-cheese",
+        "blue-veined-cheese"
+      ],
+      "display_name": "blue cheese"
+    },
+    "blueberries": {
+      "parent_category": "Raw Ingredient - Fruits",
+      "similar_items": [
+        "blackberries",
+        "cranberries",
+        "currants",
+        "raisins",
+        "grapes"
+      ],
+      "display_name": "blueberries"
+    },
+    "bolognaise-sauce": {
+      "parent_category": "Condiment - Sauces & Dressings",
+      "similar_items": [
+        "spaghetti-sauce",
+        "marinara-sauce",
+        "pasta-sauce",
+        "meat-sauce",
+        "tomato-sauce"
+      ],
+      "display_name": "bolognaise sauce"
+    },
+    "bouillon": {
+      "parent_category": "Prepared Food - Soups & Broths",
+      "similar_items": [
+        "broth",
+        "stock",
+        "consomme",
+        "soup",
+        "bouillon-cube"
+      ],
+      "display_name": "bouillon"
+    },
+    "bouillon-vegetable": {
+      "parent_category": "Prepared Food - Soups & Broths",
+      "similar_items": [
+        "vegetable-broth",
+        "vegetable-stock",
+        "vegetable-soup",
+        "vegetable-consomme",
+        "vegetable-bouillon-cube"
+      ],
+      "display_name": "vegetable bouillon"
+    },
+    "bouquet-garni": {
+      "parent_category": "Raw Ingredient - Herbs & Spices",
+      "similar_items": [
+        "herb-bundle",
+        "herb-sprig",
+        "herb-mix",
+        "herb-sachet",
+        "herb-bouquet"
+      ],
+      "display_name": "bouquet garni"
+    },
+    "braided-white-loaf": {
+      "parent_category": "Bakery - Bread & Loaves",
+      "similar_items": [
+        "white bread",
+        "loaf of bread",
+        "braided bread",
+        "white loaf",
+        "bread loaf"
+      ],
+      "display_name": "white bread"
+    },
+    "brazil-nut": {
+      "parent_category": "Raw Ingredient - Legumes, Nuts & Seeds",
+      "similar_items": [
+        "nut",
+        "large nut",
+        "brazil nut seed",
+        "brazil nut kernel",
+        "brazil nut shell"
+      ],
+      "display_name": "brazil nut"
+    },
+    "bread": {
+      "parent_category": "Bakery - Bread & Loaves",
+      "similar_items": [
+        "loaf of bread",
+        "bread loaf",
+        "white bread",
+        "brown bread",
+        "sliced bread"
+      ],
+      "display_name": "bread"
+    },
+    "bread-5-grain": {
+      "parent_category": "Bakery - Bread & Loaves",
+      "similar_items": [
+        "5 grain bread",
+        "whole grain bread",
+        "multigrain bread",
+        "seeded bread",
+        "brown bread"
+      ],
+      "display_name": "5 grain bread"
+    },
+    "bread-black": {
+      "parent_category": "Bakery - Bread & Loaves",
+      "similar_items": [
+        "black bread",
+        "rye bread",
+        "dark bread",
+        "whole grain bread",
+        "seeded bread"
+      ],
+      "display_name": "black bread"
+    },
+    "bread-french-white-flour": {
+      "parent_category": "Bakery - Bread & Loaves",
+      "similar_items": [
+        "french bread",
+        "white flour bread",
+        "baguette",
+        "white bread",
+        "loaf of bread"
+      ],
+      "display_name": "white bread"
+    },
+    "bread-fruit": {
+      "parent_category": "Raw Ingredient - Vegetables",
+      "similar_items": [
+        "breadfruit",
+        "bread fruit",
+        "breadfruit slice",
+        "breadfruit cut",
+        "breadfruit piece"
+      ],
+      "display_name": "breadfruit"
+    },
+    "bread-grain": {
+      "parent_category": "Bakery - Bread & Loaves",
+      "similar_items": [
+        "grain bread",
+        "whole grain bread",
+        "multigrain bread",
+        "seeded bread",
+        "brown bread"
+      ],
+      "display_name": "grain bread"
+    },
+    "bread-half-white": {
+      "parent_category": "Bakery - Bread & Loaves",
+      "similar_items": [
+        "half white bread",
+        "white bread",
+        "loaf of bread",
+        "bread loaf",
+        "sliced bread"
+      ],
+      "display_name": "white bread half"
+    },
+    "bread-meat-substitute-lettuce-sauce": {
+      "parent_category": "Prepared Food - Main Courses",
+      "similar_items": [
+        "bread substitute",
+        "meat substitute bread",
+        "lettuce bread",
+        "sauce bread",
+        "vegetarian bread"
+      ],
+      "display_name": "meat substitute sandwich"
+    },
+    "bread-nut": {
+      "parent_category": "Bakery - Bread & Loaves",
+      "similar_items": [
+        "bread",
+        "nut bread",
+        "multigrain bread",
+        "seeded bread",
+        "whole grain bread"
+      ],
+      "display_name": "nut bread"
+    },
+    "bread-olive": {
+      "parent_category": "Bakery - Bread & Loaves",
+      "similar_items": [
+        "bread",
+        "olive bread",
+        "herb bread",
+        "focaccia",
+        "ciabatta"
+      ],
+      "display_name": "olive bread"
+    },
+    "bread-pita": {
+      "parent_category": "Bakery - Bread & Loaves",
+      "similar_items": [
+        "pita",
+        "flatbread",
+        "naan",
+        "tortilla",
+        "pocket bread"
+      ],
+      "display_name": "pita bread"
+    },
+    "bread-rye": {
+      "parent_category": "Bakery - Bread & Loaves",
+      "similar_items": [
+        "rye bread",
+        "dark bread",
+        "whole grain bread",
+        "seeded bread",
+        "sourdough"
+      ],
+      "display_name": "rye bread"
+    },
+    "bread-sourdough": {
+      "parent_category": "Bakery - Bread & Loaves",
+      "similar_items": [
+        "sourdough",
+        "artisan bread",
+        "rustic bread",
+        "crusty bread",
+        "whole grain bread"
+      ],
+      "display_name": "sourdough bread"
+    },
+    "bread-spelt": {
+      "parent_category": "Bakery - Bread & Loaves",
+      "similar_items": [
+        "spelt bread",
+        "whole grain bread",
+        "ancient grain bread",
+        "seeded bread",
+        "multigrain bread"
+      ],
+      "display_name": "spelt bread"
+    },
+    "bread-ticino": {
+      "parent_category": "Bakery - Bread & Loaves",
+      "similar_items": [
+        "ticino bread",
+        "swiss bread",
+        "rustic bread",
+        "crusty bread",
+        "whole grain bread"
+      ],
+      "display_name": "ticino bread"
+    },
+    "bread-toast": {
+      "parent_category": "Bakery - Bread & Loaves",
+      "similar_items": [
+        "toast",
+        "toasted bread",
+        "grilled bread",
+        "brown toast",
+        "whole grain toast"
+      ],
+      "display_name": "toast"
+    },
+    "bread-white": {
+      "parent_category": "Bakery - Bread & Loaves",
+      "similar_items": [
+        "white bread",
+        "plain bread",
+        "sandwich bread",
+        "soft bread",
+        "loaf bread"
+      ],
+      "display_name": "white bread"
+    },
+    "bread-whole-wheat": {
+      "parent_category": "Bakery - Bread & Loaves",
+      "similar_items": [
+        "whole wheat bread",
+        "whole grain bread",
+        "brown bread",
+        "seeded bread",
+        "multigrain bread"
+      ],
+      "display_name": "whole wheat bread"
+    },
+    "bread-wholemeal": {
+      "parent_category": "Bakery - Bread & Loaves",
+      "similar_items": [
+        "bread",
+        "whole grain bread",
+        "brown bread",
+        "rye bread",
+        "multigrain bread"
+      ],
+      "display_name": "wholemeal bread"
+    },
+    "bread-wholemeal-toast": {
+      "parent_category": "Bakery - Bread & Loaves",
+      "similar_items": [
+        "toast",
+        "whole grain toast",
+        "brown toast",
+        "rye toast",
+        "multigrain toast"
+      ],
+      "display_name": "wholemeal toast"
+    },
+    "breadcrumbs-unspiced": {
+      "parent_category": "Processed Ingredient - Flours & Powders",
+      "similar_items": [
+        "breadcrumbs",
+        "plain breadcrumbs",
+        "dried breadcrumbs",
+        "panko",
+        "crumbs"
+      ],
+      "display_name": "breadcrumbs"
+    },
+    "brie": {
+      "parent_category": "Processed Ingredient - Cheese",
+      "similar_items": [
+        "soft cheese",
+        "cream cheese",
+        "camembert",
+        "bloomy rind cheese",
+        "soft white cheese"
+      ],
+      "display_name": "brie"
+    },
+    "brioche": {
+      "parent_category": "Bakery - Pastries & Sweet Baked",
+      "similar_items": [
+        "enriched bread",
+        "sweet bread",
+        "buttery bread",
+        "brioche loaf",
+        "brioche bun"
+      ],
+      "display_name": "brioche"
+    },
+    "broccoli": {
+      "parent_category": "Raw Ingredient - Vegetables",
+      "similar_items": [
+        "cauliflower",
+        "green vegetable",
+        "broccoli florets",
+        "broccoli crown",
+        "broccolini"
+      ],
+      "display_name": "broccoli"
+    },
+    "brownie": {
+      "parent_category": "Dessert - Cakes & Pastries",
+      "similar_items": [
+        "chocolate cake",
+        "fudgy brownie",
+        "chocolate square",
+        "chocolate bar",
+        "chocolate dessert"
+      ],
+      "display_name": "brownie"
+    },
+    "brussel-sprouts": {
+      "parent_category": "Raw Ingredient - Vegetables",
+      "similar_items": [
+        "cabbage",
+        "mini cabbage",
+        "green vegetable",
+        "brussels sprouts",
+        "sprouts"
+      ],
+      "display_name": "brussels sprouts"
+    },
+    "buckwheat-grain-peeled": {
+      "parent_category": "Raw Ingredient - Grains & Cereals",
+      "similar_items": [
+        "buckwheat",
+        "groats",
+        "pseudo-grain",
+        "buckwheat kernels",
+        "buckwheat seeds"
+      ],
+      "display_name": "buckwheat"
+    },
+    "buckwheat-pancake": {
+      "parent_category": "Prepared Food - Main Courses",
+      "similar_items": [
+        "pancake",
+        "buckwheat pancake",
+        "blini",
+        "galette",
+        "crepe"
+      ],
+      "display_name": "buckwheat pancake"
+    },
+    "bulgur": {
+      "parent_category": "Raw Ingredient - Grains & Cereals",
+      "similar_items": [
+        "couscous",
+        "quinoa",
+        "rice",
+        "farro",
+        "barley"
+      ],
+      "display_name": "bulgur"
+    },
+    "butter": {
+      "parent_category": "Raw Ingredient - Oils & Fats",
+      "similar_items": [
+        "margarine",
+        "lard",
+        "ghee",
+        "shortening",
+        "coconut oil"
+      ],
+      "display_name": "butter"
+    },
+    "butter-herb": {
+      "parent_category": "Condiment - Spreads & Jams",
+      "similar_items": [
+        "herbed butter",
+        "compound butter",
+        "flavored butter",
+        "spreadable butter",
+        "herb butter"
+      ],
+      "display_name": "herb butter"
+    },
+    "butter-spread-puree-almond": {
+      "parent_category": "Condiment - Spreads & Jams",
+      "similar_items": [
+        "almond butter",
+        "peanut butter",
+        "cashew butter",
+        "nut butter",
+        "almond spread"
+      ],
+      "display_name": "almond butter"
+    },
+    "cake-chocolate": {
+      "parent_category": "Dessert - Cakes & Pastries",
+      "similar_items": [
+        "chocolate cake",
+        "devil's food cake",
+        "chocolate sponge cake",
+        "chocolate layer cake",
+        "chocolate bundt cake"
+      ],
+      "display_name": "chocolate cake"
+    },
+    "cake-marble": {
+      "parent_category": "Dessert - Cakes & Pastries",
+      "similar_items": [
+        "marble cake",
+        "marbled cake",
+        "swirl cake",
+        "marble loaf cake",
+        "marble bundt cake"
+      ],
+      "display_name": "marble cake"
+    },
+    "cake-oblong": {
+      "parent_category": "Dessert - Cakes & Pastries",
+      "similar_items": [
+        "loaf cake",
+        "pound cake",
+        "bundt cake",
+        "sheet cake",
+        "bar cake"
+      ],
+      "display_name": "oblong cake"
+    },
+    "cake-salted": {
+      "parent_category": "Dessert - Cakes & Pastries",
+      "similar_items": [
+        "salted caramel cake",
+        "salted chocolate cake",
+        "salted butter cake",
+        "salted caramel layer cake",
+        "salted caramel bundt cake"
+      ],
+      "display_name": "salted cake"
+    },
+    "cantonese-fried-rice": {
+      "parent_category": "Prepared Food - Main Courses",
+      "similar_items": [
+        "fried rice",
+        "chinese fried rice",
+        "vegetable fried rice",
+        "egg fried rice",
+        "japanese fried rice"
+      ],
+      "display_name": "fried rice"
+    },
+    "capers": {
+      "parent_category": "Raw Ingredient - Herbs & Spices",
+      "similar_items": [
+        "olives",
+        "pickles",
+        "green olives",
+        "black olives",
+        "cornichons"
+      ],
+      "display_name": "capers"
+    },
+    "cappuccino": {
+      "parent_category": "Beverage - Non-Alcoholic",
+      "similar_items": [
+        "latte",
+        "coffee",
+        "espresso",
+        "cafe-au-lait",
+        "macchiato"
+      ],
+      "display_name": "cappuccino"
+    },
+    "caprese-salad-tomato-mozzarella": {
+      "parent_category": "Prepared Food - Salads & Cold Dishes",
+      "similar_items": [
+        "tomato-mozzarella-salad",
+        "insalata-caprese",
+        "tomato-basil-mozzarella",
+        "italian-salad",
+        "tomato-cheese-salad"
+      ],
+      "display_name": "caprese salad"
+    },
+    "carrot-cake": {
+      "parent_category": "Dessert - Cakes & Pastries",
+      "similar_items": [
+        "carrot-loaf",
+        "carrot-bread",
+        "spiced-carrot-cake",
+        "carrot-muffin",
+        "carrot-pound-cake"
+      ],
+      "display_name": "carrot cake"
+    },
+    "carrot-raw": {
+      "parent_category": "Raw Ingredient - Vegetables",
+      "similar_items": [
+        "raw-carrot",
+        "whole-carrot",
+        "fresh-carrot",
+        "carrot-stick",
+        "carrot-baby"
+      ],
+      "display_name": "raw carrot"
+    },
+    "carrot-steamed-without-addition-of-salt": {
+      "parent_category": "Prepared Food - Vegetarian Dishes",
+      "similar_items": [
+        "steamed-carrot",
+        "cooked-carrot",
+        "boiled-carrot",
+        "steamed-vegetable",
+        "carrot-side-dish"
+      ],
+      "display_name": "steamed carrot"
+    },
+    "cashew-nut": {
+      "parent_category": "Raw Ingredient - Legumes, Nuts & Seeds",
+      "similar_items": [
+        "cashews",
+        "raw-cashews",
+        "whole-cashews",
+        "cashew",
+        "cashew-nut-shell"
+      ],
+      "display_name": "cashew nut"
+    },
+    "cauliflower": {
+      "parent_category": "Raw Ingredient - Vegetables",
+      "similar_items": [
+        "cauliflower-head",
+        "cauliflower-florets",
+        "cauliflower-raw",
+        "cauliflower-whole",
+        "cauliflower-vegetable"
+      ],
+      "display_name": "cauliflower"
+    },
+    "celeriac": {
+      "parent_category": "Raw Ingredient - Vegetables",
+      "similar_items": [
+        "celery-root",
+        "celeriac-root",
+        "celery-knob",
+        "celery-root-vegetable",
+        "celeriac-raw"
+      ],
+      "display_name": "celeriac"
+    },
+    "celery": {
+      "parent_category": "Raw Ingredient - Vegetables",
+      "similar_items": [
+        "celery-stalk",
+        "celery-sticks",
+        "celery-raw",
+        "celery-vegetable",
+        "celery-green"
+      ],
+      "display_name": "celery"
+    },
+    "cenovis-yeast-spread": {
+      "parent_category": "Condiment - Spreads & Jams",
+      "similar_items": [
+        "yeast-spread",
+        "yeast-extract-spread",
+        "vegemite",
+        "marmite",
+        "brewer's-yeast-spread"
+      ],
+      "display_name": "yeast spread"
+    },
+    "cervelat": {
+      "parent_category": "Raw Ingredient - Meat & Poultry",
+      "similar_items": [
+        "salami",
+        "chorizo",
+        "sausage",
+        "hot dog",
+        "bologna"
+      ],
+      "display_name": "cervelat"
+    },
+    "champagne": {
+      "parent_category": "Beverage - Alcoholic",
+      "similar_items": [
+        "sparkling wine",
+        "prosecco",
+        "cava",
+        "champagne flute",
+        "wine glass"
+      ],
+      "display_name": "champagne"
+    },
+    "cheddar": {
+      "parent_category": "Processed Ingredient - Cheese",
+      "similar_items": [
+        "gouda",
+        "gruyere",
+        "provolone",
+        "monterey jack",
+        "havarti"
+      ],
+      "display_name": "cheddar"
+    },
+    "cheese": {
+      "parent_category": "Processed Ingredient - Cheese",
+      "similar_items": [
+        "cheddar",
+        "gouda",
+        "mozzarella",
+        "brie",
+        "camembert"
+      ],
+      "display_name": "cheese"
+    },
+    "cheese-for-raclette": {
+      "parent_category": "Processed Ingredient - Cheese",
+      "similar_items": [
+        "gruyere",
+        "emmentaler",
+        "comte",
+        "raclette cheese",
+        "swiss cheese"
+      ],
+      "display_name": "raclette cheese"
+    },
+    "cheesecake": {
+      "parent_category": "Dessert - Cakes & Pastries",
+      "similar_items": [
+        "cake",
+        "tiramisu",
+        "panna cotta",
+        "lemon bars",
+        "carrot cake"
+      ],
+      "display_name": "cheesecake"
+    },
+    "cherries": {
+      "parent_category": "Raw Ingredient - Fruits",
+      "similar_items": [
+        "berries",
+        "grapes",
+        "blueberries",
+        "raspberries",
+        "strawberries"
+      ],
+      "display_name": "cherries"
+    },
+    "chestnuts": {
+      "parent_category": "Raw Ingredient - Legumes, Nuts & Seeds",
+      "similar_items": [
+        "acorns",
+        "hazelnuts",
+        "walnuts",
+        "chestnut flour",
+        "chestnut puree"
+      ],
+      "display_name": "chestnuts"
+    },
+    "chia-grains": {
+      "parent_category": "Raw Ingredient - Legumes, Nuts & Seeds",
+      "similar_items": [
+        "flaxseeds",
+        "sesame seeds",
+        "poppy seeds",
+        "quinoa",
+        "sunflower seeds"
+      ],
+      "display_name": "chia grains"
+    },
+    "chicken": {
+      "parent_category": "Raw Ingredient - Meat & Poultry",
+      "similar_items": [
+        "turkey",
+        "duck",
+        "chicken breast",
+        "chicken thigh",
+        "chicken wings"
+      ],
+      "display_name": "chicken"
+    },
+    "chicken-breast": {
+      "parent_category": "Raw Ingredient - Meat & Poultry",
+      "similar_items": [
+        "chicken",
+        "poultry",
+        "white meat",
+        "boneless chicken",
+        "chicken fillet"
+      ],
+      "display_name": "chicken breast"
+    },
+    "chicken-curry-cream-coconut-milk-curry-spices-paste": {
+      "parent_category": "Prepared Food - Main Courses",
+      "similar_items": [
+        "chicken curry",
+        "curry dish",
+        "coconut curry",
+        "spicy chicken",
+        "creamy curry"
+      ],
+      "display_name": "chicken curry"
+    },
+    "chicken-cut-into-stripes-only-meat": {
+      "parent_category": "Raw Ingredient - Meat & Poultry",
+      "similar_items": [
+        "chicken strips",
+        "chicken tenders",
+        "boneless chicken",
+        "chicken fillet",
+        "chicken breast"
+      ],
+      "display_name": "chicken strips"
+    },
+    "chicken-leg": {
+      "parent_category": "Raw Ingredient - Meat & Poultry",
+      "similar_items": [
+        "chicken drumstick",
+        "chicken thigh",
+        "poultry leg",
+        "chicken",
+        "bone-in chicken"
+      ],
+      "display_name": "chicken leg"
+    },
+    "chicken-nuggets": {
+      "parent_category": "Prepared Food - Main Courses",
+      "similar_items": [
+        "breaded chicken",
+        "chicken tenders",
+        "fried chicken",
+        "chicken bites",
+        "chicken pieces"
+      ],
+      "display_name": "chicken nuggets"
+    },
+    "chicken-wing": {
+      "parent_category": "Raw Ingredient - Meat & Poultry",
+      "similar_items": [
+        "wing",
+        "chicken drumette",
+        "chicken flat",
+        "chicken tip",
+        "poultry wing"
+      ],
+      "display_name": "chicken wing"
+    },
+    "chickpeas": {
+      "parent_category": "Raw Ingredient - Legumes, Nuts & Seeds",
+      "similar_items": [
+        "garbanzo beans",
+        "chana",
+        "ceci",
+        "chick peas",
+        "legumes"
+      ],
+      "display_name": "chickpeas"
+    },
+    "chili-con-carne-prepared": {
+      "parent_category": "Prepared Food - Main Courses",
+      "similar_items": [
+        "chili",
+        "spicy beef",
+        "beef chili",
+        "chili con carne",
+        "meat chili"
+      ],
+      "display_name": "chili con carne"
+    },
+    "chinese-cabbage": {
+      "parent_category": "Raw Ingredient - Vegetables",
+      "similar_items": [
+        "napa cabbage",
+        "bok choy",
+        "pak choi",
+        "chinese leaf",
+        "wombok"
+      ],
+      "display_name": "chinese cabbage"
+    },
+    "chips-french-fries": {
+      "parent_category": "Snack - Savory",
+      "similar_items": [
+        "fries",
+        "french fries",
+        "potato chips",
+        "fried potatoes",
+        "crispy fries"
+      ],
+      "display_name": "french fries"
+    },
+    "chives": {
+      "parent_category": "Raw Ingredient - Herbs & Spices",
+      "similar_items": [
+        "green onion",
+        "scallion",
+        "leek",
+        "spring onion",
+        "garlic chives"
+      ],
+      "display_name": "chives"
+    },
+    "chocolate": {
+      "parent_category": "Dessert - Candy & Confections",
+      "similar_items": [
+        "chocolate bar",
+        "chocolate block",
+        "chocolate pieces",
+        "chocolate chips",
+        "chocolate squares"
+      ],
+      "display_name": "chocolate"
+    },
+    "chocolate-cookies": {
+      "parent_category": "Bakery - Pastries & Sweet Baked",
+      "similar_items": [
+        "chocolate chip cookies",
+        "chocolate cookies",
+        "chocolate chip cookie",
+        "chocolate chip",
+        "chocolate chip cookie dough"
+      ],
+      "display_name": "chocolate cookies"
+    },
+    "chocolate-egg-small": {
+      "parent_category": "Dessert - Candy & Confections",
+      "similar_items": [
+        "chocolate egg",
+        "chocolate bunny",
+        "chocolate rabbit",
+        "chocolate egg small",
+        "chocolate egg hollow"
+      ],
+      "display_name": "small chocolate egg"
+    },
+    "chocolate-filled": {
+      "parent_category": "Dessert - Candy & Confections",
+      "similar_items": [
+        "chocolate filled",
+        "chocolate filled candy",
+        "chocolate filled egg",
+        "chocolate filled bunny",
+        "chocolate filled rabbit"
+      ],
+      "display_name": "chocolate filled"
+    },
+    "chocolate-milk-chocolate-drink": {
+      "parent_category": "Beverage - Non-Alcoholic",
+      "similar_items": [
+        "chocolate milk",
+        "chocolate drink",
+        "chocolate milkshake",
+        "chocolate milkshake",
+        "chocolate milkshake"
+      ],
+      "display_name": "chocolate milk"
+    },
+    "chocolate-mousse": {
+      "parent_category": "Dessert - Frozen & Cold",
+      "similar_items": [
+        "chocolate mousse",
+        "chocolate mousse cake",
+        "chocolate mousse dessert",
+        "chocolate mousse cup",
+        "chocolate mousse recipe"
+      ],
+      "display_name": "chocolate mousse"
+    },
+    "chorizo": {
+      "parent_category": "Raw Ingredient - Meat & Poultry",
+      "similar_items": [
+        "spanish chorizo",
+        "mexican chorizo",
+        "chorizo sausage",
+        "chorizo links",
+        "chorizo slices"
+      ],
+      "display_name": "chorizo"
+    },
+    "coca-cola": {
+      "parent_category": "Beverage - Non-Alcoholic",
+      "similar_items": [
+        "coke",
+        "coca cola",
+        "coca cola bottle",
+        "coca cola can",
+        "coca cola glass"
+      ],
+      "display_name": "coca cola"
+    },
+    "coca-cola-zero": {
+      "parent_category": "Beverage - Non-Alcoholic",
+      "similar_items": [
+        "coca cola zero",
+        "coca cola zero sugar",
+        "coca cola zero bottle",
+        "coca cola zero can",
+        "coca cola zero glass"
+      ],
+      "display_name": "coca cola zero"
+    },
+    "cocktail": {
+      "parent_category": "Beverage - Alcoholic",
+      "similar_items": [
+        "mixed drink",
+        "alcoholic beverage",
+        "liquor",
+        "martini",
+        "mojito"
+      ],
+      "display_name": "cocktail"
+    },
+    "cocoa-powder": {
+      "parent_category": "Processed Ingredient - Flours & Powders",
+      "similar_items": [
+        "chocolate powder",
+        "cocoa",
+        "unsweetened cocoa",
+        "baking cocoa",
+        "dutch-processed cocoa"
+      ],
+      "display_name": "cocoa powder"
+    },
+    "coconut": {
+      "parent_category": "Raw Ingredient - Fruits",
+      "similar_items": [
+        "coconut fruit",
+        "coconut shell",
+        "coconut meat",
+        "coconut husk",
+        "coconut water"
+      ],
+      "display_name": "coconut"
+    },
+    "coconut-milk": {
+      "parent_category": "Processed Ingredient - Dairy Alternatives",
+      "similar_items": [
+        "coconut cream",
+        "coconut beverage",
+        "coconut drink",
+        "coconut liquid",
+        "coconut extract"
+      ],
+      "display_name": "coconut milk"
+    },
+    "cod": {
+      "parent_category": "Raw Ingredient - Fish & Seafood",
+      "similar_items": [
+        "white fish",
+        "fillet",
+        "sea bass",
+        "halibut",
+        "tilapia"
+      ],
+      "display_name": "cod"
+    },
+    "coffee-decaffeinated": {
+      "parent_category": "Beverage - Non-Alcoholic",
+      "similar_items": [
+        "decaf coffee",
+        "coffee without caffeine",
+        "caffeine-free coffee",
+        "decaffeinated beverage",
+        "coffee substitute"
+      ],
+      "display_name": "decaf coffee"
+    },
+    "coffee-with-caffeine": {
+      "parent_category": "Beverage - Non-Alcoholic",
+      "similar_items": [
+        "caffeinated coffee",
+        "regular coffee",
+        "black coffee",
+        "brewed coffee",
+        "espresso"
+      ],
+      "display_name": "coffee"
+    },
+    "coleslaw-chopped-without-sauce": {
+      "parent_category": "Prepared Food - Salads & Cold Dishes",
+      "similar_items": [
+        "chopped cabbage",
+        "raw cabbage",
+        "shredded cabbage",
+        "cabbage salad",
+        "vegetable mix"
+      ],
+      "display_name": "chopped coleslaw"
+    },
+    "cooked-sausage": {
+      "parent_category": "Prepared Food - Main Courses",
+      "similar_items": [
+        "grilled sausage",
+        "sausage links",
+        "sausage patty",
+        "sausage roll",
+        "sausage slice"
+      ],
+      "display_name": "cooked sausage"
+    },
+    "cookies": {
+      "parent_category": "Bakery - Pastries & Sweet Baked",
+      "similar_items": [
+        "biscuits",
+        "sweet cookies",
+        "chocolate chip cookies",
+        "oatmeal cookies",
+        "sugar cookies"
+      ],
+      "display_name": "cookies"
+    },
+    "cordon-bleu-from-pork-schnitzel-fried": {
+      "parent_category": "Prepared Food - Main Courses",
+      "similar_items": [
+        "pork schnitzel",
+        "fried chicken",
+        "breaded pork cutlet",
+        "fried pork",
+        "breaded meat"
+      ],
+      "display_name": "pork cordon bleu"
+    },
+    "coriander": {
+      "parent_category": "Raw Ingredient - Herbs & Spices",
+      "similar_items": [
+        "cilantro",
+        "fresh cilantro",
+        "cilantro leaves",
+        "fresh coriander leaves",
+        "cilantro plant"
+      ],
+      "display_name": "coriander"
+    },
+    "corn": {
+      "parent_category": "Raw Ingredient - Vegetables",
+      "similar_items": [
+        "sweet corn",
+        "corn on the cob",
+        "maize",
+        "corn kernels",
+        "fresh corn"
+      ],
+      "display_name": "corn"
+    },
+    "corn-crisps": {
+      "parent_category": "Snack - Savory",
+      "similar_items": [
+        "corn chips",
+        "tortilla chips",
+        "corn snacks",
+        "cheese puffs",
+        "corn flakes"
+      ],
+      "display_name": "corn crisps"
+    },
+    "corn-flakes": {
+      "parent_category": "Raw Ingredient - Grains & Cereals",
+      "similar_items": [
+        "cereal flakes",
+        "breakfast cereal",
+        "corn cereal",
+        "corn puffs",
+        "corn flakes cereal"
+      ],
+      "display_name": "corn flakes"
+    },
+    "cottage-cheese": {
+      "parent_category": "Raw Ingredient - Dairy & Eggs",
+      "similar_items": [
+        "curd cheese",
+        "ricotta",
+        "farmer cheese",
+        "quark",
+        "cottage cheese curds"
+      ],
+      "display_name": "cottage cheese"
+    },
+    "country-fries": {
+      "parent_category": "Prepared Food - Main Courses",
+      "similar_items": [
+        "french fries",
+        "potato wedges",
+        "home fries",
+        "steak fries",
+        "shoestring fries"
+      ],
+      "display_name": "country fries"
+    },
+    "couscous": {
+      "parent_category": "Raw Ingredient - Grains & Cereals",
+      "similar_items": [
+        "semolina",
+        "bulgur",
+        "quinoa",
+        "couscous grains",
+        "couscous pearls"
+      ],
+      "display_name": "couscous"
+    },
+    "crackers": {
+      "parent_category": "Snack - Savory",
+      "similar_items": [
+        "biscuits",
+        "saltines",
+        "graham crackers",
+        "rice crackers",
+        "oyster crackers"
+      ],
+      "display_name": "crackers"
+    },
+    "cream": {
+      "parent_category": "Raw Ingredient - Dairy & Eggs",
+      "similar_items": [
+        "heavy cream",
+        "whipping cream",
+        "double cream",
+        "light cream",
+        "half-and-half"
+      ],
+      "display_name": "cream"
+    },
+    "cream-cheese": {
+      "parent_category": "Processed Ingredient - Cheese",
+      "similar_items": [
+        "ricotta",
+        "mascarpone",
+        "cottage cheese",
+        "burrata",
+        "fromage frais"
+      ],
+      "display_name": "cream cheese"
+    },
+    "cream-spinach": {
+      "parent_category": "Prepared Food - Main Courses",
+      "similar_items": [
+        "spinach-artichoke-dip",
+        "spinach-quiche",
+        "spinach-lasagna",
+        "spinach-stuffed-chicken",
+        "spinach-pasta"
+      ],
+      "display_name": "spinach cream"
+    },
+    "crepe-plain": {
+      "parent_category": "Bakery - Pastries & Sweet Baked",
+      "similar_items": [
+        "pancake",
+        "blintz",
+        "galette",
+        "tortilla",
+        "flatbread"
+      ],
+      "display_name": "plain crepe"
+    },
+    "crisp-bread-wasa": {
+      "parent_category": "Bakery - Bread & Loaves",
+      "similar_items": [
+        "rye-cracker",
+        "whole-grain-cracker",
+        "flatbread",
+        "pita",
+        "matzo"
+      ],
+      "display_name": "crisp bread"
+    },
+    "crisps": {
+      "parent_category": "Snack - Savory",
+      "similar_items": [
+        "potato-chips",
+        "nachos",
+        "tortilla-chips",
+        "pita-chips",
+        "crackers"
+      ],
+      "display_name": "crisps"
+    },
+    "croissant": {
+      "parent_category": "Bakery - Pastries & Sweet Baked",
+      "similar_items": [
+        "danish",
+        "pain-au-chocolat",
+        "muffin",
+        "scone",
+        "brioche"
+      ],
+      "display_name": "croissant"
+    },
+    "croissant-wholegrain": {
+      "parent_category": "Bakery - Pastries & Sweet Baked",
+      "similar_items": [
+        "whole-grain-bread",
+        "multigrain-bread",
+        "whole-grain-muffin",
+        "whole-grain-pita",
+        "whole-grain-bagel"
+      ],
+      "display_name": "wholegrain croissant"
+    },
+    "croissant-with-chocolate-filling": {
+      "parent_category": "Bakery - Pastries & Sweet Baked",
+      "similar_items": [
+        "pain-au-chocolat",
+        "chocolate-croissant",
+        "chocolate-danish",
+        "chocolate-muffin",
+        "chocolate-brioche"
+      ],
+      "display_name": "chocolate croissant"
+    },
+    "croque-monsieur": {
+      "parent_category": "Prepared Food - Main Courses",
+      "similar_items": [
+        "grilled-cheese-sandwich",
+        "ham-and-cheese-sandwich",
+        "toastie",
+        "panini",
+        "club-sandwich"
+      ],
+      "display_name": "croque monsieur"
+    },
+    "croutons": {
+      "parent_category": "Condiment - Seasonings & Spices",
+      "similar_items": [
+        "breadcrumbs",
+        "toasted-bread",
+        "garlic-bread",
+        "baguette",
+        "toasted-bread-slices"
+      ],
+      "display_name": "croutons"
+    },
+    "crunch-muesli": {
+      "parent_category": "Bakery - Pastries & Sweet Baked",
+      "similar_items": [
+        "granola",
+        "muesli",
+        "oatmeal",
+        "cereal",
+        "breakfast bar"
+      ],
+      "display_name": "muesli"
+    },
+    "cucumber": {
+      "parent_category": "Raw Ingredient - Vegetables",
+      "similar_items": [
+        "zucchini",
+        "pickle",
+        "cucumber-pickled",
+        "green pepper",
+        "squash"
+      ],
+      "display_name": "cucumber"
+    },
+    "cucumber-pickled": {
+      "parent_category": "Processed Ingredient - Canned & Preserved",
+      "similar_items": [
+        "pickle",
+        "gherkin",
+        "cornichon",
+        "cucumber",
+        "dill pickle"
+      ],
+      "display_name": "pickled cucumber"
+    },
+    "curd": {
+      "parent_category": "Raw Ingredient - Dairy & Eggs",
+      "similar_items": [
+        "yogurt",
+        "cottage cheese",
+        "ricotta",
+        "quark",
+        "fromage blanc"
+      ],
+      "display_name": "curd"
+    },
+    "curds-natural-with-at-most-10-fidm": {
+      "parent_category": "Raw Ingredient - Dairy & Eggs",
+      "similar_items": [
+        "curd",
+        "cottage cheese",
+        "ricotta",
+        "quark",
+        "fromage blanc"
+      ],
+      "display_name": "natural curds"
+    },
+    "curry-vegetarian": {
+      "parent_category": "Prepared Food - Main Courses",
+      "similar_items": [
+        "vegetable curry",
+        "vegetarian stew",
+        "chickpea curry",
+        "lentil curry",
+        "tofu curry"
+      ],
+      "display_name": "vegetarian curry"
+    },
+    "dairy-ice-cream": {
+      "parent_category": "Dessert - Frozen & Cold",
+      "similar_items": [
+        "ice cream",
+        "gelato",
+        "frozen yogurt",
+        "sorbet",
+        "sherbet"
+      ],
+      "display_name": "ice cream"
+    },
+    "damson-plum": {
+      "parent_category": "Raw Ingredient - Fruits",
+      "similar_items": [
+        "plum",
+        "prune",
+        "sloe",
+        "blackthorn",
+        "prune plum"
+      ],
+      "display_name": "damson plum"
+    },
+    "dark-chocolate": {
+      "parent_category": "Dessert - Candy & Confections",
+      "similar_items": [
+        "chocolate",
+        "bittersweet chocolate",
+        "semisweet chocolate",
+        "chocolate bar",
+        "chocolate square"
+      ],
+      "display_name": "dark chocolate"
+    },
+    "dates": {
+      "parent_category": "Raw Ingredient - Fruits",
+      "similar_items": [
+        "dried dates",
+        "date palm",
+        "date fruit",
+        "medjool dates",
+        "deglet noor dates"
+      ],
+      "display_name": "dates"
+    },
+    "dips": {
+      "parent_category": "Condiment - Sauces & Dressings",
+      "similar_items": [
+        "hummus",
+        "guacamole",
+        "salsa",
+        "tahini",
+        "baba ganoush"
+      ],
+      "display_name": "dips"
+    },
+    "dough-puff-pastry-shortcrust-bread-pizza-dough": {
+      "parent_category": "Bakery - Pizza & Flatbreads",
+      "similar_items": [
+        "pizza dough",
+        "flatbread dough",
+        "pastry dough",
+        "shortcrust pastry",
+        "puff pastry"
+      ],
+      "display_name": "pizza dough"
+    },
+    "dried-meat": {
+      "parent_category": "Raw Ingredient - Meat & Poultry",
+      "similar_items": [
+        "jerky",
+        "biltong",
+        "beef jerky",
+        "turkey jerky",
+        "salami"
+      ],
+      "display_name": "dried meat"
+    },
+    "dried-raisins": {
+      "parent_category": "Raw Ingredient - Fruits",
+      "similar_items": [
+        "dried grapes",
+        "sultanas",
+        "currants",
+        "dried cranberries",
+        "dried apricots"
+      ],
+      "display_name": "raisins"
+    },
+    "dumplings": {
+      "parent_category": "Prepared Food - Main Courses",
+      "similar_items": [
+        "gyoza",
+        "potstickers",
+        "ravioli",
+        "pierogi",
+        "momos"
+      ],
+      "display_name": "dumplings"
+    },
+    "ebly": {
+      "parent_category": "Raw Ingredient - Grains & Cereals",
+      "similar_items": [
+        "bulgur",
+        "couscous",
+        "quinoa",
+        "farro",
+        "barley"
+      ],
+      "display_name": "ebly"
+    },
+    "egg": {
+      "parent_category": "Raw Ingredient - Dairy & Eggs",
+      "similar_items": [
+        "chicken egg",
+        "quail egg",
+        "duck egg",
+        "goose egg",
+        "ostrich egg"
+      ],
+      "display_name": "egg"
+    },
+    "egg-scrambled-prepared": {
+      "parent_category": "Prepared Food - Main Courses",
+      "similar_items": [
+        "scrambled eggs",
+        "omelette",
+        "frittata",
+        "quiche",
+        "egg scramble"
+      ],
+      "display_name": "scrambled egg"
+    },
+    "eggplant": {
+      "parent_category": "Raw Ingredient - Vegetables",
+      "similar_items": [
+        "aubergine",
+        "brinjal",
+        "melanzane",
+        "nasu",
+        "berenjena"
+      ],
+      "display_name": "eggplant"
+    },
+    "eggplant-caviar": {
+      "parent_category": "Condiment - Sauces & Dressings",
+      "similar_items": [
+        "baba ganoush",
+        "melitzanosalata",
+        "ratatouille",
+        "eggplant dip",
+        "eggplant spread"
+      ],
+      "display_name": "eggplant caviar"
+    },
+    "emmental-cheese": {
+      "parent_category": "Processed Ingredient - Cheese",
+      "similar_items": [
+        "gouda",
+        "cheddar",
+        "gruyere",
+        "swiss cheese",
+        "yellow cheese"
+      ],
+      "display_name": "emmental cheese"
+    },
+    "espresso-with-caffeine": {
+      "parent_category": "Beverage - Non-Alcoholic",
+      "similar_items": [
+        "black coffee",
+        "coffee",
+        "caffeinated coffee",
+        "strong coffee",
+        "espresso"
+      ],
+      "display_name": "espresso"
+    },
+    "fajita-bread-only": {
+      "parent_category": "Bakery - Bread & Loaves",
+      "similar_items": [
+        "tortilla",
+        "flatbread",
+        "pita bread",
+        "naan",
+        "wrap"
+      ],
+      "display_name": "fajita bread"
+    },
+    "falafel-balls": {
+      "parent_category": "Prepared Food - Vegetarian Dishes",
+      "similar_items": [
+        "chickpea balls",
+        "vegetarian meatballs",
+        "veggie balls",
+        "falafel",
+        "chickpea patties"
+      ],
+      "display_name": "falafel"
+    },
+    "faux-mage-cashew-vegan-chers": {
+      "parent_category": "Processed Ingredient - Dairy Alternatives",
+      "similar_items": [
+        "vegan cheese",
+        "cashew cheese",
+        "plant-based cheese",
+        "dairy-free cheese",
+        "non-dairy cheese"
+      ],
+      "display_name": "cashew vegan cheese"
+    },
+    "fennel": {
+      "parent_category": "Raw Ingredient - Vegetables",
+      "similar_items": [
+        "anise",
+        "licorice root",
+        "fennel bulb",
+        "fennel seeds",
+        "fennel fronds"
+      ],
+      "display_name": "fennel"
+    },
+    "feta": {
+      "parent_category": "Processed Ingredient - Cheese",
+      "similar_items": [
+        "goat cheese",
+        "ricotta",
+        "cottage cheese",
+        "brie",
+        "mozzarella"
+      ],
+      "display_name": "feta"
+    },
+    "fig-dried": {
+      "parent_category": "Raw Ingredient - Fruits",
+      "similar_items": [
+        "dried figs",
+        "prunes",
+        "raisins",
+        "dried apricots",
+        "dried dates"
+      ],
+      "display_name": "dried fig"
+    },
+    "figs": {
+      "parent_category": "Raw Ingredient - Fruits",
+      "similar_items": [
+        "fresh figs",
+        "fig fruit",
+        "figs on tree",
+        "figs in basket",
+        "figs on branch"
+      ],
+      "display_name": "figs"
+    },
+    "fish": {
+      "parent_category": "Raw Ingredient - Fish & Seafood",
+      "similar_items": [
+        "seafood",
+        "sea bass",
+        "salmon",
+        "tuna",
+        "cod"
+      ],
+      "display_name": "fish"
+    },
+    "fish-crunchies-battered": {
+      "parent_category": "Snack - Savory",
+      "similar_items": [
+        "fish-sticks",
+        "battered-fish",
+        "fried-fish",
+        "tempura",
+        "breaded-fish"
+      ],
+      "display_name": "battered fish crunchies"
+    },
+    "fish-fingers-breaded": {
+      "parent_category": "Prepared Food - Main Courses",
+      "similar_items": [
+        "breaded fish",
+        "fish sticks",
+        "fish nuggets",
+        "breaded chicken",
+        "breaded shrimp"
+      ],
+      "display_name": "fish fingers"
+    },
+    "flakes-oat": {
+      "parent_category": "Raw Ingredient - Grains & Cereals",
+      "similar_items": [
+        "oatmeal",
+        "rolled oats",
+        "oat flakes",
+        "oat groats",
+        "oat bran"
+      ],
+      "display_name": "oat flakes"
+    },
+    "focaccia": {
+      "parent_category": "Bakery - Bread & Loaves",
+      "similar_items": [
+        "flatbread",
+        "pita",
+        "naan",
+        "ciabatta",
+        "bagel"
+      ],
+      "display_name": "focaccia"
+    },
+    "fondue": {
+      "parent_category": "Prepared Food - Main Courses",
+      "similar_items": [
+        "cheese dip",
+        "cheese fondue",
+        "melted cheese",
+        "cheese sauce",
+        "cheese platter"
+      ],
+      "display_name": "fondue"
+    },
+    "french-beans": {
+      "parent_category": "Raw Ingredient - Vegetables",
+      "similar_items": [
+        "green-beans",
+        "string-beans",
+        "haricots-verts",
+        "snap-beans",
+        "bush-beans"
+      ],
+      "display_name": "french beans"
+    },
+    "french-pizza-from-alsace-baked": {
+      "parent_category": "Bakery - Pizza & Flatbreads",
+      "similar_items": [
+        "flatbread",
+        "pizza",
+        "tarte flamb\u00e9e",
+        "quiche",
+        "calzone"
+      ],
+      "display_name": "french pizza"
+    },
+    "french-salad-dressing": {
+      "parent_category": "Condiment - Sauces & Dressings",
+      "similar_items": [
+        "italian-dressing",
+        "vinaigrette",
+        "ranch-dressing",
+        "caesar-dressing",
+        "balsamic-glaze"
+      ],
+      "display_name": "french dressing"
+    },
+    "fresh-cheese": {
+      "parent_category": "Raw Ingredient - Dairy & Eggs",
+      "similar_items": [
+        "ricotta",
+        "mozzarella",
+        "cottage cheese",
+        "paneer",
+        "feta"
+      ],
+      "display_name": "fresh cheese"
+    },
+    "fruit-compotes": {
+      "parent_category": "Prepared Food - Main Courses",
+      "similar_items": [
+        "fruit-salad",
+        "fruit-cocktail",
+        "fruit-pudding",
+        "fruit-crumble",
+        "fruit-steamed"
+      ],
+      "display_name": "fruit compotes"
+    },
+    "fruit-coulis": {
+      "parent_category": "Condiment - Sauces & Dressings",
+      "similar_items": [
+        "fruit puree",
+        "fruit sauce",
+        "jam",
+        "applesauce",
+        "berry compote"
+      ],
+      "display_name": "fruit coulis"
+    },
+    "fruit-salad": {
+      "parent_category": "Prepared Food - Salads & Cold Dishes",
+      "similar_items": [
+        "fruit mix",
+        "fruit medley",
+        "fruit platter",
+        "fruit bowl",
+        "fruit cocktail"
+      ],
+      "display_name": "fruit salad"
+    },
+    "fruit-tart": {
+      "parent_category": "Dessert - Cakes & Pastries",
+      "similar_items": [
+        "fruit pie",
+        "fruit pastry",
+        "fruit tartlet",
+        "fruit galette",
+        "fruit strudel"
+      ],
+      "display_name": "fruit tart"
+    },
+    "frying-sausage": {
+      "parent_category": "Raw Ingredient - Meat & Poultry",
+      "similar_items": [
+        "sausage",
+        "raw sausage",
+        "pork sausage",
+        "beef sausage",
+        "chicken sausage"
+      ],
+      "display_name": "frying sausage"
+    },
+    "garlic": {
+      "parent_category": "Raw Ingredient - Herbs & Spices",
+      "similar_items": [
+        "garlic clove",
+        "garlic bulb",
+        "elephant garlic",
+        "shallot",
+        "onion"
+      ],
+      "display_name": "garlic"
+    },
+    "glucose-drink-50g": {
+      "parent_category": "Beverage - Non-Alcoholic",
+      "similar_items": [
+        "glucose drink",
+        "sports drink",
+        "energy drink",
+        "electrolyte drink",
+        "hydration drink"
+      ],
+      "display_name": "glucose drink"
+    },
+    "gluten-free-bread": {
+      "parent_category": "Bakery - Bread & Loaves",
+      "similar_items": [
+        "gluten-free loaf",
+        "gluten-free roll",
+        "gluten-free baguette",
+        "gluten-free bun",
+        "gluten-free ciabatta"
+      ],
+      "display_name": "gluten free bread"
+    },
+    "goat-average-raw": {
+      "parent_category": "Raw Ingredient - Meat & Poultry",
+      "similar_items": [
+        "raw goat meat",
+        "goat meat",
+        "goat chops",
+        "goat steak",
+        "goat shoulder"
+      ],
+      "display_name": "raw goat"
+    },
+    "goat-cheese-soft": {
+      "parent_category": "Processed Ingredient - Cheese",
+      "similar_items": [
+        "soft goat cheese",
+        "ch\u00e8vre",
+        "fresh goat cheese",
+        "goat cheese spread",
+        "goat cheese log"
+      ],
+      "display_name": "soft goat cheese"
+    },
+    "grapefruit-pomelo": {
+      "parent_category": "Raw Ingredient - Fruits",
+      "similar_items": [
+        "pomelo",
+        "grapefruit",
+        "citrus fruit",
+        "orange",
+        "lemon"
+      ],
+      "display_name": "grapefruit pomelo"
+    },
+    "grapes": {
+      "parent_category": "Raw Ingredient - Fruits",
+      "similar_items": [
+        "raisins",
+        "currants",
+        "blueberries",
+        "cherries",
+        "plums"
+      ],
+      "display_name": "grapes"
+    },
+    "greek-salad": {
+      "parent_category": "Prepared Food - Salads & Cold Dishes",
+      "similar_items": [
+        "caesar-salad",
+        "caprese-salad",
+        "cobb-salad",
+        "feta-salad",
+        "mediterranean-salad"
+      ],
+      "display_name": "greek salad"
+    },
+    "greek-yaourt-yahourt-yogourt-ou-yoghourt": {
+      "parent_category": "Raw Ingredient - Dairy & Eggs",
+      "similar_items": [
+        "yogurt",
+        "strained-yogurt",
+        "greek-yogurt",
+        "plain-yogurt",
+        "natural-yogurt"
+      ],
+      "display_name": "greek yogurt"
+    },
+    "green-asparagus": {
+      "parent_category": "Raw Ingredient - Vegetables",
+      "similar_items": [
+        "asparagus",
+        "spears",
+        "green-spears",
+        "asparagus-spears",
+        "asparagus-stalks"
+      ],
+      "display_name": "green asparagus"
+    },
+    "green-bean-steamed-without-addition-of-salt": {
+      "parent_category": "Raw Ingredient - Vegetables",
+      "similar_items": [
+        "green-beans",
+        "steamed-green-beans",
+        "french-beans",
+        "string-beans",
+        "haricots-verts"
+      ],
+      "display_name": "steamed green beans"
+    },
+    "green-olives": {
+      "parent_category": "Raw Ingredient - Vegetables",
+      "similar_items": [
+        "olives",
+        "black-olives",
+        "kalamata-olives",
+        "pitted-olives",
+        "stuffed-olives"
+      ],
+      "display_name": "green olives"
+    },
+    "grissini": {
+      "parent_category": "Bakery - Bread & Loaves",
+      "similar_items": [
+        "breadsticks",
+        "baguette",
+        "french-bread",
+        "italian-bread",
+        "crusty-bread"
+      ],
+      "display_name": "grissini"
+    },
+    "grits-polenta-maize-flour": {
+      "parent_category": "Raw Ingredient - Grains & Cereals",
+      "similar_items": [
+        "polenta",
+        "cornmeal",
+        "maize-flour",
+        "corn-flour",
+        "grits"
+      ],
+      "display_name": "grits"
+    },
+    "gruyere": {
+      "parent_category": "Processed Ingredient - Cheese",
+      "similar_items": [
+        "cheese",
+        "swiss-cheese",
+        "emmental",
+        "cheddar",
+        "gouda"
+      ],
+      "display_name": "gruyere"
+    },
+    "guacamole": {
+      "parent_category": "Condiment - Sauces & Dressings",
+      "similar_items": [
+        "avocado-dip",
+        "avocado-sauce",
+        "avocado-paste",
+        "avocado-mash",
+        "avocado-spread"
+      ],
+      "display_name": "guacamole"
+    },
+    "gummi-bears-fruit-jellies-jelly-babies-with-fruit-essence": {
+      "parent_category": "Dessert - Candy & Confections",
+      "similar_items": [
+        "gummy bears",
+        "fruit snacks",
+        "jelly beans",
+        "gummy worms",
+        "fruit gummies"
+      ],
+      "display_name": "fruit jelly bears"
+    },
+    "halloumi": {
+      "parent_category": "Raw Ingredient - Dairy & Eggs",
+      "similar_items": [
+        "mozzarella",
+        "feta",
+        "paneer",
+        "ricotta",
+        "cottage cheese"
+      ],
+      "display_name": "halloumi"
+    },
+    "ham": {
+      "parent_category": "Raw Ingredient - Meat & Poultry",
+      "similar_items": [
+        "bacon",
+        "salami",
+        "prosciutto",
+        "turkey",
+        "chicken"
+      ],
+      "display_name": "ham"
+    },
+    "ham-cooked": {
+      "parent_category": "Prepared Food - Main Courses",
+      "similar_items": [
+        "cooked bacon",
+        "cooked turkey",
+        "cooked chicken",
+        "cooked salami",
+        "cooked prosciutto"
+      ],
+      "display_name": "cooked ham"
+    },
+    "ham-croissant": {
+      "parent_category": "Bakery - Pastries & Sweet Baked",
+      "similar_items": [
+        "ham sandwich",
+        "ham baguette",
+        "ham roll",
+        "ham panini",
+        "ham wrap"
+      ],
+      "display_name": "ham croissant"
+    },
+    "ham-raw": {
+      "parent_category": "Raw Ingredient - Meat & Poultry",
+      "similar_items": [
+        "raw bacon",
+        "raw salami",
+        "raw prosciutto",
+        "raw turkey",
+        "raw chicken"
+      ],
+      "display_name": "raw ham"
+    },
+    "ham-turkey": {
+      "parent_category": "Raw Ingredient - Meat & Poultry",
+      "similar_items": [
+        "turkey ham",
+        "ham turkey",
+        "turkey bacon",
+        "turkey salami",
+        "turkey prosciutto"
+      ],
+      "display_name": "ham and turkey"
+    },
+    "hamburger": {
+      "parent_category": "Prepared Food - Main Courses",
+      "similar_items": [
+        "cheeseburger",
+        "veggie burger",
+        "burger",
+        "beef patty",
+        "hamburger patty"
+      ],
+      "display_name": "hamburger"
+    },
+    "hamburger-bread-meat-ketchup": {
+      "parent_category": "Prepared Food - Main Courses",
+      "similar_items": [
+        "cheeseburger",
+        "veggie burger",
+        "burger",
+        "beef patty",
+        "hamburger patty"
+      ],
+      "display_name": "hamburger"
+    },
+    "hamburger-bun": {
+      "parent_category": "Bakery - Bread & Loaves",
+      "similar_items": [
+        "burger bun",
+        "hot dog bun",
+        "sandwich bun",
+        "roll",
+        "bread roll"
+      ],
+      "display_name": "hamburger bun"
+    },
+    "hard-cheese": {
+      "parent_category": "Processed Ingredient - Cheese",
+      "similar_items": [
+        "cheddar",
+        "gouda",
+        "parmesan",
+        "gruyere",
+        "manchego"
+      ],
+      "display_name": "hard cheese"
+    },
+    "hazelnut": {
+      "parent_category": "Raw Ingredient - Legumes, Nuts & Seeds",
+      "similar_items": [
+        "almond",
+        "pistachio",
+        "cashew",
+        "walnut",
+        "pecan"
+      ],
+      "display_name": "hazelnut"
+    },
+    "hazelnut-chocolate-spread-nutella-ovomaltine-caotina": {
+      "parent_category": "Condiment - Spreads & Jams",
+      "similar_items": [
+        "nutella",
+        "ovomaltine",
+        "caotina",
+        "chocolate spread",
+        "hazelnut spread"
+      ],
+      "display_name": "hazelnut chocolate spread"
+    },
+    "herbal-tea": {
+      "parent_category": "Beverage - Non-Alcoholic",
+      "similar_items": [
+        "chamomile tea",
+        "peppermint tea",
+        "green tea",
+        "black tea",
+        "rooibos tea"
+      ],
+      "display_name": "herbal tea"
+    },
+    "high-protein-pasta-made-of-lentils-peas": {
+      "parent_category": "Prepared Food - Pasta & Rice Dishes",
+      "similar_items": [
+        "lentil pasta",
+        "pea pasta",
+        "chickpea pasta",
+        "legume pasta",
+        "protein pasta"
+      ],
+      "display_name": "lentil and pea pasta"
+    },
+    "honey": {
+      "parent_category": "Raw Ingredient - Oils & Fats",
+      "similar_items": [
+        "maple syrup",
+        "agave nectar",
+        "molasses",
+        "corn syrup",
+        "golden syrup"
+      ],
+      "display_name": "honey"
+    },
+    "hummus": {
+      "parent_category": "Condiment - Sauces & Dressings",
+      "similar_items": [
+        "baba ganoush",
+        "tahini",
+        "falafel",
+        "muhammara",
+        "tzatziki"
+      ],
+      "display_name": "hummus"
+    },
+    "ice-cubes": {
+      "parent_category": "Miscellaneous",
+      "similar_items": [
+        "ice",
+        "frozen water",
+        "crushed ice",
+        "ice chips",
+        "ice shavings"
+      ],
+      "display_name": "ice cubes"
+    },
+    "ice-tea": {
+      "parent_category": "Beverage - Non-Alcoholic",
+      "similar_items": [
+        "iced tea",
+        "cold tea",
+        "lemonade",
+        "sweet tea",
+        "unsweetened tea"
+      ],
+      "display_name": "ice tea"
+    },
+    "italian-salad-dressing": {
+      "parent_category": "Condiment - Sauces & Dressings",
+      "similar_items": [
+        "vinaigrette",
+        "balsamic dressing",
+        "caesar dressing",
+        "ranch dressing",
+        "italian dressing"
+      ],
+      "display_name": "italian salad dressing"
+    },
+    "jam": {
+      "parent_category": "Condiment - Spreads & Jams",
+      "similar_items": [
+        "jelly",
+        "preserves",
+        "marmalade",
+        "fruit spread",
+        "honey"
+      ],
+      "display_name": "jam"
+    },
+    "juice-apple": {
+      "parent_category": "Beverage - Non-Alcoholic",
+      "similar_items": [
+        "apple juice",
+        "apple cider",
+        "apple drink",
+        "clear liquid",
+        "fruit juice"
+      ],
+      "display_name": "apple juice"
+    },
+    "juice-multifruit": {
+      "parent_category": "Beverage - Non-Alcoholic",
+      "similar_items": [
+        "fruit punch",
+        "fruit cocktail",
+        "fruit juice",
+        "mixed fruit juice",
+        "fruit drink"
+      ],
+      "display_name": "multifruit juice"
+    },
+    "juice-orange": {
+      "parent_category": "Beverage - Non-Alcoholic",
+      "similar_items": [
+        "orange juice",
+        "orange drink",
+        "citrus juice",
+        "clear liquid",
+        "fruit juice"
+      ],
+      "display_name": "orange juice"
+    },
+    "kaki": {
+      "parent_category": "Raw Ingredient - Fruits",
+      "similar_items": [
+        "persimmon",
+        "tomato",
+        "apple",
+        "pear",
+        "orange"
+      ],
+      "display_name": "kaki"
+    },
+    "kebab-in-pita-bread": {
+      "parent_category": "Prepared Food - Main Courses",
+      "similar_items": [
+        "shawarma",
+        "gyro",
+        "doner",
+        "sandwich",
+        "wrap"
+      ],
+      "display_name": "kebab in pita"
+    },
+    "kefir-drink": {
+      "parent_category": "Beverage - Non-Alcoholic",
+      "similar_items": [
+        "yogurt drink",
+        "probiotic drink",
+        "fermented milk",
+        "sour milk",
+        "kefir"
+      ],
+      "display_name": "kefir"
+    },
+    "ketchup": {
+      "parent_category": "Condiment - Sauces & Dressings",
+      "similar_items": [
+        "tomato sauce",
+        "salsa",
+        "chili sauce",
+        "red sauce",
+        "bbq sauce"
+      ],
+      "display_name": "ketchup"
+    },
+    "kiwi": {
+      "parent_category": "Raw Ingredient - Fruits",
+      "similar_items": [
+        "kiwi fruit",
+        "green fruit",
+        "small fruit",
+        "tropical fruit",
+        "fruit"
+      ],
+      "display_name": "kiwi"
+    },
+    "kolhrabi": {
+      "parent_category": "Raw Ingredient - Vegetables",
+      "similar_items": [
+        "kohlrabi",
+        "turnip",
+        "cabbage",
+        "broccoli",
+        "cauliflower"
+      ],
+      "display_name": "kolhrabi"
+    },
+    "lamb": {
+      "parent_category": "Raw Ingredient - Meat & Poultry",
+      "similar_items": [
+        "mutton",
+        "sheep",
+        "lamb meat",
+        "lamb steak",
+        "lamb shoulder"
+      ],
+      "display_name": "lamb"
+    },
+    "lamb-chop": {
+      "parent_category": "Raw Ingredient - Meat & Poultry",
+      "similar_items": [
+        "lamb chop",
+        "lamb rib",
+        "lamb cutlet",
+        "lamb steak",
+        "lamb shoulder"
+      ],
+      "display_name": "lamb chop"
+    },
+    "lasagne-meat-prepared": {
+      "parent_category": "Prepared Food - Main Courses",
+      "similar_items": [
+        "lasagna",
+        "meat lasagna",
+        "lasagne with meat",
+        "lasagna with meat",
+        "meat lasagne"
+      ],
+      "display_name": "meat lasagne"
+    },
+    "lasagne-vegetable-prepared": {
+      "parent_category": "Prepared Food - Vegetarian Dishes",
+      "similar_items": [
+        "vegetable lasagna",
+        "vegetable lasagne",
+        "vegetarian lasagna",
+        "vegetarian lasagne",
+        "veggie lasagna"
+      ],
+      "display_name": "vegetable lasagne"
+    },
+    "latte-macchiato-with-caffeine": {
+      "parent_category": "Beverage - Non-Alcoholic",
+      "similar_items": [
+        "latte",
+        "macchiato",
+        "caffe latte",
+        "caffe macchiato",
+        "coffee with milk"
+      ],
+      "display_name": "latte macchiato"
+    },
+    "leaf-spinach": {
+      "parent_category": "Raw Ingredient - Vegetables",
+      "similar_items": [
+        "spinach",
+        "spinach leaves",
+        "fresh spinach",
+        "baby spinach",
+        "spinach greens"
+      ],
+      "display_name": "spinach"
+    },
+    "leek": {
+      "parent_category": "Raw Ingredient - Vegetables",
+      "similar_items": [
+        "leek vegetable",
+        "leek stalk",
+        "leek onion",
+        "leek bulb",
+        "leek greens"
+      ],
+      "display_name": "leek"
+    },
+    "lemon": {
+      "parent_category": "Raw Ingredient - Fruits",
+      "similar_items": [
+        "lime",
+        "yellow lemon",
+        "lemon fruit",
+        "lemon slice",
+        "lemon wedge"
+      ],
+      "display_name": "lemon"
+    },
+    "lemon-cake": {
+      "parent_category": "Dessert - Cakes & Pastries",
+      "similar_items": [
+        "lemon cake dessert",
+        "lemon sponge cake",
+        "lemon layer cake",
+        "lemon loaf cake",
+        "lemon bundt cake"
+      ],
+      "display_name": "lemon cake"
+    },
+    "lemon-pie": {
+      "parent_category": "Dessert - Cakes & Pastries",
+      "similar_items": [
+        "lemon pie dessert",
+        "lemon meringue pie",
+        "lemon tart",
+        "lemon cream pie",
+        "lemon custard pie"
+      ],
+      "display_name": "lemon pie"
+    },
+    "lentils": {
+      "parent_category": "Raw Ingredient - Legumes, Nuts & Seeds",
+      "similar_items": [
+        "chickpeas",
+        "beans",
+        "peas",
+        "split peas",
+        "green lentils"
+      ],
+      "display_name": "lentils"
+    },
+    "lentils-green-du-puy-du-berry": {
+      "parent_category": "Raw Ingredient - Legumes, Nuts & Seeds",
+      "similar_items": [
+        "lentils",
+        "green lentils",
+        "brown lentils",
+        "puy lentils",
+        "french lentils"
+      ],
+      "display_name": "green lentils"
+    },
+    "light-beer": {
+      "parent_category": "Beverage - Alcoholic",
+      "similar_items": [
+        "beer",
+        "lager",
+        "pilsner",
+        "ale",
+        "stout"
+      ],
+      "display_name": "light beer"
+    },
+    "linseeds": {
+      "parent_category": "Raw Ingredient - Legumes, Nuts & Seeds",
+      "similar_items": [
+        "flaxseeds",
+        "sesame seeds",
+        "sunflower seeds",
+        "chia seeds",
+        "pumpkin seeds"
+      ],
+      "display_name": "linseeds"
+    },
+    "lye-pretzel-soft": {
+      "parent_category": "Bakery - Savory Baked Goods",
+      "similar_items": [
+        "pretzel",
+        "soft pretzel",
+        "baked pretzel",
+        "salted pretzel",
+        "pretzel roll"
+      ],
+      "display_name": "soft pretzel"
+    },
+    "m-m-s": {
+      "parent_category": "Dessert - Candy & Confections",
+      "similar_items": [
+        "m&ms",
+        "chocolate candies",
+        "colorful candies",
+        "mixed candies",
+        "sweet candies"
+      ],
+      "display_name": "m&m's"
+    },
+    "macaroon": {
+      "parent_category": "Dessert - Cakes & Pastries",
+      "similar_items": [
+        "macaron",
+        "coconut macaroon",
+        "almond macaroon",
+        "macaroon cookie",
+        "macaroon biscuit"
+      ],
+      "display_name": "macaroon"
+    },
+    "mandarine": {
+      "parent_category": "Raw Ingredient - Fruits",
+      "similar_items": [
+        "tangerine",
+        "clementine",
+        "orange",
+        "mandarin orange",
+        "satsuma"
+      ],
+      "display_name": "mandarine"
+    },
+    "mango": {
+      "parent_category": "Raw Ingredient - Fruits",
+      "similar_items": [
+        "papaya",
+        "peach",
+        "nectarine",
+        "apricot",
+        "guava"
+      ],
+      "display_name": "mango"
+    },
+    "mango-dried": {
+      "parent_category": "Processed Ingredient - Canned & Preserved",
+      "similar_items": [
+        "dried mango",
+        "dehydrated mango",
+        "dried fruit",
+        "dried papaya",
+        "dried apricot"
+      ],
+      "display_name": "dried mango"
+    },
+    "maple-syrup-concentrate": {
+      "parent_category": "Condiment - Sauces & Dressings",
+      "similar_items": [
+        "maple syrup",
+        "honey",
+        "corn syrup",
+        "molasses",
+        "pancake syrup"
+      ],
+      "display_name": "maple syrup"
+    },
+    "margarine": {
+      "parent_category": "Raw Ingredient - Oils & Fats",
+      "similar_items": [
+        "butter",
+        "vegan butter",
+        "shortening",
+        "lard",
+        "vegetable oil"
+      ],
+      "display_name": "margarine"
+    },
+    "mashed-potatoes-prepared-with-full-fat-milk-with-butter": {
+      "parent_category": "Prepared Food - Main Courses",
+      "similar_items": [
+        "mashed potatoes",
+        "potato mash",
+        "mashed sweet potatoes",
+        "potato puree",
+        "creamed potatoes"
+      ],
+      "display_name": "mashed potatoes"
+    },
+    "mayonnaise": {
+      "parent_category": "Condiment - Sauces & Dressings",
+      "similar_items": [
+        "aioli",
+        "tartar sauce",
+        "salad dressing",
+        "sandwich spread",
+        "egg salad"
+      ],
+      "display_name": "mayonnaise"
+    },
+    "meat": {
+      "parent_category": "Raw Ingredient - Meat & Poultry",
+      "similar_items": [
+        "beef",
+        "pork",
+        "chicken",
+        "lamb",
+        "turkey"
+      ],
+      "display_name": "meat"
+    },
+    "meat-balls": {
+      "parent_category": "Prepared Food - Main Courses",
+      "similar_items": [
+        "meatballs",
+        "meatball",
+        "meatballs in sauce",
+        "meatballs with pasta",
+        "meatballs with rice"
+      ],
+      "display_name": "meatballs"
+    },
+    "meat-terrine-pate": {
+      "parent_category": "Prepared Food - Main Courses",
+      "similar_items": [
+        "terrine",
+        "pate",
+        "meatloaf",
+        "meat pie",
+        "meat casserole"
+      ],
+      "display_name": "meat terrine"
+    },
+    "meatloaf": {
+      "parent_category": "Prepared Food - Main Courses",
+      "similar_items": [
+        "meatloaf slice",
+        "meatloaf with gravy",
+        "meatloaf with vegetables",
+        "meatloaf with mashed potatoes",
+        "meatloaf with sauce"
+      ],
+      "display_name": "meatloaf"
+    },
+    "meringue": {
+      "parent_category": "Dessert - Cakes & Pastries",
+      "similar_items": [
+        "meringue cookies",
+        "meringue nests",
+        "meringue pie",
+        "meringue topping",
+        "meringue shells"
+      ],
+      "display_name": "meringue"
+    },
+    "milk": {
+      "parent_category": "Raw Ingredient - Dairy & Eggs",
+      "similar_items": [
+        "whole milk",
+        "skim milk",
+        "almond milk",
+        "soy milk",
+        "coconut milk"
+      ],
+      "display_name": "milk"
+    },
+    "milk-chocolate": {
+      "parent_category": "Dessert - Candy & Confections",
+      "similar_items": [
+        "dark chocolate",
+        "white chocolate",
+        "chocolate bar",
+        "chocolate candy",
+        "chocolate pieces"
+      ],
+      "display_name": "chocolate milk"
+    },
+    "milk-chocolate-with-hazelnuts": {
+      "parent_category": "Dessert - Candy & Confections",
+      "similar_items": [
+        "chocolate with almonds",
+        "chocolate with nuts",
+        "chocolate spread",
+        "nutella",
+        "chocolate hazelnut spread"
+      ],
+      "display_name": "chocolate with hazelnuts"
+    },
+    "minced-meat": {
+      "parent_category": "Raw Ingredient - Meat & Poultry",
+      "similar_items": [
+        "ground beef",
+        "hamburger meat",
+        "minced pork",
+        "minced lamb",
+        "minced chicken"
+      ],
+      "display_name": "minced meat"
+    },
+    "mix-of-dried-fruits-and-nuts": {
+      "parent_category": "Snack - Sweet",
+      "similar_items": [
+        "trail mix",
+        "fruit and nut mix",
+        "dried fruit mix",
+        "nut and raisin mix",
+        "energy mix"
+      ],
+      "display_name": "mixed dried fruits and nuts"
+    },
+    "mixed-nuts": {
+      "parent_category": "Snack - Savory",
+      "similar_items": [
+        "assorted nuts",
+        "nut mix",
+        "nuts and seeds",
+        "mixed nut blend",
+        "nut assortment"
+      ],
+      "display_name": "mixed nuts"
+    },
+    "mixed-salad-chopped-without-sauce": {
+      "parent_category": "Prepared Food - Salads & Cold Dishes",
+      "similar_items": [
+        "chopped salad",
+        "mixed greens",
+        "vegetable salad",
+        "garden salad",
+        "chopped veggie salad"
+      ],
+      "display_name": "mixed salad"
+    },
+    "mixed-seeds": {
+      "parent_category": "Raw Ingredient - Legumes, Nuts & Seeds",
+      "similar_items": [
+        "seed mix",
+        "assorted seeds",
+        "seed blend",
+        "mixed grain seeds",
+        "seed assortment"
+      ],
+      "display_name": "mixed seeds"
+    },
+    "mixed-vegetables": {
+      "parent_category": "Raw Ingredient - Vegetables",
+      "similar_items": [
+        "vegetable medley",
+        "mixed veggies",
+        "assorted vegetables",
+        "vegetable mix",
+        "vegetable blend"
+      ],
+      "display_name": "mixed vegetables"
+    },
+    "mousse": {
+      "parent_category": "Dessert - Frozen & Cold",
+      "similar_items": [
+        "chocolate mousse",
+        "fruit mousse",
+        "vanilla mousse",
+        "dessert mousse",
+        "cold mousse"
+      ],
+      "display_name": "mousse"
+    },
+    "mozzarella": {
+      "parent_category": "Processed Ingredient - Cheese",
+      "similar_items": [
+        "cheese",
+        "cheddar",
+        "gouda",
+        "provolone",
+        "feta"
+      ],
+      "display_name": "mozzarella"
+    },
+    "muesli": {
+      "parent_category": "Bakery - Pastries & Sweet Baked",
+      "similar_items": [
+        "granola",
+        "cereal",
+        "oatmeal",
+        "muesli bar"
+      ],
+      "display_name": "muesli"
+    },
+    "muffin": {
+      "parent_category": "Bakery - Pastries & Sweet Baked",
+      "similar_items": [
+        "cupcake",
+        "scone",
+        "biscuit",
+        "muffin top"
+      ],
+      "display_name": "muffin"
+    },
+    "mungbean-sprouts": {
+      "parent_category": "Raw Ingredient - Legumes, Nuts & Seeds",
+      "similar_items": [
+        "bean sprouts",
+        "alfalfa sprouts",
+        "soybean sprouts",
+        "mung beans"
+      ],
+      "display_name": "mungbean sprouts"
+    },
+    "mushroom": {
+      "parent_category": "Raw Ingredient - Vegetables",
+      "similar_items": [
+        "champignon",
+        "button mushroom",
+        "portobello",
+        "cremini"
+      ],
+      "display_name": "mushroom"
+    },
+    "mushroom-average-stewed-without-addition-of-fat-without-addition-of-salt": {
+      "parent_category": "Prepared Food - Main Courses",
+      "similar_items": [
+        "stewed mushrooms",
+        "cooked mushrooms",
+        "mushroom stew",
+        "mushroom soup"
+      ],
+      "display_name": "stewed mushrooms"
+    },
+    "mushrooms": {
+      "parent_category": "Raw Ingredient - Vegetables",
+      "similar_items": [
+        "champignon",
+        "button mushroom",
+        "portobello",
+        "cremini"
+      ],
+      "display_name": "mushrooms"
+    },
+    "mustard": {
+      "parent_category": "Condiment - Sauces & Dressings",
+      "similar_items": [
+        "yellow mustard",
+        "dijon mustard",
+        "spicy mustard",
+        "honey mustard"
+      ],
+      "display_name": "mustard"
+    },
+    "mustard-dijon": {
+      "parent_category": "Condiment - Sauces & Dressings",
+      "similar_items": [
+        "dijon",
+        "spicy mustard",
+        "whole grain mustard",
+        "stone ground mustard"
+      ],
+      "display_name": "dijon mustard"
+    },
+    "naan-indien-bread": {
+      "parent_category": "Bakery - Bread & Loaves",
+      "similar_items": [
+        "naan",
+        "flatbread",
+        "pita",
+        "roti"
+      ],
+      "display_name": "naan bread"
+    },
+    "nectarine": {
+      "parent_category": "Raw Ingredient - Fruits",
+      "similar_items": [
+        "peach",
+        "plum",
+        "apricot",
+        "peach nectarine"
+      ],
+      "display_name": "nectarine"
+    },
+    "nuts": {
+      "parent_category": "Raw Ingredient - Legumes, Nuts & Seeds",
+      "similar_items": [
+        "almonds",
+        "walnuts",
+        "cashews",
+        "pistachios",
+        "pecans"
+      ],
+      "display_name": "nuts"
+    },
+    "oat-milk": {
+      "parent_category": "Processed Ingredient - Dairy Alternatives",
+      "similar_items": [
+        "almond milk",
+        "soy milk",
+        "rice milk",
+        "coconut milk",
+        "hemp milk"
+      ],
+      "display_name": "oat milk"
+    },
+    "oil": {
+      "parent_category": "Raw Ingredient - Oils & Fats",
+      "similar_items": [
+        "olive oil",
+        "vegetable oil",
+        "sunflower oil",
+        "canola oil",
+        "coconut oil"
+      ],
+      "display_name": "oil"
+    },
+    "oil-vinegar-salad-dressing": {
+      "parent_category": "Condiment - Sauces & Dressings",
+      "similar_items": [
+        "balsamic vinaigrette",
+        "italian dressing",
+        "french dressing",
+        "ranch dressing",
+        "caesar dressing"
+      ],
+      "display_name": "oil and vinegar dressing"
+    },
+    "omelette-plain": {
+      "parent_category": "Prepared Food - Main Courses",
+      "similar_items": [
+        "scrambled eggs",
+        "frittata",
+        "quiche",
+        "egg pancake",
+        "egg white omelette"
+      ],
+      "display_name": "plain omelette"
+    },
+    "onion": {
+      "parent_category": "Raw Ingredient - Vegetables",
+      "similar_items": [
+        "shallot",
+        "leek",
+        "garlic",
+        "scallion",
+        "chive"
+      ],
+      "display_name": "onion"
+    },
+    "orange": {
+      "parent_category": "Raw Ingredient - Fruits",
+      "similar_items": [
+        "mandarin",
+        "tangerine",
+        "grapefruit",
+        "lemon",
+        "lime"
+      ],
+      "display_name": "orange"
+    },
+    "pancakes": {
+      "parent_category": "Bakery - Pastries & Sweet Baked",
+      "similar_items": [
+        "crepes",
+        "waffles",
+        "blintzes",
+        "dutch baby pancake",
+        "pancake batter"
+      ],
+      "display_name": "pancakes"
+    },
+    "panna-cotta": {
+      "parent_category": "Dessert - Frozen & Cold",
+      "similar_items": [
+        "cr\u00e8me br\u00fbl\u00e9e",
+        "flan",
+        "mousse",
+        "gelato",
+        "ice cream"
+      ],
+      "display_name": "panna cotta"
+    },
+    "paprika-chips": {
+      "parent_category": "Snack - Savory",
+      "similar_items": [
+        "cheese puffs",
+        "potato chips",
+        "nachos",
+        "tortilla chips",
+        "pita chips"
+      ],
+      "display_name": "paprika chips"
+    },
+    "parmesan": {
+      "parent_category": "Processed Ingredient - Cheese",
+      "similar_items": [
+        "cheddar",
+        "gouda",
+        "gruyere",
+        "provolone",
+        "mozzarella"
+      ],
+      "display_name": "parmesan"
+    },
+    "parsley": {
+      "parent_category": "Raw Ingredient - Herbs & Spices",
+      "similar_items": [
+        "cilantro",
+        "basil",
+        "oregano",
+        "thyme",
+        "rosemary"
+      ],
+      "display_name": "parsley"
+    },
+    "pasta": {
+      "parent_category": "Prepared Food - Pasta & Rice Dishes",
+      "similar_items": [
+        "noodles",
+        "spaghetti",
+        "macaroni",
+        "fettuccine",
+        "lasagna"
+      ],
+      "display_name": "pasta"
+    },
+    "pasta-hornli": {
+      "parent_category": "Prepared Food - Pasta & Rice Dishes",
+      "similar_items": [
+        "pasta",
+        "macaroni",
+        "shell pasta",
+        "conch pasta",
+        "cavatelli"
+      ],
+      "display_name": "hornli pasta"
+    },
+    "pasta-in-butterfly-form-farfalle": {
+      "parent_category": "Prepared Food - Pasta & Rice Dishes",
+      "similar_items": [
+        "farfalle",
+        "bowtie pasta",
+        "butterfly pasta",
+        "pasta",
+        "macaroni"
+      ],
+      "display_name": "farfalle pasta"
+    },
+    "pasta-in-conch-form": {
+      "parent_category": "Prepared Food - Pasta & Rice Dishes",
+      "similar_items": [
+        "conch pasta",
+        "shell pasta",
+        "pasta",
+        "cavatelli",
+        "macaroni"
+      ],
+      "display_name": "conch pasta"
+    },
+    "pasta-linguini-parpadelle-tagliatelle": {
+      "parent_category": "Prepared Food - Pasta & Rice Dishes",
+      "similar_items": [
+        "linguine",
+        "tagliatelle",
+        "pappardelle",
+        "fettuccine",
+        "pasta"
+      ],
+      "display_name": "linguini, parpadelle, tagliatelle pasta"
+    },
+    "pasta-noodles": {
+      "parent_category": "Prepared Food - Pasta & Rice Dishes",
+      "similar_items": [
+        "noodles",
+        "spaghetti",
+        "ramen",
+        "udon",
+        "pasta"
+      ],
+      "display_name": "pasta noodles"
+    },
+    "pasta-penne": {
+      "parent_category": "Prepared Food - Pasta & Rice Dishes",
+      "similar_items": [
+        "penne",
+        "rigatoni",
+        "ziti",
+        "macaroni",
+        "pasta"
+      ],
+      "display_name": "penne pasta"
+    },
+    "pasta-ravioli-stuffing": {
+      "parent_category": "Prepared Food - Pasta & Rice Dishes",
+      "similar_items": [
+        "ravioli",
+        "tortellini",
+        "cannelloni",
+        "stuffed pasta",
+        "pasta"
+      ],
+      "display_name": "ravioli"
+    },
+    "pasta-spaghetti": {
+      "parent_category": "Prepared Food - Pasta & Rice Dishes",
+      "similar_items": [
+        "pasta",
+        "spaghetti",
+        "spaghetti noodles",
+        "spaghetti strands",
+        "spaghetti bolognese"
+      ],
+      "display_name": "spaghetti"
+    },
+    "pasta-tortelloni-stuffing": {
+      "parent_category": "Prepared Food - Pasta & Rice Dishes",
+      "similar_items": [
+        "tortelloni",
+        "stuffed pasta",
+        "tortellini",
+        "ravioli",
+        "meat-filled pasta"
+      ],
+      "display_name": "tortelloni pasta"
+    },
+    "pasta-twist": {
+      "parent_category": "Prepared Food - Pasta & Rice Dishes",
+      "similar_items": [
+        "fusilli",
+        "rotini",
+        "spiral pasta",
+        "twisted pasta",
+        "corkscrew pasta"
+      ],
+      "display_name": "twist pasta"
+    },
+    "pasta-wholemeal": {
+      "parent_category": "Prepared Food - Pasta & Rice Dishes",
+      "similar_items": [
+        "whole wheat pasta",
+        "brown pasta",
+        "whole grain pasta",
+        "wholemeal spaghetti",
+        "wholemeal noodles"
+      ],
+      "display_name": "wholemeal pasta"
+    },
+    "pastry-flaky": {
+      "parent_category": "Bakery - Pastries & Sweet Baked",
+      "similar_items": [
+        "flaky pie crust",
+        "puff pastry",
+        "phyllo dough",
+        "lattice crust",
+        "flaky tart shell"
+      ],
+      "display_name": "flaky pastry"
+    },
+    "peach": {
+      "parent_category": "Raw Ingredient - Fruits",
+      "similar_items": [
+        "nectarine",
+        "apricot",
+        "plum",
+        "persimmon",
+        "peach halves"
+      ],
+      "display_name": "peach"
+    },
+    "peanut": {
+      "parent_category": "Raw Ingredient - Legumes, Nuts & Seeds",
+      "similar_items": [
+        "groundnut",
+        "monkey nut",
+        "goober",
+        "peanut in shell",
+        "peanut kernel"
+      ],
+      "display_name": "peanut"
+    },
+    "peanut-butter": {
+      "parent_category": "Condiment - Spreads & Jams",
+      "similar_items": [
+        "nut butter",
+        "peanut spread",
+        "peanut paste",
+        "peanut cream",
+        "peanut sauce"
+      ],
+      "display_name": "peanut butter"
+    },
+    "pear": {
+      "parent_category": "Raw Ingredient - Fruits",
+      "similar_items": [
+        "apple",
+        "quince",
+        "bosc pear",
+        "pear slices",
+        "pear halves"
+      ],
+      "display_name": "pear"
+    },
+    "pearl-onions": {
+      "parent_category": "Raw Ingredient - Vegetables",
+      "similar_items": [
+        "small onions",
+        "baby onions",
+        "pickled onions",
+        "onion pearls",
+        "onionettes"
+      ],
+      "display_name": "pearl onions"
+    },
+    "peas": {
+      "parent_category": "Raw Ingredient - Vegetables",
+      "similar_items": [
+        "green peas",
+        "snow peas",
+        "sweet peas",
+        "garden peas",
+        "pea pods"
+      ],
+      "display_name": "peas"
+    },
+    "pecan-nut": {
+      "parent_category": "Raw Ingredient - Legumes, Nuts & Seeds",
+      "similar_items": [
+        "pecans",
+        "walnuts",
+        "hazelnuts",
+        "almonds",
+        "pistachios"
+      ],
+      "display_name": "pecan"
+    },
+    "perch-fillets-lake": {
+      "parent_category": "Raw Ingredient - Fish & Seafood",
+      "similar_items": [
+        "fish fillets",
+        "white fish fillets",
+        "perch",
+        "lake perch",
+        "pan-fried fish"
+      ],
+      "display_name": "perch fillets"
+    },
+    "philadelphia": {
+      "parent_category": "Processed Ingredient - Dairy Alternatives",
+      "similar_items": [
+        "cream cheese",
+        "soft cheese",
+        "spreadable cheese",
+        "cheese spread",
+        "dairy spread"
+      ],
+      "display_name": "philadelphia"
+    },
+    "pie-apricot-baked-with-cake-dough": {
+      "parent_category": "Dessert - Cakes & Pastries",
+      "similar_items": [
+        "apricot pie",
+        "fruit pie",
+        "cake pie",
+        "baked pie",
+        "pastry pie"
+      ],
+      "display_name": "apricot pie"
+    },
+    "pie-plum-baked-with-cake-dough": {
+      "parent_category": "Dessert - Cakes & Pastries",
+      "similar_items": [
+        "plum pie",
+        "fruit pie",
+        "cake pie",
+        "baked pie",
+        "pastry pie"
+      ],
+      "display_name": "plum pie"
+    },
+    "pie-rhubarb-baked-with-cake-dough": {
+      "parent_category": "Dessert - Cakes & Pastries",
+      "similar_items": [
+        "rhubarb pie",
+        "fruit pie",
+        "cake pie",
+        "baked pie",
+        "pastry pie"
+      ],
+      "display_name": "rhubarb pie"
+    },
+    "pine-nuts": {
+      "parent_category": "Raw Ingredient - Legumes, Nuts & Seeds",
+      "similar_items": [
+        "pine nuts",
+        "pine seeds",
+        "pine kernels",
+        "pine nut kernels",
+        "pine nut seeds"
+      ],
+      "display_name": "pine nuts"
+    },
+    "pineapple": {
+      "parent_category": "Raw Ingredient - Fruits",
+      "similar_items": [
+        "pineapple slices",
+        "pineapple chunks",
+        "pineapple rings",
+        "pineapple fruit",
+        "pineapple halves"
+      ],
+      "display_name": "pineapple"
+    },
+    "pistachio": {
+      "parent_category": "Raw Ingredient - Legumes, Nuts & Seeds",
+      "similar_items": [
+        "pistachios",
+        "green pistachios",
+        "shelled pistachios",
+        "pistachio nuts",
+        "pistachio kernels"
+      ],
+      "display_name": "pistachio"
+    },
+    "pizza-margherita-baked": {
+      "parent_category": "Bakery - Pizza & Flatbreads",
+      "similar_items": [
+        "pizza",
+        "margherita pizza",
+        "cheese pizza",
+        "tomato pizza",
+        "flatbread"
+      ],
+      "display_name": "margherita pizza"
+    },
+    "pizza-with-ham-baked": {
+      "parent_category": "Bakery - Pizza & Flatbreads",
+      "similar_items": [
+        "pizza",
+        "ham pizza",
+        "meat pizza",
+        "cheese pizza",
+        "flatbread"
+      ],
+      "display_name": "ham pizza"
+    },
+    "pizza-with-ham-with-mushrooms-baked": {
+      "parent_category": "Bakery - Pizza & Flatbreads",
+      "similar_items": [
+        "pizza",
+        "ham and mushroom pizza",
+        "mushroom pizza",
+        "meat pizza",
+        "flatbread"
+      ],
+      "display_name": "ham and mushroom pizza"
+    },
+    "pizza-with-vegetables-baked": {
+      "parent_category": "Bakery - Pizza & Flatbreads",
+      "similar_items": [
+        "pizza",
+        "vegetable pizza",
+        "veggie pizza",
+        "flatbread",
+        "cheese pizza"
+      ],
+      "display_name": "vegetable pizza"
+    },
+    "plums": {
+      "parent_category": "Raw Ingredient - Fruits",
+      "similar_items": [
+        "prunes",
+        "dried plums",
+        "purple fruit",
+        "small fruit",
+        "fruit"
+      ],
+      "display_name": "plums"
+    },
+    "pomegranate": {
+      "parent_category": "Raw Ingredient - Fruits",
+      "similar_items": [
+        "pomegranate seeds",
+        "red fruit",
+        "exotic fruit",
+        "fruit",
+        "berry"
+      ],
+      "display_name": "pomegranate"
+    },
+    "popcorn-salted": {
+      "parent_category": "Snack - Savory",
+      "similar_items": [
+        "popcorn",
+        "salted popcorn",
+        "snack",
+        "movie snack",
+        "corn"
+      ],
+      "display_name": "salted popcorn"
+    },
+    "pork": {
+      "parent_category": "Raw Ingredient - Meat & Poultry",
+      "similar_items": [
+        "pork meat",
+        "raw pork",
+        "meat",
+        "pig meat",
+        "uncooked pork"
+      ],
+      "display_name": "pork"
+    },
+    "pork-chop": {
+      "parent_category": "Raw Ingredient - Meat & Poultry",
+      "similar_items": [
+        "pork chop",
+        "meat",
+        "raw pork chop",
+        "pork",
+        "uncooked pork chop"
+      ],
+      "display_name": "pork chop"
+    },
+    "pork-escalope": {
+      "parent_category": "Raw Ingredient - Meat & Poultry",
+      "similar_items": [
+        "pork escalope",
+        "pork cutlet",
+        "meat",
+        "raw pork",
+        "uncooked pork"
+      ],
+      "display_name": "pork escalope"
+    },
+    "pork-roast": {
+      "parent_category": "Raw Ingredient - Meat & Poultry",
+      "similar_items": [
+        "pork",
+        "roast beef",
+        "beef roast",
+        "pork tenderloin",
+        "pork loin"
+      ],
+      "display_name": "roast pork"
+    },
+    "porridge-prepared-with-partially-skimmed-milk": {
+      "parent_category": "Prepared Food - Main Courses",
+      "similar_items": [
+        "oatmeal",
+        "oat porridge",
+        "cream of wheat",
+        "congee",
+        "rice porridge"
+      ],
+      "display_name": "porridge with milk"
+    },
+    "potato-gnocchi": {
+      "parent_category": "Prepared Food - Pasta & Rice Dishes",
+      "similar_items": [
+        "gnocchi",
+        "dumplings",
+        "ravioli",
+        "pasta",
+        "stuffed pasta"
+      ],
+      "display_name": "potato gnocchi"
+    },
+    "potato-salad-with-mayonnaise-yogurt-dressing": {
+      "parent_category": "Prepared Food - Salads & Cold Dishes",
+      "similar_items": [
+        "potato salad",
+        "mayonnaise salad",
+        "yogurt salad",
+        "cold potato salad",
+        "salad with potatoes"
+      ],
+      "display_name": "potato salad with mayonnaise and yogurt dressing"
+    },
+    "potatoes-au-gratin-dauphinois-prepared": {
+      "parent_category": "Prepared Food - Main Courses",
+      "similar_items": [
+        "au gratin potatoes",
+        "dauphinois potatoes",
+        "gratin",
+        "cheesy potatoes",
+        "baked potatoes"
+      ],
+      "display_name": "potatoes au gratin"
+    },
+    "potatoes-steamed": {
+      "parent_category": "Raw Ingredient - Vegetables",
+      "similar_items": [
+        "steamed potatoes",
+        "boiled potatoes",
+        "mashed potatoes",
+        "potato chunks",
+        "potato wedges"
+      ],
+      "display_name": "steamed potatoes"
+    },
+    "praline": {
+      "parent_category": "Dessert - Candy & Confections",
+      "similar_items": [
+        "candy",
+        "sweet",
+        "chocolate praline",
+        "nut praline",
+        "candy coated nuts"
+      ],
+      "display_name": "praline"
+    },
+    "processed-cheese": {
+      "parent_category": "Processed Ingredient - Cheese",
+      "similar_items": [
+        "cheese",
+        "sliced cheese",
+        "cheese slices",
+        "processed cheese slices",
+        "cheese spread"
+      ],
+      "display_name": "processed cheese"
+    },
+    "processed-meat-charcuterie": {
+      "parent_category": "Raw Ingredient - Meat & Poultry",
+      "similar_items": [
+        "charcuterie",
+        "cured meat",
+        "sliced meat",
+        "meat platter",
+        "cold cuts"
+      ],
+      "display_name": "charcuterie"
+    },
+    "prosecco": {
+      "parent_category": "Beverage - Alcoholic",
+      "similar_items": [
+        "sparkling wine",
+        "champagne",
+        "sparkling white wine",
+        "white wine",
+        "bubbly wine"
+      ],
+      "display_name": "prosecco"
+    },
+    "pumpkin": {
+      "parent_category": "Raw Ingredient - Vegetables",
+      "similar_items": [
+        "squash",
+        "butternut squash",
+        "acorn squash",
+        "orange vegetable",
+        "gourd"
+      ],
+      "display_name": "pumpkin"
+    },
+    "pumpkin-seeds": {
+      "parent_category": "Raw Ingredient - Legumes, Nuts & Seeds",
+      "similar_items": [
+        "sunflower seeds",
+        "sesame seeds",
+        "chia seeds",
+        "flax seeds",
+        "small nuts"
+      ],
+      "display_name": "pumpkin seeds"
+    },
+    "quiche-with-cheese-baked-with-puff-pastry": {
+      "parent_category": "Bakery - Savory Baked Goods",
+      "similar_items": [
+        "cheese tart",
+        "savory pie",
+        "cheese pastry",
+        "quiche lorraine",
+        "cheese quiche"
+      ],
+      "display_name": "cheese quiche"
+    },
+    "quiche-with-spinach-baked-with-cake-dough": {
+      "parent_category": "Bakery - Savory Baked Goods",
+      "similar_items": [
+        "spinach tart",
+        "spinach quiche",
+        "vegetable quiche",
+        "spinach pie",
+        "savory cake"
+      ],
+      "display_name": "spinach quiche"
+    },
+    "quinoa": {
+      "parent_category": "Raw Ingredient - Grains & Cereals",
+      "similar_items": [
+        "brown rice",
+        "bulgur",
+        "couscous",
+        "millet",
+        "farro"
+      ],
+      "display_name": "quinoa"
+    },
+    "raspberries": {
+      "parent_category": "Raw Ingredient - Fruits",
+      "similar_items": [
+        "blackberries",
+        "redcurrants",
+        "strawberries",
+        "cherries",
+        "red fruit"
+      ],
+      "display_name": "raspberries"
+    },
+    "ratatouille": {
+      "parent_category": "Prepared Food - Main Courses",
+      "similar_items": [
+        "vegetable stew",
+        "mixed vegetable dish",
+        "stewed vegetables",
+        "vegetable casserole",
+        "vegetable medley"
+      ],
+      "display_name": "ratatouille"
+    },
+    "red-cabbage": {
+      "parent_category": "Raw Ingredient - Vegetables",
+      "similar_items": [
+        "purple cabbage",
+        "red leaf lettuce",
+        "red leafy vegetable",
+        "red cabbage leaves",
+        "red lettuce"
+      ],
+      "display_name": "red cabbage"
+    },
+    "red-radish": {
+      "parent_category": "Raw Ingredient - Vegetables",
+      "similar_items": [
+        "radish",
+        "red radish",
+        "red root vegetable",
+        "small red vegetable",
+        "radish root"
+      ],
+      "display_name": "red radish"
+    },
+    "rice": {
+      "parent_category": "Raw Ingredient - Grains & Cereals",
+      "similar_items": [
+        "white rice",
+        "brown rice",
+        "cooked rice",
+        "rice grains",
+        "long grain rice"
+      ],
+      "display_name": "rice"
+    },
+    "rice-basmati": {
+      "parent_category": "Raw Ingredient - Grains & Cereals",
+      "similar_items": [
+        "rice-jasmin",
+        "rice-whole-grain",
+        "rice-wild",
+        "rice"
+      ],
+      "display_name": "basmati rice"
+    },
+    "rice-jasmin": {
+      "parent_category": "Raw Ingredient - Grains & Cereals",
+      "similar_items": [
+        "rice-basmati",
+        "rice-whole-grain",
+        "rice-wild",
+        "rice"
+      ],
+      "display_name": "jasmin rice"
+    },
+    "rice-noodles-vermicelli": {
+      "parent_category": "Raw Ingredient - Grains & Cereals",
+      "similar_items": [
+        "vermicelli",
+        "rice-noodles",
+        "noodles",
+        "spaghetti"
+      ],
+      "display_name": "rice noodles"
+    },
+    "rice-waffels": {
+      "parent_category": "Bakery - Savory Baked Goods",
+      "similar_items": [
+        "waffles",
+        "waffle",
+        "waffle-iron",
+        "waffle-maker"
+      ],
+      "display_name": "rice waffles"
+    },
+    "rice-whole-grain": {
+      "parent_category": "Raw Ingredient - Grains & Cereals",
+      "similar_items": [
+        "rice-basmati",
+        "rice-jasmin",
+        "rice-wild",
+        "brown-rice"
+      ],
+      "display_name": "whole grain rice"
+    },
+    "rice-wild": {
+      "parent_category": "Raw Ingredient - Grains & Cereals",
+      "similar_items": [
+        "rice-basmati",
+        "rice-jasmin",
+        "rice-whole-grain",
+        "wild-rice"
+      ],
+      "display_name": "wild rice"
+    },
+    "risotto-with-mushrooms-cooked": {
+      "parent_category": "Prepared Food - Main Courses",
+      "similar_items": [
+        "risotto",
+        "risotto-without-cheese-cooked",
+        "mushroom-risotto",
+        "cooked-risotto"
+      ],
+      "display_name": "mushroom risotto"
+    },
+    "risotto-without-cheese-cooked": {
+      "parent_category": "Prepared Food - Main Courses",
+      "similar_items": [
+        "risotto",
+        "risotto-with-mushrooms-cooked",
+        "cooked-risotto",
+        "plain-risotto"
+      ],
+      "display_name": "risotto"
+    },
+    "ristretto-with-caffeine": {
+      "parent_category": "Beverage - Non-Alcoholic",
+      "similar_items": [
+        "espresso",
+        "coffee",
+        "caffeinated-coffee",
+        "strong-coffee"
+      ],
+      "display_name": "ristretto"
+    },
+    "roll-of-half-white-or-white-flour-with-large-void": {
+      "parent_category": "Bakery - Bread & Loaves",
+      "similar_items": [
+        "bread-roll",
+        "roll",
+        "white-bread",
+        "bread"
+      ],
+      "display_name": "roll"
+    },
+    "roll-with-pieces-of-chocolate": {
+      "parent_category": "Bakery - Pastries & Sweet Baked",
+      "similar_items": [
+        "chocolate roll",
+        "chocolate swiss roll",
+        "chocolate cake roll",
+        "chocolate pinwheel",
+        "chocolate cinnamon roll"
+      ],
+      "display_name": "chocolate roll"
+    },
+    "romanesco": {
+      "parent_category": "Raw Ingredient - Vegetables",
+      "similar_items": [
+        "cauliflower",
+        "broccoli",
+        "broccolini",
+        "cauliflower romanesco",
+        "green cauliflower"
+      ],
+      "display_name": "romanesco"
+    },
+    "rosti": {
+      "parent_category": "Prepared Food - Main Courses",
+      "similar_items": [
+        "hash browns",
+        "potato pancake",
+        "grated potato cake",
+        "swiss potato cake",
+        "potato frittata"
+      ],
+      "display_name": "rosti"
+    },
+    "rusk-wholemeal": {
+      "parent_category": "Bakery - Bread & Loaves",
+      "similar_items": [
+        "wholemeal bread",
+        "whole wheat bread",
+        "wholemeal toast",
+        "whole wheat toast",
+        "wholemeal biscuit"
+      ],
+      "display_name": "wholemeal rusk"
+    },
+    "salad-dressing": {
+      "parent_category": "Condiment - Sauces & Dressings",
+      "similar_items": [
+        "vinaigrette",
+        "mayonnaise",
+        "ranch dressing",
+        "italian dressing",
+        "french dressing"
+      ],
+      "display_name": "salad dressing"
+    },
+    "salad-lambs-ear": {
+      "parent_category": "Raw Ingredient - Vegetables",
+      "similar_items": [
+        "mallow leaves",
+        "mallow",
+        "mallow plant",
+        "mallow greens",
+        "mallow salad"
+      ],
+      "display_name": "lambs ear salad"
+    },
+    "salad-leaf-salad-green": {
+      "parent_category": "Raw Ingredient - Vegetables",
+      "similar_items": [
+        "lettuce",
+        "green leaf lettuce",
+        "salad greens",
+        "leafy greens",
+        "salad leaves"
+      ],
+      "display_name": "green salad"
+    },
+    "salad-rocket": {
+      "parent_category": "Raw Ingredient - Vegetables",
+      "similar_items": [
+        "arugula",
+        "rocket salad",
+        "rocket leaves",
+        "arugula leaves",
+        "rocket greens"
+      ],
+      "display_name": "rocket salad"
+    },
+    "salami": {
+      "parent_category": "Processed Ingredient - Canned & Preserved",
+      "similar_items": [
+        "pepperoni",
+        "chorizo",
+        "sausage",
+        "cured sausage",
+        "dry sausage"
+      ],
+      "display_name": "salami"
+    },
+    "salmon": {
+      "parent_category": "Raw Ingredient - Fish & Seafood",
+      "similar_items": [
+        "smoked salmon",
+        "raw salmon",
+        "salmon fillet",
+        "salmon steak",
+        "salmon sashimi"
+      ],
+      "display_name": "salmon"
+    },
+    "salmon-smoked": {
+      "parent_category": "Raw Ingredient - Fish & Seafood",
+      "similar_items": [
+        "smoked fish",
+        "smoked trout",
+        "smoked mackerel",
+        "smoked salmon fillet",
+        "smoked salmon slices"
+      ],
+      "display_name": "smoked salmon"
+    },
+    "salt-cake-vegetables-filled": {
+      "parent_category": "Bakery - Savory Baked Goods",
+      "similar_items": [
+        "vegetable pie",
+        "spinach pie",
+        "vegetable turnover",
+        "vegetable empanada",
+        "vegetable pastry"
+      ],
+      "display_name": "vegetable cake"
+    },
+    "sandwich-ham-cheese-and-butter": {
+      "parent_category": "Prepared Food - Main Courses",
+      "similar_items": [
+        "ham and cheese sandwich",
+        "ham sandwich",
+        "cheese sandwich",
+        "ham and butter sandwich",
+        "ham and cheese roll"
+      ],
+      "display_name": "ham and cheese sandwich"
+    },
+    "sauce-carbonara": {
+      "parent_category": "Condiment - Sauces & Dressings",
+      "similar_items": [
+        "alfredo sauce",
+        "cheese sauce",
+        "creamy pasta sauce",
+        "white sauce",
+        "bechamel sauce"
+      ],
+      "display_name": "carbonara sauce"
+    },
+    "sauce-cocktail": {
+      "parent_category": "Condiment - Sauces & Dressings",
+      "similar_items": [
+        "tomato sauce",
+        "ketchup",
+        "marinara sauce",
+        "pizza sauce",
+        "red sauce"
+      ],
+      "display_name": "cocktail sauce"
+    },
+    "sauce-cream": {
+      "parent_category": "Condiment - Sauces & Dressings",
+      "similar_items": [
+        "white sauce",
+        "bechamel sauce",
+        "alfredo sauce",
+        "cheese sauce",
+        "creamy sauce"
+      ],
+      "display_name": "cream sauce"
+    },
+    "sauce-curry": {
+      "parent_category": "Condiment - Sauces & Dressings",
+      "similar_items": [
+        "curry paste",
+        "curry powder",
+        "curry gravy",
+        "curry sauce",
+        "curry mix"
+      ],
+      "display_name": "curry sauce"
+    },
+    "sauce-mushroom": {
+      "parent_category": "Condiment - Sauces & Dressings",
+      "similar_items": [
+        "mushroom gravy",
+        "mushroom soup",
+        "mushroom cream sauce",
+        "mushroom sauce",
+        "mushroom broth"
+      ],
+      "display_name": "mushroom sauce"
+    },
+    "sauce-pesto": {
+      "parent_category": "Condiment - Sauces & Dressings",
+      "similar_items": [
+        "basil pesto",
+        "green pesto",
+        "pesto sauce",
+        "pesto",
+        "pesto cream sauce"
+      ],
+      "display_name": "pesto sauce"
+    },
+    "sauce-roast": {
+      "parent_category": "Condiment - Sauces & Dressings",
+      "similar_items": [
+        "gravy",
+        "meat sauce",
+        "roast sauce",
+        "brown sauce",
+        "meat gravy"
+      ],
+      "display_name": "roast sauce"
+    },
+    "sauce-savoury": {
+      "parent_category": "Condiment - Sauces & Dressings",
+      "similar_items": [
+        "gravy",
+        "marinara",
+        "brown sauce",
+        "chili sauce",
+        "barbecue sauce"
+      ],
+      "display_name": "savoury sauce"
+    },
+    "sauce-soya": {
+      "parent_category": "Condiment - Sauces & Dressings",
+      "similar_items": [
+        "soy sauce",
+        "dark soy sauce",
+        "light soy sauce",
+        "tamari",
+        "shoyu"
+      ],
+      "display_name": "soy sauce"
+    },
+    "sauce-sweet-salted-asian": {
+      "parent_category": "Condiment - Sauces & Dressings",
+      "similar_items": [
+        "hoisin sauce",
+        "plum sauce",
+        "duck sauce",
+        "sweet chili sauce",
+        "teriyaki sauce"
+      ],
+      "display_name": "sweet and salty asian sauce"
+    },
+    "sauce-sweet-sour": {
+      "parent_category": "Condiment - Sauces & Dressings",
+      "similar_items": [
+        "sweet and sour sauce",
+        "pineapple sauce",
+        "mango chutney",
+        "tamarind sauce",
+        "plum sauce"
+      ],
+      "display_name": "sweet and sour sauce"
+    },
+    "sauerkraut": {
+      "parent_category": "Processed Ingredient - Canned & Preserved",
+      "similar_items": [
+        "fermented cabbage",
+        "kimchi",
+        "pickled cabbage",
+        "fermented vegetables",
+        "coleslaw"
+      ],
+      "display_name": "sauerkraut"
+    },
+    "sausage": {
+      "parent_category": "Raw Ingredient - Meat & Poultry",
+      "similar_items": [
+        "hot dog",
+        "wiener",
+        "banger",
+        "bratwurst",
+        "frankfurter"
+      ],
+      "display_name": "sausage"
+    },
+    "savoury-puff-pastry": {
+      "parent_category": "Bakery - Savory Baked Goods",
+      "similar_items": [
+        "puff pastry",
+        "phyllo pastry",
+        "filo pastry",
+        "savory tart",
+        "savory pie"
+      ],
+      "display_name": "savoury puff pastry"
+    },
+    "savoury-puff-pastry-stick": {
+      "parent_category": "Bakery - Savory Baked Goods",
+      "similar_items": [
+        "cheese stick",
+        "pastry stick",
+        "savory stick",
+        "puff pastry stick",
+        "cheese puff"
+      ],
+      "display_name": "savoury puff pastry stick"
+    },
+    "savoy-cabbage-steamed-without-addition-of-salt": {
+      "parent_category": "Raw Ingredient - Vegetables",
+      "similar_items": [
+        "steamed cabbage",
+        "boiled cabbage",
+        "green cabbage",
+        "napa cabbage",
+        "bok choy"
+      ],
+      "display_name": "steamed savoy cabbage"
+    },
+    "seeds": {
+      "parent_category": "Raw Ingredient - Legumes, Nuts & Seeds",
+      "similar_items": [
+        "sunflower seeds",
+        "pumpkin seeds",
+        "chia seeds",
+        "flax seeds",
+        "sesame seeds"
+      ],
+      "display_name": "seeds"
+    },
+    "sekt": {
+      "parent_category": "Beverage - Alcoholic",
+      "similar_items": [
+        "champagne",
+        "sparkling wine",
+        "prosecco",
+        "cava",
+        "sparkling cider"
+      ],
+      "display_name": "sekt"
+    },
+    "semi-hard-cheese": {
+      "parent_category": "Processed Ingredient - Cheese",
+      "similar_items": [
+        "gouda",
+        "cheddar",
+        "gruyere",
+        "edam",
+        "havarti"
+      ],
+      "display_name": "semi-hard cheese"
+    },
+    "sesame-seeds": {
+      "parent_category": "Raw Ingredient - Legumes, Nuts & Seeds",
+      "similar_items": [
+        "poppy seeds",
+        "flax seeds",
+        "sunflower seeds",
+        "chia seeds",
+        "hemp seeds"
+      ],
+      "display_name": "sesame seeds"
+    },
+    "shoots": {
+      "parent_category": "Raw Ingredient - Vegetables",
+      "similar_items": [
+        "bean sprouts",
+        "alfalfa sprouts",
+        "radish sprouts",
+        "sunflower shoots",
+        "pea shoots"
+      ],
+      "display_name": "shoots"
+    },
+    "shrimp-boiled": {
+      "parent_category": "Raw Ingredient - Fish & Seafood",
+      "similar_items": [
+        "boiled prawns",
+        "cooked shrimp",
+        "poached shrimp",
+        "steamed shrimp",
+        "shellfish"
+      ],
+      "display_name": "boiled shrimp"
+    },
+    "shrimp-prawn-large": {
+      "parent_category": "Raw Ingredient - Fish & Seafood",
+      "similar_items": [
+        "large prawns",
+        "jumbo shrimp",
+        "king prawns",
+        "tiger prawns",
+        "giant shrimp"
+      ],
+      "display_name": "large shrimp"
+    },
+    "shrimp-prawn-small": {
+      "parent_category": "Raw Ingredient - Fish & Seafood",
+      "similar_items": [
+        "small prawns",
+        "baby shrimp",
+        "mini shrimp",
+        "petite shrimp",
+        "tiny shrimp"
+      ],
+      "display_name": "small shrimp"
+    },
+    "smoked-cooked-sausage-of-pork-and-beef-meat-sausag": {
+      "parent_category": "Prepared Food - Main Courses",
+      "similar_items": [
+        "smoked sausage",
+        "cooked sausage",
+        "pork sausage",
+        "beef sausage",
+        "smoked meat"
+      ],
+      "display_name": "smoked sausage"
+    },
+    "smoothie": {
+      "parent_category": "Beverage - Non-Alcoholic",
+      "similar_items": [
+        "fruit shake",
+        "blended drink",
+        "fruit smoothie",
+        "green smoothie",
+        "berry smoothie"
+      ],
+      "display_name": "smoothie"
+    },
+    "soft-cheese": {
+      "parent_category": "Processed Ingredient - Cheese",
+      "similar_items": [
+        "brie",
+        "camembert",
+        "ricotta",
+        "mozzarella",
+        "feta"
+      ],
+      "display_name": "soft cheese"
+    },
+    "sorbet": {
+      "parent_category": "Dessert - Frozen & Cold",
+      "similar_items": [
+        "ice cream",
+        "gelato",
+        "frozen yogurt",
+        "sherbet",
+        "granita"
+      ],
+      "display_name": "sorbet"
+    },
+    "soup-cream-of-vegetables": {
+      "parent_category": "Prepared Food - Soups & Broths",
+      "similar_items": [
+        "cream of mushroom soup",
+        "cream of chicken soup",
+        "cream of broccoli soup",
+        "vegetable soup",
+        "cream soup"
+      ],
+      "display_name": "cream of vegetable soup"
+    },
+    "soup-miso": {
+      "parent_category": "Prepared Food - Soups & Broths",
+      "similar_items": [
+        "miso soup",
+        "miso broth",
+        "japanese soup",
+        "miso broth with tofu",
+        "miso soup with seaweed"
+      ],
+      "display_name": "miso soup"
+    },
+    "soup-of-lentils-dahl-dhal": {
+      "parent_category": "Prepared Food - Soups & Broths",
+      "similar_items": [
+        "lentil soup",
+        "dhal soup",
+        "dhal",
+        "indian lentil soup",
+        "lentil stew"
+      ],
+      "display_name": "lentil soup"
+    },
+    "soup-potato": {
+      "parent_category": "Prepared Food - Soups & Broths",
+      "similar_items": [
+        "potato soup",
+        "cream of potato soup",
+        "potato and leek soup",
+        "potato chowder",
+        "potato and vegetable soup"
+      ],
+      "display_name": "potato soup"
+    },
+    "soup-pumpkin": {
+      "parent_category": "Prepared Food - Soups & Broths",
+      "similar_items": [
+        "pumpkin soup",
+        "cream of pumpkin soup",
+        "pumpkin and carrot soup",
+        "pumpkin chowder",
+        "pumpkin and vegetable soup"
+      ],
+      "display_name": "pumpkin soup"
+    },
+    "soup-tomato": {
+      "parent_category": "Prepared Food - Soups & Broths",
+      "similar_items": [
+        "tomato soup",
+        "cream of tomato soup",
+        "tomato and basil soup",
+        "tomato and vegetable soup",
+        "tomato bisque"
+      ],
+      "display_name": "tomato soup"
+    },
+    "soup-vegetable": {
+      "parent_category": "Prepared Food - Soups & Broths",
+      "similar_items": [
+        "vegetable soup",
+        "minestrone soup",
+        "vegetable broth",
+        "vegetable chowder",
+        "vegetable stew"
+      ],
+      "display_name": "vegetable soup"
+    },
+    "sour-cream": {
+      "parent_category": "Condiment - Spreads & Jams",
+      "similar_items": [
+        "sour cream",
+        "sour cream dip",
+        "sour cream sauce",
+        "sour cream dressing",
+        "sour cream topping"
+      ],
+      "display_name": "sour cream"
+    },
+    "soya-drink-soy-milk": {
+      "parent_category": "Beverage - Non-Alcoholic",
+      "similar_items": [
+        "soy milk",
+        "soy beverage",
+        "soy drink",
+        "soy milkshake",
+        "soy latte"
+      ],
+      "display_name": "soy milk"
+    },
+    "soya-yaourt-yahourt-yogourt-ou-yoghourt": {
+      "parent_category": "Processed Ingredient - Dairy Alternatives",
+      "similar_items": [
+        "greek yogurt",
+        "coconut yogurt",
+        "almond yogurt",
+        "soy yogurt",
+        "vegan yogurt"
+      ],
+      "display_name": "soya yogurt"
+    },
+    "spaetzle": {
+      "parent_category": "Prepared Food - Main Courses",
+      "similar_items": [
+        "gnocchi",
+        "dumplings",
+        "macaroni",
+        "pasta",
+        "noodles"
+      ],
+      "display_name": "spaetzle"
+    },
+    "spinach-raw": {
+      "parent_category": "Raw Ingredient - Vegetables",
+      "similar_items": [
+        "kale",
+        "lettuce",
+        "collard greens",
+        "swiss chard",
+        "bok choy"
+      ],
+      "display_name": "raw spinach"
+    },
+    "spinach-steamed-without-addition-of-salt": {
+      "parent_category": "Prepared Food - Vegetarian Dishes",
+      "similar_items": [
+        "steamed kale",
+        "steamed collard greens",
+        "steamed swiss chard",
+        "steamed bok choy",
+        "steamed broccoli"
+      ],
+      "display_name": "steamed spinach"
+    },
+    "spring-onion-scallion": {
+      "parent_category": "Raw Ingredient - Vegetables",
+      "similar_items": [
+        "green onion",
+        "leek",
+        "chive",
+        "onion",
+        "shallot"
+      ],
+      "display_name": "spring onion"
+    },
+    "spring-roll-fried": {
+      "parent_category": "Prepared Food - Main Courses",
+      "similar_items": [
+        "egg roll",
+        "samosa",
+        "empanada",
+        "wonton",
+        "fried dumpling"
+      ],
+      "display_name": "fried spring roll"
+    },
+    "strawberries": {
+      "parent_category": "Raw Ingredient - Fruits",
+      "similar_items": [
+        "raspberries",
+        "blueberries",
+        "cherries",
+        "redcurrants",
+        "cranberries"
+      ],
+      "display_name": "strawberries"
+    },
+    "sugar-glazing": {
+      "parent_category": "Condiment - Sauces & Dressings",
+      "similar_items": [
+        "caramel sauce",
+        "honey glaze",
+        "syrup",
+        "icing",
+        "glaze"
+      ],
+      "display_name": "sugar glaze"
+    },
+    "sugar-melon": {
+      "parent_category": "Raw Ingredient - Fruits",
+      "similar_items": [
+        "watermelon",
+        "cantaloupe",
+        "honeydew",
+        "galia melon",
+        "cantaloupe melon"
+      ],
+      "display_name": "melon"
+    },
+    "sun-dried-tomatoe": {
+      "parent_category": "Processed Ingredient - Canned & Preserved",
+      "similar_items": [
+        "dried tomato",
+        "sun-dried tomato",
+        "dehydrated tomato",
+        "tomato flakes",
+        "tomato powder"
+      ],
+      "display_name": "sun dried tomato"
+    },
+    "sunflower-seeds": {
+      "parent_category": "Raw Ingredient - Legumes, Nuts & Seeds",
+      "similar_items": [
+        "pumpkin seeds",
+        "sesame seeds",
+        "chia seeds",
+        "flax seeds",
+        "hemp seeds"
+      ],
+      "display_name": "sunflower seeds"
+    },
+    "sushi": {
+      "parent_category": "Prepared Food - Main Courses",
+      "similar_items": [
+        "sashimi",
+        "maki rolls",
+        "nigiri",
+        "temaki",
+        "california roll"
+      ],
+      "display_name": "sushi"
+    },
+    "sweet-corn-canned": {
+      "parent_category": "Processed Ingredient - Canned & Preserved",
+      "similar_items": [
+        "canned corn",
+        "canned peas",
+        "canned beans",
+        "canned carrots",
+        "canned green beans"
+      ],
+      "display_name": "canned corn"
+    },
+    "sweet-potato": {
+      "parent_category": "Raw Ingredient - Vegetables",
+      "similar_items": [
+        "yam",
+        "potato",
+        "carrot",
+        "beetroot",
+        "turnip"
+      ],
+      "display_name": "sweet potato"
+    },
+    "sweets-candies": {
+      "parent_category": "Dessert - Candy & Confections",
+      "similar_items": [
+        "chocolates",
+        "gummies",
+        "lollipops",
+        "hard candies",
+        "jelly beans"
+      ],
+      "display_name": "candies"
+    },
+    "swiss-chard": {
+      "parent_category": "Raw Ingredient - Vegetables",
+      "similar_items": [
+        "spinach",
+        "kale",
+        "collard greens",
+        "beet greens",
+        "bok choy"
+      ],
+      "display_name": "swiss chard"
+    },
+    "syrup-diluted-ready-to-drink": {
+      "parent_category": "Beverage - Non-Alcoholic",
+      "similar_items": [
+        "sweetened tea",
+        "fruit punch",
+        "lemonade",
+        "soda",
+        "sweetened coffee"
+      ],
+      "display_name": "diluted syrup"
+    },
+    "taboule-prepared-with-couscous": {
+      "parent_category": "Prepared Food - Salads & Cold Dishes",
+      "similar_items": [
+        "couscous salad",
+        "quinoa salad",
+        "bulgur salad",
+        "feta salad",
+        "greek salad"
+      ],
+      "display_name": "tabbouleh"
+    },
+    "tart": {
+      "parent_category": "Bakery - Pastries & Sweet Baked",
+      "similar_items": [
+        "pie",
+        "quiche",
+        "tartlet",
+        "fruit tart",
+        "savory tart"
+      ],
+      "display_name": "tart"
+    },
+    "tartar-meat": {
+      "parent_category": "Prepared Food - Main Courses",
+      "similar_items": [
+        "steak tartare",
+        "beef tartare",
+        "raw meat dish",
+        "meat salad",
+        "meat appetizer"
+      ],
+      "display_name": "tartar"
+    },
+    "tartar-sauce": {
+      "parent_category": "Condiment - Sauces & Dressings",
+      "similar_items": [
+        "mayonnaise",
+        "aioli",
+        "remoulade",
+        "cocktail sauce",
+        "thousand island dressing"
+      ],
+      "display_name": "tartar sauce"
+    },
+    "tea": {
+      "parent_category": "Beverage - Non-Alcoholic",
+      "similar_items": [
+        "coffee",
+        "herbal tea",
+        "chamomile tea",
+        "green tea",
+        "black tea"
+      ],
+      "display_name": "tea"
+    },
+    "tea-black": {
+      "parent_category": "Beverage - Non-Alcoholic",
+      "similar_items": [
+        "black tea",
+        "english breakfast tea",
+        "assam tea",
+        "darjeeling tea",
+        "ceylon tea"
+      ],
+      "display_name": "black tea"
+    },
+    "tea-fruit": {
+      "parent_category": "Beverage - Non-Alcoholic",
+      "similar_items": [
+        "fruit tea",
+        "herbal tea",
+        "berry tea",
+        "peach tea",
+        "apple tea"
+      ],
+      "display_name": "fruit tea"
+    },
+    "tea-ginger": {
+      "parent_category": "Beverage - Non-Alcoholic",
+      "similar_items": [
+        "ginger tea",
+        "herbal tea",
+        "spiced tea",
+        "chamomile tea",
+        "peppermint tea"
+      ],
+      "display_name": "ginger tea"
+    },
+    "tea-green": {
+      "parent_category": "Beverage - Non-Alcoholic",
+      "similar_items": [
+        "green tea",
+        "matcha",
+        "sencha",
+        "gunpowder tea",
+        "japanese green tea"
+      ],
+      "display_name": "green tea"
+    },
+    "tea-peppermint": {
+      "parent_category": "Beverage - Non-Alcoholic",
+      "similar_items": [
+        "peppermint tea",
+        "mint tea",
+        "herbal tea",
+        "chamomile tea",
+        "ginger tea"
+      ],
+      "display_name": "peppermint tea"
+    },
+    "tea-rooibos": {
+      "parent_category": "Beverage - Non-Alcoholic",
+      "similar_items": [
+        "rooibos tea",
+        "red tea",
+        "herbal tea",
+        "chamomile tea",
+        "ginger tea"
+      ],
+      "display_name": "rooibos tea"
+    },
+    "tea-spice": {
+      "parent_category": "Beverage - Non-Alcoholic",
+      "similar_items": [
+        "spiced tea",
+        "chai tea",
+        "ginger tea",
+        "herbal tea",
+        "peppermint tea"
+      ],
+      "display_name": "spice tea"
+    },
+    "tea-verveine": {
+      "parent_category": "Beverage - Non-Alcoholic",
+      "similar_items": [
+        "verveine tea",
+        "lemon verbena tea",
+        "herbal tea",
+        "chamomile tea",
+        "peppermint tea"
+      ],
+      "display_name": "verveine tea"
+    },
+    "tete-de-moine": {
+      "parent_category": "Bakery - Savory Baked Goods",
+      "similar_items": [
+        "cheese wheel",
+        "round cheese",
+        "cheese loaf",
+        "cheese head",
+        "round bread"
+      ],
+      "display_name": "tete de moine"
+    },
+    "thickened-cream-35": {
+      "parent_category": "Raw Ingredient - Oils & Fats",
+      "similar_items": [
+        "heavy cream",
+        "whipping cream",
+        "double cream",
+        "whipped cream",
+        "sour cream"
+      ],
+      "display_name": "thickened cream"
+    },
+    "tiramisu": {
+      "parent_category": "Dessert - Cakes & Pastries",
+      "similar_items": [
+        "trifle",
+        "layered cake",
+        "dessert with mascarpone",
+        "coffee cake",
+        "sponge cake"
+      ],
+      "display_name": "tiramisu"
+    },
+    "tofu": {
+      "parent_category": "Raw Ingredient - Legumes, Nuts & Seeds",
+      "similar_items": [
+        "soybean curd",
+        "bean curd",
+        "silken tofu",
+        "firm tofu",
+        "extra firm tofu"
+      ],
+      "display_name": "tofu"
+    },
+    "tomato-raw": {
+      "parent_category": "Raw Ingredient - Vegetables",
+      "similar_items": [
+        "cherry tomato",
+        "plum tomato",
+        "roma tomato",
+        "beefsteak tomato",
+        "green tomato"
+      ],
+      "display_name": "raw tomato"
+    },
+    "tomato-sauce": {
+      "parent_category": "Condiment - Sauces & Dressings",
+      "similar_items": [
+        "pasta sauce",
+        "marinara sauce",
+        "ketchup",
+        "salsa",
+        "chili sauce"
+      ],
+      "display_name": "tomato sauce"
+    },
+    "tomato-stewed-without-addition-of-fat-without-addition-of-salt": {
+      "parent_category": "Prepared Food - Main Courses",
+      "similar_items": [
+        "stewed tomatoes",
+        "canned tomatoes",
+        "tomato stew",
+        "tomato compote",
+        "tomato puree"
+      ],
+      "display_name": "stewed tomato"
+    },
+    "tomme": {
+      "parent_category": "Processed Ingredient - Cheese",
+      "similar_items": [
+        "cheese wheel",
+        "round cheese",
+        "cheese loaf",
+        "cheese head",
+        "cheese block"
+      ],
+      "display_name": "tomme"
+    },
+    "tuna": {
+      "parent_category": "Raw Ingredient - Fish & Seafood",
+      "similar_items": [
+        "tuna steak",
+        "yellowfin tuna",
+        "bluefin tuna",
+        "albacore tuna",
+        "skipjack tuna"
+      ],
+      "display_name": "tuna"
+    },
+    "tuna-in-oil-drained": {
+      "parent_category": "Processed Ingredient - Canned & Preserved",
+      "similar_items": [
+        "canned tuna",
+        "tuna in water",
+        "tuna in brine",
+        "tuna chunks",
+        "tuna fillets"
+      ],
+      "display_name": "tuna in oil"
+    },
+    "turnover-with-meat-small-meat-pie-empanadas": {
+      "parent_category": "Bakery - Savory Baked Goods",
+      "similar_items": [
+        "empanadas",
+        "meat pie",
+        "small meat pie",
+        "savory turnover",
+        "hand pie"
+      ],
+      "display_name": "small meat turnover"
+    },
+    "tzatziki": {
+      "parent_category": "Condiment - Sauces & Dressings",
+      "similar_items": [
+        "yogurt sauce",
+        "cucumber yogurt",
+        "greek yogurt dip",
+        "cucumber dip",
+        "yogurt dip"
+      ],
+      "display_name": "tzatziki"
+    },
+    "vanille-cream-cooked-custard-creme-dessert": {
+      "parent_category": "Dessert - Frozen & Cold",
+      "similar_items": [
+        "vanilla custard",
+        "vanilla cream",
+        "custard dessert",
+        "vanilla pudding",
+        "creme dessert"
+      ],
+      "display_name": "vanilla custard dessert"
+    },
+    "veal-sausage": {
+      "parent_category": "Raw Ingredient - Meat & Poultry",
+      "similar_items": [
+        "veal",
+        "veal meat",
+        "veal links",
+        "veal sausage links",
+        "veal sausage patties"
+      ],
+      "display_name": "veal sausage"
+    },
+    "vegetable-au-gratin-baked": {
+      "parent_category": "Prepared Food - Main Courses",
+      "similar_items": [
+        "au gratin",
+        "baked vegetable",
+        "vegetable gratin",
+        "gratin",
+        "baked au gratin"
+      ],
+      "display_name": "baked vegetable au gratin"
+    },
+    "vegetable-mix-peas-and-carrots": {
+      "parent_category": "Raw Ingredient - Vegetables",
+      "similar_items": [
+        "peas and carrots",
+        "mixed vegetables",
+        "vegetable mix",
+        "carrots and peas",
+        "vegetable blend"
+      ],
+      "display_name": "peas and carrots"
+    },
+    "vegetables": {
+      "parent_category": "Raw Ingredient - Vegetables",
+      "similar_items": [
+        "veggies",
+        "fresh vegetables",
+        "raw vegetables",
+        "vegetable medley",
+        "vegetable assortment"
+      ],
+      "display_name": "vegetables"
+    },
+    "veggie-burger": {
+      "parent_category": "Prepared Food - Main Courses",
+      "similar_items": [
+        "vegetarian burger",
+        "plant-based burger",
+        "veggie patty",
+        "vegetable burger",
+        "veggie patty"
+      ],
+      "display_name": "veggie burger"
+    },
+    "waffle": {
+      "parent_category": "Bakery - Bread & Loaves",
+      "similar_items": [
+        "waffles",
+        "belgian waffle",
+        "waffle iron",
+        "waffle batter",
+        "waffle maker"
+      ],
+      "display_name": "waffle"
+    },
+    "walnut": {
+      "parent_category": "Raw Ingredient - Legumes, Nuts & Seeds",
+      "similar_items": [
+        "nuts",
+        "walnuts",
+        "raw walnuts",
+        "walnut halves",
+        "walnut pieces"
+      ],
+      "display_name": "walnut"
+    },
+    "water": {
+      "parent_category": "Beverage - Non-Alcoholic",
+      "similar_items": [
+        "sparkling water",
+        "tap water",
+        "mineral water",
+        "distilled water"
+      ],
+      "display_name": "water"
+    },
+    "water-mineral": {
+      "parent_category": "Beverage - Non-Alcoholic",
+      "similar_items": [
+        "sparkling water",
+        "tap water",
+        "distilled water",
+        "soda water"
+      ],
+      "display_name": "mineral water"
+    },
+    "water-with-lemon-juice": {
+      "parent_category": "Beverage - Non-Alcoholic",
+      "similar_items": [
+        "lemon water",
+        "lemonade",
+        "lemon-infused water",
+        "citrus water"
+      ],
+      "display_name": "lemon water"
+    },
+    "watermelon-fresh": {
+      "parent_category": "Raw Ingredient - Fruits",
+      "similar_items": [
+        "cantaloupe",
+        "honeydew",
+        "melon",
+        "pumpkin"
+      ],
+      "display_name": "fresh watermelon"
+    },
+    "white-asparagus": {
+      "parent_category": "Raw Ingredient - Vegetables",
+      "similar_items": [
+        "green asparagus",
+        "leek",
+        "spear",
+        "stalk"
+      ],
+      "display_name": "white asparagus"
+    },
+    "white-bread-with-butter-eggs-and-milk": {
+      "parent_category": "Prepared Food - Main Courses",
+      "similar_items": [
+        "toast with butter",
+        "breakfast sandwich",
+        "bread with eggs",
+        "buttered toast"
+      ],
+      "display_name": "white bread with butter, eggs, and milk"
+    },
+    "white-cabbage": {
+      "parent_category": "Raw Ingredient - Vegetables",
+      "similar_items": [
+        "green cabbage",
+        "napa cabbage",
+        "lettuce",
+        "kale"
+      ],
+      "display_name": "white cabbage"
+    },
+    "white-chocolate": {
+      "parent_category": "Dessert - Candy & Confections",
+      "similar_items": [
+        "milk chocolate",
+        "dark chocolate",
+        "candy bar",
+        "chocolate bar"
+      ],
+      "display_name": "white chocolate"
+    },
+    "white-coffee-with-caffeine": {
+      "parent_category": "Beverage - Non-Alcoholic",
+      "similar_items": [
+        "black coffee",
+        "latte",
+        "espresso",
+        "caffeinated coffee"
+      ],
+      "display_name": "white coffee"
+    },
+    "white-radish": {
+      "parent_category": "Raw Ingredient - Vegetables",
+      "similar_items": [
+        "daikon",
+        "radish",
+        "turnip",
+        "carrot"
+      ],
+      "display_name": "white radish"
+    },
+    "wienerli-swiss-sausage": {
+      "parent_category": "Raw Ingredient - Meat & Poultry",
+      "similar_items": [
+        "sausage",
+        "bratwurst",
+        "hot dog",
+        "frankfurter",
+        "banger"
+      ],
+      "display_name": "swiss sausage"
+    },
+    "wine-red": {
+      "parent_category": "Beverage - Alcoholic",
+      "similar_items": [
+        "red wine",
+        "merlot",
+        "cabernet",
+        "shiraz",
+        "pinot noir"
+      ],
+      "display_name": "red wine"
+    },
+    "wine-rose": {
+      "parent_category": "Beverage - Alcoholic",
+      "similar_items": [
+        "rose wine",
+        "blush wine",
+        "pink wine",
+        "rose",
+        "blush"
+      ],
+      "display_name": "rose wine"
+    },
+    "wine-white": {
+      "parent_category": "Beverage - Alcoholic",
+      "similar_items": [
+        "white wine",
+        "chardonnay",
+        "sauvignon blanc",
+        "riesling",
+        "pinot grigio"
+      ],
+      "display_name": "white wine"
+    },
+    "witloof-chicory": {
+      "parent_category": "Raw Ingredient - Vegetables",
+      "similar_items": [
+        "chicory",
+        "endive",
+        "radicchio",
+        "lettuce",
+        "salad greens"
+      ],
+      "display_name": "chicory"
+    },
+    "yaourt-yahourt-yogourt-ou-yoghourt-natural": {
+      "parent_category": "Raw Ingredient - Dairy & Eggs",
+      "similar_items": [
+        "yogurt",
+        "yoghurt",
+        "natural yogurt",
+        "plain yogurt",
+        "greek yogurt"
+      ],
+      "display_name": "natural yogurt"
+    },
+    "zucchini": {
+      "parent_category": "Raw Ingredient - Vegetables",
+      "similar_items": [
+        "courgette",
+        "cucumber",
+        "squash",
+        "green zucchini",
+        "summer squash"
+      ],
+      "display_name": "zucchini"
+    },
+    "zucchini-stewed-without-addition-of-fat-without-addition-of-salt": {
+      "parent_category": "Prepared Food - Vegetarian Dishes",
+      "similar_items": [
+        "stewed zucchini",
+        "cooked zucchini",
+        "zucchini stew",
+        "zucchini without salt",
+        "zucchini without fat"
+      ],
+      "display_name": "stewed zucchini"
+    }
+  }
+}

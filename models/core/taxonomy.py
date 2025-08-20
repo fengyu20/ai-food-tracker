@@ -3,18 +3,70 @@ import re
 from difflib import get_close_matches, SequenceMatcher
 from typing import Dict, Any, List, Tuple, Optional
 
+# Import the centralized settings
+from .settings import REFINED_TAXONOMY_FILE
+
+# Single source of truth for the parent categories
+PARENT_CATEGORIES: List[str] = [
+    # === RAW INGREDIENTS  ===
+    "Raw Ingredient - Fruits",
+    "Raw Ingredient - Vegetables",
+    "Raw Ingredient - Herbs & Spices",
+    "Raw Ingredient - Meat & Poultry",
+    "Raw Ingredient - Fish & Seafood",
+    "Raw Ingredient - Dairy & Eggs",
+    "Raw Ingredient - Grains & Cereals",
+    "Raw Ingredient - Legumes, Nuts & Seeds",
+    "Raw Ingredient - Oils & Fats",
+
+    # === PROCESSED INGREDIENTS ===
+    "Processed Ingredient - Cheese",
+    "Processed Ingredient - Dairy Alternatives",
+    "Processed Ingredient - Flours & Powders",
+    "Processed Ingredient - Canned & Preserved",
+
+    # === BAKERY & BREAD ===
+    "Bakery - Bread & Loaves",
+    "Bakery - Pastries & Sweet Baked",
+    "Bakery - Savory Baked Goods",
+    "Bakery - Pizza & Flatbreads",
+
+    # === PREPARED FOODS ===
+    "Prepared Food - Soups & Broths",
+    "Prepared Food - Salads & Cold Dishes",
+    "Prepared Food - Pasta & Rice Dishes",
+    "Prepared Food - Main Courses",
+    "Prepared Food - Vegetarian Dishes",
+
+    # === BEVERAGES  ===
+    "Beverage - Non-Alcoholic",
+    "Beverage - Alcoholic",
+
+    # === CONDIMENTS & SEASONINGS ===
+    "Condiment - Sauces & Dressings",
+    "Condiment - Spreads & Jams",
+    "Condiment - Seasonings & Spices",
+
+    # === SNACKS & SWEETS ===
+    "Snack - Savory",
+    "Snack - Sweet",
+    "Dessert - Cakes & Pastries",
+    "Dessert - Frozen & Cold",
+    "Dessert - Candy & Confections",
+
+    "Miscellaneous"
+]
 
 class Taxonomy:
     """
     Compare the AI result with the known category list.
     """
-    # TBD: include the python file to extract the categories from the dataset //
-
-    def __init__(self, mapping_file: str = 'config/categories_mapping.json'):
+    # Use the refined taxonomy file as the default
+    def __init__(self, mapping_file: str = REFINED_TAXONOMY_FILE):
         try:
             with open(mapping_file, 'r') as f:
                 self.mapping = json.load(f)
-            
+
             self.parent_categories = list(self.mapping.keys())
             self.all_subcategories = []
             self.subcategory_to_parent = {}
@@ -23,8 +75,8 @@ class Taxonomy:
                 for subcategory in subcategories:
                     self.all_subcategories.append(subcategory)
                     self.subcategory_to_parent[subcategory] = parent
-            
-            print(f"📋 Taxonomy loaded: {len(self.parent_categories)} parent categories, {len(self.all_subcategories)} subcategories.")
+
+            print(f"Taxonomy loaded: {len(self.parent_categories)} parent categories, {len(self.all_subcategories)} subcategories.")
         except Exception as e:
             print(f"Critical Error: Failed to load taxonomy from {mapping_file}: {e}")
             self.mapping = {}
@@ -71,7 +123,7 @@ class Taxonomy:
                 validated_items.append(validated_item)
             elif unlisted_item:
                 unlisted_foods.append(unlisted_item)
-        
+
         return validated_items, unlisted_foods
 
     def _find_match(
@@ -119,7 +171,7 @@ class Taxonomy:
                         "original_ai_output": ai_output,
                         "similarity_score": similarity
                     }, None)
-        
+
         # 3. Word-based Match
         words = set(re.findall(r'\w+', cleaned_output))
         if len(words) >= 2:
@@ -153,9 +205,9 @@ class Taxonomy:
         """Adjusts confidence based on fuzzy match quality."""
         confidence_map = {'high': 3, 'medium': 2, 'low': 1, 'unknown': 1}
         original_score = confidence_map.get(original_confidence, 1)
-        
+
         adjusted_score = original_score * similarity
-        
+
         if adjusted_score >= 2.5: return 'high'
         if adjusted_score >= 1.5: return 'medium'
         return 'low'

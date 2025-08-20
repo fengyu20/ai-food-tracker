@@ -1,27 +1,28 @@
 import json
 import re
 import time
-from typing import Dict, Any, Tuple, List
+from typing import Dict, Any, Tuple, List, Union
 import base64
+import io
 from PIL import Image
 
 
-def load_provider_settings() -> Dict[str, List[str]]:
+def load_provider_config() -> Dict[str, Any]:
     try:
-        settings_path = 'models/providers/provider_sets.json'
-        with open(settings_path, 'r') as f:
+        config_path = 'models/configs/provider_config.json'
+        with open(config_path, 'r') as f:
             return json.load(f)
     except FileNotFoundError:
-        print(f"Error: The provider settings file was not found at {settings_path}")
+        print(f"Error: The provider config file was not found at {config_path}")
         raise
     except json.JSONDecodeError:
-        print(f"Error: The provider settings file at {settings_path} is not valid JSON.")
+        print(f"Error: The provider config file at {config_path} is not valid JSON.")
         raise
 
 
-def load_image(image_path: str, max_size: int = 4096) -> Image.Image:
+def load_image(image_path: str, max_size: int = 4096, return_type: str = "pillow") -> Union[Image.Image, str]:
     """
-    Load an image and convert it to PIL.Image.Image.
+    Load an image, resize it if necessary, and return it in the specified format for LLM input.
     """
     try:
         image = Image.open(image_path)
@@ -33,7 +34,19 @@ def load_image(image_path: str, max_size: int = 4096) -> Image.Image:
             image.thumbnail((max_size, max_size), Image.Resampling.LANCZOS)
             print(f"Resized image to {image.size}")
 
-        return image
+        if return_type == "pillow":
+            return image
+        
+        elif return_type == "base64":
+            # Convert PIL image to base64 string
+            buffered = io.BytesIO()
+            image.save(buffered, format="JPEG") # You can change format if needed
+            img_str = base64.b64encode(buffered.getvalue()).decode('utf-8')
+            return img_str
+
+        else:
+            raise ValueError(f"Unsupported return_type: {return_type}")
+
     except FileNotFoundError:
         print(f"Error: Image file not found at {image_path}")
         raise
@@ -42,26 +55,10 @@ def load_image(image_path: str, max_size: int = 4096) -> Image.Image:
         raise
 
 
-def image_to_base64_uri(image_path: str) -> str:
-    """
-    Load an image and convert it to base64 uri.
-    """
-    with open(image_path, "rb") as image_file:
-        binary_data = image_file.read()
-        base64_encoded_data = base64.b64encode(binary_data)
-        base64_string = base64_encoded_data.decode('utf-8')
-        
-        # Determine the mime type
-        mime_type = "image/jpeg"
-        if image_path.lower().endswith(".png"):
-            mime_type = "image/png"
-        elif image_path.lower().endswith(".webp"):
-            mime_type = "image/webp"
-
-        return f"data:{mime_type};base64,{base64_string}"
-
-
 def clean_json_response(response_text: str) -> str:
+    if not response_text or not response_text.strip():
+        raise ValueError("LLM returned an empty or whitespace-only response.")
+        
     cleaned = response_text.strip()
 
     # Remove markdown code blocks
@@ -96,7 +93,7 @@ def clean_json_response(response_text: str) -> str:
         
         if last_valid_pos > 0 and last_valid_pos < len(fixed):
             fixed = fixed[:last_valid_pos]
-            print("🔧 Truncated response to last valid JSON object.")
+            print("Truncated response to last valid JSON object.")
 
         try:
             json.loads(fixed)

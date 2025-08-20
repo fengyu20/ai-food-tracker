@@ -1,0 +1,39 @@
+{
+    "default_parameters": {
+      "temperature": 0.1,
+      "fuzzy_threshold": 90,
+      "max_tokens": 2048
+    },
+    "providers": {
+      "gemini": [
+        {
+          "model": "gemini-1.5-flash"
+        },
+        {
+          "model": "gemini-2.5-flash"
+        }
+      ],
+      "openrouter": [
+        {
+          "model": "mistralai/mistral-small-3.2-24b-instruct:free"
+        },
+        {
+          "model": "meta-llama/llama-3.2-11b-vision-instruct:free",
+          "parameters": {
+            "temperature": 0.4
+          }
+        },
+        {
+          "model": "qwen/qwen2.5-vl-32b-instruct:free",
+          "parameters": {
+            "temperature": 0.3
+          }
+        },
+        "anthropic/claude-3.5-sonnet",
+        "openai/gpt-4o"
+      ],
+      "llama": [
+        "llama3.2-vision:latest"
+      ]
+    }
+  }

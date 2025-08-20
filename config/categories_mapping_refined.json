@@ -1,0 +1,152 @@
+{
+    "Raw Ingredient - Meat & Poultry": [
+        {
+            "name": "ham-raw",
+            "display_name": "raw ham",
+            "similar_items": [
+                "raw ham",
+                "fresh ham",
+                "raw pork",
+                "uncured ham",
+                "uncooked ham"
+            ]
+        }
+    ],
+    "Raw Ingredient - Fish & Seafood": [
+        {
+            "name": "salmon-smoked",
+            "display_name": "smoked salmon",
+            "similar_items": [
+                "smoked salmon",
+                "salmon",
+                "smoked fish",
+                "smoked mackerel",
+                "smoked trout"
+            ]
+        }
+    ],
+    "Raw Ingredient - Dairy & Eggs": [
+        {
+            "name": "cottage-cheese",
+            "display_name": "cottage cheese",
+            "similar_items": [
+                "curds",
+                "farmer's cheese",
+                "fresh cheese",
+                "quark",
+                "ricotta"
+            ]
+        },
+        {
+            "name": "curds-natural-with-at-most-10-fidm",
+            "display_name": "natural curds",
+            "similar_items": [
+                "curds",
+                "cottage cheese",
+                "farmer's cheese",
+                "quark",
+                "ricotta"
+            ]
+        }
+    ],
+    "Processed Ingredient - Cheese": [
+        {
+            "name": "hard-cheese",
+            "display_name": "hard cheese",
+            "similar_items": [
+                "cheddar",
+                "parmesan",
+                "gouda",
+                "gruyere",
+                "manchego"
+            ]
+        }
+    ],
+    "Bakery - Bread & Loaves": [
+        {
+            "name": "bagel-without-filling",
+            "display_name": "bagel",
+            "similar_items": [
+                "bagel",
+                "plain bagel",
+                "donut without filling",
+                "bread",
+                "roll"
+            ]
+        },
+        {
+            "name": "bread-half-white",
+            "display_name": "white bread half",
+            "similar_items": [
+                "white bread",
+                "bread slice",
+                "half loaf",
+                "loaf of bread",
+                "sliced bread"
+            ]
+        }
+    ],
+    "Bakery - Pastries & Sweet Baked": [
+        {
+            "name": "pancakes",
+            "display_name": "pancakes",
+            "similar_items": [
+                "crepes",
+                "waffles",
+                "flapjacks",
+                "griddle cakes",
+                "breakfast"
+            ]
+        }
+    ],
+    "Bakery - Savory Baked Goods": [
+        {
+            "name": "quiche-with-cheese-baked-with-puff-pastry",
+            "display_name": "cheese quiche",
+            "similar_items": [
+                "quiche",
+                "cheese quiche",
+                "puff pastry pie",
+                "savory pie",
+                "tart"
+            ]
+        }
+    ],
+    "Prepared Food - Salads & Cold Dishes": [
+        {
+            "name": "fruit-salad",
+            "display_name": "fruit salad",
+            "similar_items": [
+                "fruit bowl",
+                "fruit cocktail",
+                "fruit medley",
+                "fruit mix",
+                "fruit platter"
+            ]
+        }
+    ],
+    "Beverage - Non-Alcoholic": [
+        {
+            "name": "coffee-with-caffeine",
+            "display_name": "coffee",
+            "similar_items": [
+                "black coffee",
+                "caffeinated coffee",
+                "espresso",
+                "latte",
+                "cappuccino"
+            ]
+        },
+        {
+            "name": "tea",
+            "display_name": "tea",
+            "similar_items": [
+                "black tea",
+                "green tea",
+                "herbal tea",
+                "white tea",
+                "oolong tea"
+            ]
+        }
+    ]
+}

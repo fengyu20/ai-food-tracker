@@ -2,66 +2,56 @@ import os
 import json
 from openai import OpenAI
 from typing import Dict, Any
+import ollama
 
 from models.core.provider import BaseProvider
-from models.core.common import clean_json_response, image_to_base64_uri
+from models.core.common import load_image, clean_json_response
 
 
 class LlamaProvider(BaseProvider):
-    # TBD: use the json file to get the default model
-    DEFAULT_MODEL = "llama3.2-vision:latest"
-    DEFAULT_BASE_URL = "http://localhost:11434/v1"
 
-    def __init__(self, api_key: str = "ollama"):
+    def __init__(self, api_key: str = None):
         super().__init__(api_key)
-        
+        self._setup_client()
 
-        base_url = os.getenv("LLAMA_API_BASE_URL", self.DEFAULT_BASE_URL)
-        
-        self.client = OpenAI(
-            base_url=base_url,
-            api_key=self.api_key, 
-        )
-        print(f"Local Llama client configured to connect to: {base_url}")
+    def _setup_client(self):
+        self.client = ollama.Client()
+        print("Llama (Ollama) client configured.")
 
     def classify(
         self,
         image_path: str,
         prompt: str,
-        model_name: str = None,
-        temperature: float = 0.1,
+        model_name: str,
+        **kwargs
     ) -> Dict[str, Any]:
-        """
-        Analyzes an image using a local Llama-compatible model.
-        """
-        model_to_use = model_name or self.DEFAULT_MODEL
-        print(f"Calling Local Llama API with model: {model_to_use}...")
-
+        print(f"Calling Llama API with model: {model_name}...")
         try:
-            base64_image_uri = image_to_base64_uri(image_path)
+            # Explicitly define the options for the API call
+            options = {
+                'temperature': kwargs.get('temperature', 0.1),
+                'num_predict': kwargs.get('max_tokens', 2048)
+            }
             
-            response = self.client.chat.completions.create(
-                model=model_to_use,
+            # Ollama's support for temperature is model-dependent and might be set in the model file.
+            # We pass it as an option here.
+            base64_image = load_image(image_path, return_type="base64")
+            
+            response = self.client.chat(
+                model=model_name,
                 messages=[
                     {
-                        "role": "user",
-                        "content": [
-                            {"type": "text", "text": prompt},
-                            {
-                                "type": "image_url",
-                                "image_url": {"url": base64_image_uri},
-                            },
-                        ],
+                        'role': 'user',
+                        'content': prompt,
+                        'images': [base64_image]
                     }
                 ],
-                max_tokens=2048,
-                temperature=temperature,
-                # Forcing JSON output if the local model supports it
-                response_format={"type": "json_object"},
+                options=options,
+                format="json"
             )
             
-            raw_text = response.choices[0].message.content
-            print(f"Raw Local Llama Response Length: {len(raw_text)} characters")
+            raw_text = response['message']['content']
+            print(f"Raw Llama Response Length: {len(raw_text)} characters")
 
             try:
                 # The response should be a JSON object if response_format is respected

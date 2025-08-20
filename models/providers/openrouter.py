@@ -4,56 +4,57 @@ from openai import OpenAI
 from typing import Dict, Any
 
 from models.core.provider import BaseProvider
-from models.core.common import clean_json_response, image_to_base64_uri
+from models.core.common import load_image, clean_json_response
 
 class OpenRouterProvider(BaseProvider):
-    # TBD: use the json file to get the default model
-    
-    DEFAULT_MODEL = "google/gemini-flash-1.5"
 
     def __init__(self, api_key: str = None):
         super().__init__(api_key)
+        self._setup_client()
+
+    def _setup_client(self):
         self.api_key = self.api_key or os.getenv('OPENROUTER_API_KEY')
         if not self.api_key:
             raise ValueError("No API key provided. Set OPENROUTER_API_KEY or pass api_key parameter.")
         
-        self.client = OpenAI(
-            base_url="https://openrouter.ai/api/v1",
-            api_key=self.api_key,
-        )
-        print("OpenRouter client configured.")
+        self.client = OpenAI(base_url="https://openrouter.ai/api/v1", api_key=self.api_key)
+        print(f"OpenRouter client configured.")
 
     def classify(
         self,
         image_path: str,
         prompt: str,
-        model_name: str = None,
-        temperature: float = 0.1,
+        model_name: str,
+        **kwargs
     ) -> Dict[str, Any]:
-
-        model_to_use = model_name or self.DEFAULT_MODEL
-        print(f"Calling OpenRouter API with model: {model_to_use}...")
-
+        print(f"Calling OpenRouter API with model: {model_name}...")
         try:
-            base64_image_uri = image_to_base64_uri(image_path)
+            # Explicitly define the parameters for the API call
+            api_params = {
+                'temperature': kwargs.get('temperature', 0.1),
+                'max_tokens': kwargs.get('max_tokens', 2048)
+            }
+
+            base64_image = load_image(image_path, return_type="base64")
 
             response = self.client.chat.completions.create(
-                model=model_to_use,
+                model=model_name,
                 messages=[
                     {
                         "role": "user",
                         "content": [
-                            {"type": "text", "text": prompt},
                             {
                                 "type": "image_url",
-                                "image_url": {"url": base64_image_uri},
+                                "image_url": f"data:image/jpeg;base64,{base64_image}",
+                            },
+                            {
+                                "type": "text",
+                                "text": prompt,
                             },
                         ],
                     }
                 ],
-                max_tokens=2048,
-                temperature=temperature,
-                response_format={"type": "json_object"},
+                **api_params
             )
             
             raw_text = response.choices[0].message.content

@@ -5,15 +5,52 @@ from typing import Dict, Any
 from models.core.taxonomy import Taxonomy
 from models.core.provider import BaseProvider
 from models.core.common import calculate_final_confidence
-from models.core.prompts import BASE_PROMPT_TEMPLATE
+from models.core.prompts import FOOD_DETECTION_PROMPT
+from models.providers import get_provider
+
+
+def run_classification(
+    image_path: str,
+    provider_name: str,
+    model_name: str,
+    taxonomy: Taxonomy,
+    api_key: str = None,
+    **kwargs
+) -> Dict[str, Any]:
+    """
+    High-level orchestrator for running a single image classification.
+
+    This function handles:
+    1. Instantiating the correct provider.
+    2. Calling the core `classify_image` function.
+    """
+    try:
+        provider = get_provider(provider_name, api_key)
+        
+        classification_result = classify_image(
+            image_path=image_path,
+            provider=provider,
+            model_name=model_name,
+            taxonomy=taxonomy,
+            **kwargs
+        )
+        return classification_result
+
+    except Exception as e:
+        return {
+            "error": f"An unexpected error occurred: {str(e)}",
+            "image_path": image_path,
+            "model": model_name,
+            "provider": provider_name
+        }
+
 
 def classify_image(
     image_path: str,
     provider: BaseProvider,
     model_name: str,
     taxonomy: Taxonomy,
-    temperature: float = 0.1,
-    fuzzy_threshold: int = 90
+    **kwargs
 ) -> Dict[str, Any]:
     """
     Classifies a single image using a given provider and model.
@@ -27,12 +64,15 @@ def classify_image(
     """
     start_time = time.time()
 
+    # Extract known parameters for this function, with defaults
+    fuzzy_threshold = kwargs.get('fuzzy_threshold', 90)
+
     # 1. Build the prompt from the template
     subcategory_text = taxonomy.build_prompt_text()
-    prompt = BASE_PROMPT_TEMPLATE.format(subcategory_text=subcategory_text)
+    prompt = FOOD_DETECTION_PROMPT.format(subcategory_text=subcategory_text)
 
-    # 2. Call the provider
-    raw_ai_result = provider.classify(image_path, prompt, model_name, temperature=temperature)
+    # 2. Call the provider, passing all remaining kwargs
+    raw_ai_result = provider.classify(image_path, prompt, model_name, **kwargs)
     latency_ms = int((time.time() - start_time) * 1000)
 
     if "error" in raw_ai_result:

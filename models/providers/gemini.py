@@ -24,24 +24,34 @@ class GeminiProvider(BaseProvider):
         self,
         image_path: str,
         prompt: str,
-        model_name: str = "gemini-1.5-flash",
-        temperature: float = 0.1,
+        model_name: str,
+        **kwargs
     ) -> Dict[str, Any]:
         print(f"Calling Gemini API with model: {model_name}...")
         try:
+            # Build the generation config from known parameters in kwargs
+            generation_config = genai.types.GenerationConfig(
+                temperature=kwargs.get('temperature', 0.1),
+                top_p=0.8,
+                max_output_tokens=kwargs.get('max_tokens', 2048),
+                response_mime_type="application/json" 
+            )
+
             image = load_image(image_path)
             model = genai.GenerativeModel(model_name)
 
             response = model.generate_content(
                 [prompt, image],
-                generation_config=genai.types.GenerationConfig(
-                    temperature=temperature,
-                    top_p=0.8,
-                    max_output_tokens=2048,
-                    response_mime_type="application/json" 
-                )
+                generation_config=generation_config
             )
             
+            # Add a check to ensure the response has valid content before accessing .text
+            if not response.parts:
+                finish_reason = response.prompt_feedback.block_reason or "Unknown"
+                error_message = f"Gemini API returned no content, likely due to safety settings or other filters. Finish reason: {finish_reason}"
+                print(error_message)
+                return {"error": error_message, "raw_response": str(response.prompt_feedback)}
+
             raw_text = response.text
             print(f"Raw Gemini Response Length: {len(raw_text)} characters")
 
