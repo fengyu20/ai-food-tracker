@@ -1,5 +1,5 @@
-# TBD: add display name + similar items also for the compare
-
+# TBD: continue to use openrouter to test more images to see if we can run in a batch
+# check the reason, gemini works for a single image but not in a batch?
 import json
 import random
 import argparse
@@ -15,10 +15,11 @@ import pandas as pd
 import numpy as np
 
 from models.core.taxonomy import Taxonomy
-from models.core.validator import validate_against_ground_truth
+from models.core.validator import validate_against_ground_truth, VALIDATION_FUZZY_THRESHOLD
 from models.providers import get_provider
 from models.core.classifier import run_classification
 from models.core.common import load_provider_config
+from models.configs.config import EvaluationConfig
 
 
 class BatchEvaluator:
@@ -57,7 +58,7 @@ class BatchEvaluator:
         return pairs
 
 
-    def evaluate_single_image(self, image_info: Dict[str, str], model_name: str, provider_name: str, model_params: Dict[str, Any]) -> Dict[str, Any]:
+    def evaluate_single_image(self, image_info: Dict[str, str], model_name: str, provider_name: str, model_params: Dict[str, Any], use_fuzzy_matching: bool) -> Dict[str, Any]:
         image_id = image_info['image_id']
         
         try:
@@ -74,10 +75,16 @@ class BatchEvaluator:
             )
 
             # 2. Validate against ground truth (this will now happen even if there's an error)
+            fuzzy_threshold = model_params.get('fuzzy_threshold', VALIDATION_FUZZY_THRESHOLD)
+            if fuzzy_threshold > 1.0:
+                fuzzy_threshold = fuzzy_threshold / 100.0
+                
             validation_result = validate_against_ground_truth(
                 classification_result,
                 image_info['annotation_path'],
-                self.taxonomy
+                self.taxonomy,
+                fuzzy_threshold=fuzzy_threshold,
+                use_fuzzy_matching=use_fuzzy_matching
             )
             
             # 3. Check for errors to log them correctly
@@ -119,7 +126,8 @@ class BatchEvaluator:
         max_workers: int,
         dataset_type: str,
         cli_params: Dict[str, Any],
-        default_params: Dict[str, Any]
+        default_params: Dict[str, Any],
+        use_fuzzy_matching: bool
     ):
 
         print("\n--- Starting Batch Evaluation ---")
@@ -128,6 +136,10 @@ class BatchEvaluator:
         if not image_pairs:
             print("No image pairs found. Aborting evaluation.")
             return
+
+        # --- Temporary file for streaming results ---
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        temp_results_path = self.output_dir / f"temp_results_{timestamp}.jsonl"
 
         tasks = []
         for provider, models in models_by_provider.items():
@@ -144,29 +156,40 @@ class BatchEvaluator:
                         "image_info": image_info,
                         "model_name": model_name,
                         "provider_name": provider,
-                        "model_params": params
+                        "model_params": params,
+                        "use_fuzzy_matching": use_fuzzy_matching
                     })
 
-        all_results = []
-        with ThreadPoolExecutor(max_workers=max_workers) as executor:
-            future_to_task = {executor.submit(self.evaluate_single_image, **task): task for task in tasks}
-            for i, future in enumerate(as_completed(future_to_task), 1):
-                try:
-                    result = future.result()
-                    all_results.append(result)
-                except Exception as e:
-                    task = future_to_task[future]
-                    print(f"A task generated an exception: {task['image_info']['image_id']} with {task['model_name']}: {e}")
-                finally:
-                    print(f"--- Progress: {i}/{len(tasks)} tasks completed ---")
+        with temp_results_path.open('w') as f_out:
+            with ThreadPoolExecutor(max_workers=max_workers) as executor:
+                future_to_task = {executor.submit(self.evaluate_single_image, **task): task for task in tasks}
+                for i, future in enumerate(as_completed(future_to_task), 1):
+                    try:
+                        result = future.result()
+                        # Write result as a JSON line to the temporary file
+                        f_out.write(json.dumps(result) + '\n')
+                    except Exception as e:
+                        task = future_to_task[future]
+                        print(f"A task generated an exception: {task['image_info']['image_id']} with {task['model_name']}: {e}")
+                    finally:
+                        print(f"--- Progress: {i}/{len(tasks)} tasks completed ---")
         
         print("\n--- Batch Evaluation Complete ---")
-        self.analyze_results(all_results)
+        self.analyze_results(temp_results_path)
 
-    def analyze_results(self, results: List[Dict[str, Any]]):
+        # Clean up the temporary file
+        temp_results_path.unlink()
 
+    def analyze_results(self, results_path: Path):
         print("Analyzing results and generating report...")
         
+        try:
+            with results_path.open('r') as f:
+                results = [json.loads(line) for line in f if line.strip()]
+        except FileNotFoundError:
+            print("No results file found to analyze.")
+            return
+
         if not results:
             print("No results to analyze.")
             return
@@ -189,18 +212,21 @@ class BatchEvaluator:
             if 'error' in classification_res:
                 df_data[image_id][f'{model_name}_detected_items'] = "ERROR"
                 df_data[image_id][f'{model_name}_raw_response'] = classification_res['error']
+                # On error, metrics are 0 and latency might be present or 0
+                df_data[image_id][f'{model_name}_f1_score'] = 0.0
+                df_data[image_id][f'{model_name}_precision'] = 0.0
+                df_data[image_id][f'{model_name}_recall'] = 0.0
+                df_data[image_id][f'{model_name}_latency_ms'] = classification_res.get('latency_ms', 0)
             else:
                 detected_items = classification_res.get('detected_items', [])
                 detected_subcategories = [item['subcategory'] for item in detected_items]
                 df_data[image_id][f'{model_name}_detected_items'] = ', '.join(sorted(detected_subcategories))
                 df_data[image_id][f'{model_name}_raw_response'] = json.dumps(classification_res.get('raw_response'))
-
-            # These metrics are now always present, defaulting to 0.0 on error from validator
-            metrics = res['validation'].get('validation_results', {}).get('accuracy_metrics', {})
-            df_data[image_id][f'{model_name}_f1_score'] = metrics.get('f1_score', 0.0)
-            df_data[image_id][f'{model_name}_precision'] = metrics.get('precision', 0.0)
-            df_data[image_id][f'{model_name}_recall'] = metrics.get('recall', 0.0)
-            df_data[image_id][f'{model_name}_latency_ms'] = classification_res.get('latency_ms', 0)
+                metrics = res['validation'].get('validation_results', {}).get('accuracy_metrics', {})
+                df_data[image_id][f'{model_name}_f1_score'] = metrics.get('f1_score', 0.0)
+                df_data[image_id][f'{model_name}_precision'] = metrics.get('precision', 0.0)
+                df_data[image_id][f'{model_name}_recall'] = metrics.get('recall', 0.0)
+                df_data[image_id][f'{model_name}_latency_ms'] = classification_res.get('latency_ms', 0)
 
         # Convert the dictionary to a DataFrame
         report_df = pd.DataFrame.from_dict(df_data, orient='index')
@@ -218,31 +244,48 @@ class BatchEvaluator:
                 f'{model}_raw_response'
             ])
         
-        # Ensure all columns exist, fill missing with None
         report_df = report_df.reindex(columns=cols)
 
-        # Add a final row with the average of all numeric columns for easy comparison
-        report_df.loc['--- AVERAGES ---'] = report_df.mean(numeric_only=True)
+        # --- AVERAGES ROW (based on successful runs only) ---
+        averages = {}
+        for model in models:
+            # Identify successful runs (not errored)
+            error_mask = report_df[f'{model}_detected_items'] == "ERROR"
+            successful_runs = report_df[~error_mask]
+            
+            if not successful_runs.empty:
+                for metric in ['f1_score', 'precision', 'recall', 'latency_ms']:
+                    col_name = f'{model}_{metric}'
+                    averages[col_name] = successful_runs[col_name].mean()
+            else: # If a model failed on all images
+                 for metric in ['f1_score', 'precision', 'recall', 'latency_ms']:
+                    averages[f'{model}_{metric}'] = 0
+        
+        report_df.loc['--- AVERAGES ---'] = pd.Series(averages)
 
-        # --- Generate Summary Report ---
+        # --- SUMMARY REPORT (separating success rate from accuracy) ---
         summary_data = []
         total_images = len(report_df.index) - 1 # Exclude average row
 
         for model in models:
-            error_count = report_df[f'{model}_detected_items'].str.contains("ERROR", na=False).sum()
-            success_count = total_images - error_count
+            error_mask = report_df[f'{model}_detected_items'].iloc[:-1] == "ERROR"
+            successful_runs = report_df.iloc[:-1][~error_mask]
             
-            summary_data.append({
+            success_count = len(successful_runs)
+            
+            summary_item = {
                 "Model": model,
-                "Average F1 Score": report_df[f'{model}_f1_score'].mean(),
-                "Average Precision": report_df[f'{model}_precision'].mean(),
-                "Average Recall": report_df[f'{model}_recall'].mean(),
-                "Average Latency (ms)": report_df[f'{model}_latency_ms'].mean(),
                 "Success Rate (%)": (success_count / total_images) * 100 if total_images > 0 else 0,
-                "Total Images": total_images
-            })
+                "Successful Evals": f"{success_count}/{total_images}",
+                "Avg F1 (on success)": successful_runs[f'{model}_f1_score'].mean() if success_count > 0 else 0,
+                "Avg Precision (on success)": successful_runs[f'{model}_precision'].mean() if success_count > 0 else 0,
+                "Avg Recall (on success)": successful_runs[f'{model}_recall'].mean() if success_count > 0 else 0,
+                "Avg Latency (on success, ms)": successful_runs[f'{model}_latency_ms'].mean() if success_count > 0 else 0,
+            }
+            summary_data.append(summary_item)
 
         summary_df = pd.DataFrame(summary_data)
+        
         # Save the reports
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         
@@ -264,33 +307,37 @@ class BatchEvaluator:
 def main():
     """Main function to run the batch evaluation from the command line."""
     parser = argparse.ArgumentParser(description="Run batch evaluation for food classification models.")
-
-    config = load_provider_config()
-    all_providers_available = list(config['providers'].keys())
-    
-    parser.add_argument("--validation_dir", default="content/extracted_food_recognition/validation", help="Path to the validation dataset directory.")
-    parser.add_argument("--training_dir", default="content/extracted_food_recognition/training", help="Path to the training dataset directory.")
-    parser.add_argument("--output_dir", default="output/evaluation_reports", help="Directory to save evaluation reports.")
-    parser.add_argument("--dataset_type", default="validation", choices=['validation', 'training'], help="Which dataset to use for evaluation.")
-    
-    parser.add_argument("--max_images", type=int, default=10, help="Maximum number of images to process. If None, all images are used.")
-    parser.add_argument("--max_workers", type=int, default=4, help="Maximum number of parallel threads.")
-
-    # Simplified provider selection
-    parser.add_argument("--providers", nargs='+', default=all_providers_available, help="List of providers to evaluate. If not specified, all available providers will be used.")
-    parser.add_argument("--api_key", help="API key, if required by any of the providers.")
-
-    parser.add_argument("--temperature", type=float, help="Default generation temperature. Overrides config file.")
-    parser.add_argument("--fuzzy_threshold", type=int, help="Default fuzzy matching threshold. Overrides config file.")
-    parser.add_argument("--max_tokens", type=int, help="Default max output tokens. Overrides config file.")
+    parser.add_argument(
+        "--config", 
+        default="models/configs/evaluation_config.yml", 
+        help="Path to the evaluation config YAML file."
+    )
+    # Allow overriding specific config values via CLI
+    parser.add_argument("--max_images", type=int, help="Override max_images from config.")
+    parser.add_argument("--providers", nargs='+', help="Override list of providers from config.")
 
     args = parser.parse_args()
 
-    # Build the list of models to evaluate based on the selected providers
-    models_by_provider = {}
-    provider_configs = config['providers']
+    # Load base configuration from YAML
+    config = EvaluationConfig.from_yaml(args.config)
 
-    for provider in args.providers:
+    # --- Override config with CLI arguments if provided ---
+    if args.max_images is not None:
+        config.max_images = args.max_images
+    if args.providers is not None:
+        config.providers = args.providers
+
+    # Load provider-specific model configurations
+    provider_model_config = load_provider_config()
+    all_providers_available = list(provider_model_config['providers'].keys())
+    
+    # Determine which providers to use
+    providers_to_run = config.providers or all_providers_available
+
+    # Build the list of models to evaluate
+    models_by_provider = {}
+    provider_configs = provider_model_config['providers']
+    for provider in providers_to_run:
         if provider in provider_configs:
             model_list = []
             for item in provider_configs[provider]:
@@ -305,30 +352,27 @@ def main():
     if not models_by_provider:
         raise ValueError("No valid providers selected or no models found for the selected providers.")
         
-    # Collect CLI parameters that can override configs. Filter out None values.
-    cli_params = {
-        "temperature": args.temperature,
-        "fuzzy_threshold": args.fuzzy_threshold,
-        "max_tokens": args.max_tokens
-    }
-    cli_params = {k: v for k, v in cli_params.items() if v is not None}
+    # CLI parameters are now just for overrides, the base comes from the config object
+    cli_params = config.default_model_parameters
 
     evaluator = BatchEvaluator(
-        validation_dir=args.validation_dir,
-        training_dir=args.training_dir,
-        output_dir=args.output_dir,
-        api_key=args.api_key
+        validation_dir=config.validation_dir,
+        training_dir=config.training_dir,
+        output_dir=config.output_dir,
+        api_key=config.api_key
     )
+
+    use_fuzzy = not cli_params.get('disable_fuzzy_matching', False)
 
     evaluator.run_batch_evaluation(
         models_by_provider=models_by_provider,
-        max_images=args.max_images,
-        max_workers=args.max_workers,
-        dataset_type=args.dataset_type,
+        max_images=config.max_images,
+        max_workers=config.max_workers,
+        dataset_type=config.dataset_type,
         cli_params=cli_params,
-        default_params=config.get('default_parameters', {})
+        default_params=config.default_model_parameters,
+        use_fuzzy_matching=use_fuzzy
     )
-
 
 if __name__ == "__main__":
     main()

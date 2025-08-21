@@ -87,7 +87,9 @@ def classify_image(
         }
 
     # 3. Process the response - convert percentage threshold to decimal
-    fuzzy_threshold_decimal = fuzzy_threshold / 100.0
+    raw_fuzzy = kwargs.get('fuzzy_threshold', 0.8)  # default as decimal for clarity
+    fuzzy_threshold_decimal = (raw_fuzzy / 100.0) if raw_fuzzy > 1.0 else raw_fuzzy
+
     validated_items, unlisted_foods = taxonomy.process_ai_response(
         raw_ai_result.get("detected_foods", []),
         fuzzy_threshold_decimal

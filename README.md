@@ -31,12 +31,64 @@ The dataset contains 43,962 images with 95,009 labeled objects across 498 food c
 
 ## Model Details
 
-### Object Detection: YOLO Training
+### LLM: Large Language Models
 
+After using YOLO to get rudimentary results, I realized that it would be hard to utilize without extensive training to get suitable weights. Also, going back to the dataset website itself, even the [prize winners](https://www.aicrowd.com/challenges/food-recognition-benchmark-2022/leaderboards) didn’t achieve the desired precision rate.  
+
+But when I tried uploading the food image to different LLMs, they generally returned accurate results. So this project switched to the LLM approach.  
+
+#### File Structure
+```
+models/                          # LLM-based food image classification
+├── classify.py                  # Classify single food image
+├── evaluate.py                  # Batch evaluation with performance reports
+│
+├── core/                        # Core classification system
+│   ├── classifier.py           # Main classification orchestrator
+│   ├── taxonomy.py             # Food category matching and validation
+│   ├── prompts.py              # Prompts
+│   ├── provider.py             # Abstract provider interface
+│   ├── validator.py            # Ground truth comparison
+│   ├── common.py               # Shared utilities and helpers
+│   └── settings.py             # Configuration paths and constants
+│
+├── providers/                   # LLM providers
+│   ├── gemini.py               # Google Gemini API
+│   ├── openrouter.py           # OpenRouter API  
+│   └── llama.py                # Local Ollama/Llama models
+│
+├── utils/                       # Taxonomy building utilities
+│   ├── common.py               # Normalization and CLI helpers
+│   ├── populate_taxonomy.py    # Generate initial food taxonomy
+│   └── refine_taxonomy.py      # Multi-model taxonomy refinement
+│
+└── configs/
+    └── provider_config.json    # Model parameters and settings
+```
+
+#### Providers  
+1. **Local LLM - Llama**: In the beginning, I tried to use a local LLM. However, the training also relies on a GPU machine, which I do not have. So for testing, I recommend only using the classify module to test a single image.  
+2. **Single Provider - Gemini**: Google Gemini offers free-tier API use, therefore it is suitable for debug testing.  
+3. **Multiple Providers - OpenRouter**: After discussing with my mentor, James, from WISJ Summer School, he also recommended using OpenRouter, which is convenient as it provides a central hub to call different LLM providers, charging a small service fee (8%).  
+
+#### How to
+Please first export your own gemini / openrouter key in your local env.
+```
+export OPENROUTER_API_KEY="your_key"
+export GEMINI_API_KEY="your_key"
+```
+
+Then run the following commands:
+- Signle image testing: `python -m models.classify path/to/image.jpg --provider gemini`
+- Batch evaluation: `python -m models.evaluate --providers gemini openrouter`
+    - *Note*: This command will use models provided in [the config file](/models/configs/provider_config.json), update if needed.
+
+
+### Object Detection: YOLO Training
 
 YOLO stands for "You Only Look Once," which is a famous object detection model.
 
-This project uses yolov11m as the base model, and you can find all the details in this Jupyter notebook. 
+This project uses yolov11m as the base model, and you can find all the details in [this Jupyter notebook](/yolo_training.ipynb). 
 
 It contains the following sections:
 0. **Environment setup**
@@ -91,17 +143,6 @@ For YOLO training, it’s important to let YOLO know your training targets. In o
 #### 3. YOLO Training
 This part selects the suitable training model, parameters, and starts training. The best model will be saved as best.pt.
 
-
-### LLM: large language models
-
-### Local LLM: Llama
-
-
-### Single Provider: Gemini 
-
-`pip install google-generativeai`
-
-### Multiple Providers: Openrouter
 
 ## Evaluation
 

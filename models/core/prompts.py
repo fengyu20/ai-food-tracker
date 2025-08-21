@@ -2,13 +2,27 @@ FOOD_DETECTION_PROMPT = """
 You are an expert food identification AI. Analyze the provided image and identify ALL specific food items using the exact subcategory names from the comprehensive list below. Your entire output must be the raw JSON.
 
 ## CRITICAL RULES:
-1. **Analyze the image thoroughly** and identify ALL food items you can see
-2. Your response MUST be a valid JSON object with NO extra text or markdown
-3. **Use EXACT subcategory names** from the list below - be as specific as possible
-4. **If you see multiple items**, list them all
-5. **Look for both prepared dishes AND individual ingredients**
-6. **Prioritize specificity** - choose the most specific subcategory that matches what you see
-7. **Be conservative but thorough** - only include items you can clearly identify
+1. **Systematically scan the entire image**, from corner to corner. Identify every single food item visible, no matter how small or partially obscured. This includes main dishes, side items, ingredients, sauces, condiments, garnishes, and beverages.
+2. Your response MUST be a valid JSON object with NO extra text or markdown.
+3. **Use the EXACT subcategory name** from the list below for each item you identify. Do not invent new names.
+4. **Composite-first approach**: If a composite dish subcategory exists in the list and is identifiable, output the composite dish. Additionally, list any ingredients that are clearly visible as distinct, separate items alongside the composite dish (not merely components integrated into the dish). If no suitable composite subcategory exists, decompose the visible dish into ingredients using exact subcategories.
+5. **Prioritize specificity (with caution)**: Always choose the most specific subcategory that you can confidently identify. If you are only confident in a more general aspect (e.g., you can identify 'butter' but not 'herb-butter'), select the most general appropriate category from the list. Do not guess specifics.
+6. **Be conservative but thorough**: Only include items you can reasonably identify. If uncertain about the exact type, choose the broader category but still include the item with lower confidence.
+7. **Check backgrounds and edges**: Food items may be partially visible at image edges or in the background of plates/bowls.
+8. **Look for layers**: In layered foods (sandwiches, lasagna, etc.), identify ingredients in each visible layer only if no composite dish category applies.
+
+## SYSTEMATIC SCANNING PROCESS:
+- **Step 1**: Identify the main/central food items
+- **Step 2**: Scan all visible surfaces of plates, bowls, and containers
+- **Step 3**: Check for small items: herbs, spices, seeds, nuts, berries
+- **Step 4**: Look for liquids: sauces, dressings, beverages, oils
+- **Step 5**: Examine any garnishes or decorative elements
+- **Step 6**: Check image corners and partially visible items
+
+## CONFIDENCE LEVELS:
+- **"high"**: Item is clearly visible and easily identifiable (>90% certain)
+- **"medium"**: Item is visible but some uncertainty about exact type (70-90% certain)  
+- **"low"**: Item is partially obscured or difficult to distinguish but likely present (50-70% certain)
 
 ## COMPLETE SUBCATEGORY LIST (organized by category):
 {subcategory_text}
@@ -17,39 +31,45 @@ You are an expert food identification AI. Analyze the provided image and identif
 {{
     "detected_foods": [
         {{
-            "subcategory": "bread-sourdough",
+            "subcategory": "exact-name-1-from-list",
             "confidence": "high",
-            "reasoning": "Clear sourdough bread with characteristic thick crust and open crumb structure"
+            "reasoning": "brief visual justification (max ~160 chars)"
         }},
         {{
-            "subcategory": "cheddar",
+            "subcategory": "exact-name-2-from-list",
             "confidence": "medium", 
-            "reasoning": "Yellow cheese slice, appears to be cheddar based on color and texture"
+            "reasoning": "brief visual justification (max ~160 chars)"
+        {{
+            "subcategory": "lettuce",
+            "confidence": "high",
+            "reasoning": "brief visual justification (max ~160 chars)"
         }}
     ],
     "overall_confidence": "high",
-    "description": "Sandwich with sourdough bread and cheddar cheese clearly visible"
+    "description": "brief visual justification (max ~160 chars)"
 }}
 
 ## VISUAL ANALYSIS TIPS:
-- **Texture**: smooth, rough, crispy, soft, creamy, grainy, fibrous
-- **Color**: exact shades, natural vs processed coloring
-- **Shape**: specific forms, cuts, natural vs manufactured
-- **Size**: grain size, piece size, relative proportions  
-- **Preparation**: raw, cooked, grilled, fried, steamed
-- **Context**: how is it presented, mixed with other ingredients?
+- **Texture**: smooth, rough, crispy, soft, creamy, grainy, fibrous, flaky
+- **Color**: exact shades, natural vs processed coloring, variations within item
+- **Shape**: specific forms, cuts, natural vs manufactured, geometric patterns
+- **Size**: grain size, piece size, relative proportions, thickness
+- **Preparation**: raw, cooked, grilled, fried, steamed, roasted, dried
+- **Context**: presentation style, mixing with other ingredients, serving method
+- **Surface details**: seeds, seasonings, char marks, browning patterns
 
 ## COMMON IDENTIFIERS:
-- **Bread types**: Look for crust thickness, color, texture, seeds
-- **Rice varieties**: Grain length, color (white/brown), texture
-- **Cheese types**: Color, texture, holes, aging marks
-- **Vegetables**: Fresh vs cooked, leaf shape, color intensity
-- **Meat types**: Color, texture, cut, preparation method
+- **Bread types**: Crust thickness/color, internal texture, seeds, shape
+- **Rice varieties**: Grain length, color (white/brown/wild), stickiness
+- **Cheese types**: Color, texture, holes, aging marks, melting state
+- **Vegetables**: Fresh vs cooked, leaf shape, color intensity, cut style
+- **Meat types**: Color, texture, cut, preparation method, marbling
+- **Fruits**: Ripeness, cut style, skin presence, color variations
+- **Sauces**: Consistency, color, visible ingredients/particles
 
 ## TASK:
-Analyze the provided image and return ONLY the raw JSON object detailing your findings.
+Analyze the provided image and return ONLY the raw JSON object detailing your findings. Remember to scan systematically and identify every visible food item.
 """
-
 
 FOOD_POPULATE_PROMPT = """
 You are an expert food ontologist creating ground truth data for image recognition systems. For each food item provided, perform these two tasks:
@@ -102,92 +122,6 @@ You are an expert food ontologist creating ground truth data for image recogniti
 Focus on creating reliable ground truth for image recognition - prioritize what would actually be confused in photographs over abstract food relationships.
 """
 
-FOOD_SYNTHESIZE_PROMPT = """
-You are an expert food taxonomist creating the definitive classification for "{item_name}" by synthesizing two expert opinions for food image recognition ground truth.
-
-## EXPERT OPINIONS:
-
-**EXPERT 1 (BASE):**
-- Category: {base_category}
-- Similar Items: {base_similar}
-
-**EXPERT 2 (CHALLENGER):**
-- Category: {challenger_category}
-- Similar Items: {challenger_similar}
-
-## SYNTHESIS METHODOLOGY:
-
-**Category Decision Framework:**
-1. If categories are identical → use that category
-2. If categories differ:
-   - Choose the more specific category when both are valid
-   - For preparation conflicts: prioritize the preparation state that's more visually obvious
-   - For hierarchical conflicts: choose based on primary visual characteristics
-   - When uncertain: default to the category that better serves image recognition
-
-**Similar Items Synthesis:**
-1. **Merge and deduplicate** all similar items from both experts
-2. **Score each item** by these criteria:
-   - Visual similarity in photos (highest weight)
-   - Linguistic correctness and common usage
-   - Relevance for image recognition confusion
-3. **Select top 6 items** based on scores
-4. **Remove**: duplicates, self-references, non-English terms, brand names
-
-**Quality Validation:**
-- Final similar_items must be lowercase English terms
-- Each item should answer: "Could this be confused with {item_name} in a photo?"
-- Items should help improve image recognition accuracy
-
-## DECISION LOGIC:
-- **Agreement**: When experts agree, validate their choice
-- **Disagreement**: Synthesize based on which opinion better serves image recognition
-- **Quality over quantity**: Better to have 3 perfect items than 6 mediocre ones
-
-## VALID CATEGORIES:
-{parent_categories_str}
-
-## OUTPUT REQUIREMENT:
-Provide ONLY the final JSON synthesis:
-{{"parent_category": "Final Category", "similar_items": ["synthesized1", "synthesized2", "synthesized3"]}}
-
-Create the most accurate and useful classification for "{item_name}" image recognition ground truth."""
-
-
-FOOD_CHALLENGER_PROMPT = """
-You are a critical food classification expert tasked with reviewing and potentially challenging an existing classification for "{item_name}".
-
-## EXISTING CLASSIFICATION TO REVIEW:
-**Current Category**: {base_category}
-**Current Similar Items**: {base_similar}
-
-## YOUR TASK:
-Critically evaluate the existing classification and provide an alternative if you identify issues:
-
-**Category Challenge Criteria:**
-- Is the category too broad/narrow for the item?
-- Does the preparation state suggest a different category?
-- Is there a more accurate category match?
-
-**Similar Items Challenge Criteria:**
-- Are the items actually visually similar in photos?
-- Are important visual lookalikes missing?
-- Are any items inappropriate for image recognition?
-- Do items follow the visual similarity priority?
-
-**Challenge Guidelines:**
-- ONLY disagree if you have good reason
-- Focus on visual similarity for image recognition context
-- Consider how this item typically appears in photos
-
-## VALID PARENT CATEGORIES:
-{parent_categories_list}
-
-## RESPONSE FORMAT:
-Provide your classification (whether agreeing or challenging):
-{{"parent_category": "Your Category Choice", "similar_items": ["item1", "item2", "item3", "item4", "item5"]}}
-
-Remember: You're challenging for IMPROVEMENT, not just to be different."""
 
 FOOD_NAME_SIMPLIFIER_PROMPT = """
 You are a food naming expert. Convert the technical food item name into a natural, user-friendly display name that people would recognize.
@@ -217,11 +151,10 @@ You are a food naming expert. Convert the technical food item name into a natura
 Respond with valid JSON only:
 {{"display_name": "simplified name"}}"""
 
-
 FOOD_CHALLENGER_BATCH_PROMPT = """You are a critical food classification expert tasked with reviewing and potentially challenging existing classifications for multiple food items.
 
 ## YOUR TASK:
-For each item below, critically evaluate the existing classification and provide an alternative ONLY if you identify issues. Your goal is IMPROVEMENT, not just being different.
+For each item below, critically evaluate the existing classification and provide an alternative ONLY if you identify meaningful issues that would improve image recognition accuracy.
 
 ## CHALLENGE CRITERIA:
 **Category Challenges:**
@@ -229,18 +162,25 @@ For each item below, critically evaluate the existing classification and provide
 - Does the preparation state suggest a different category?
 - Is there a more accurate category match?
 
-**Similar Items Challenges:**
-- Are the items actually visually similar in photos?
-- Are important visual lookalikes missing?
-- Are any items inappropriate for image recognition?
-- Do items follow visual similarity priority over conceptual similarity?
+**Similar Items Challenges (Focus on Visual Recognition):**
+- Are there visually similar items missing that would confuse image recognition?
+- Are any current items too generic ("candy", "sweet") or irrelevant?
+- Would swapping items significantly improve visual similarity?
+- Are items at the right level of specificity for image recognition?
+- Do items represent what people would actually see in photos?
+
+## QUALITY STANDARDS:
+- Use consistent lowercase-with-hyphens formatting: "chocolate-chip-cookie"
+- Avoid overly generic terms: prefer "chocolate-candies" over "candy"
+- Avoid brand names unless they represent a distinct visual category
+- Focus on items that would genuinely help distinguish this food in photos
+- Each similar item should answer: "Could this realistically be confused with [target] in a photo?"
 
 ## CHALLENGE GUIDELINES:
-- ONLY disagree if you have good reason - agreement is perfectly valid
-- Focus on visual similarity for image recognition context
-- Consider how each item typically appears in photos
-- Evaluate each item independently
-- Prioritize visual lookalikes that would confuse image recognition
+- ONLY disagree if you have substantial reasoning for improvement
+- Focus on semantic/visual improvements, not just formatting consistency
+- Agreement with existing classifications is encouraged when they are already good
+- Consider: "Would this change actually help image recognition accuracy?"
 
 ## VALID PARENT CATEGORIES:
 {parent_categories_list}
@@ -249,14 +189,12 @@ For each item below, critically evaluate the existing classification and provide
 {items_to_review_str}
 
 ## RESPONSE FORMAT (JSON ONLY):
-Your entire response must be a single JSON object with a key for each item name:
 {{
   "item-name-1": {{"parent_category": "Your Category Choice", "similar_items": ["item1", "item2", "item3", "item4", "item5"]}},
   "item-name-2": {{"parent_category": "Your Category Choice", "similar_items": ["item1", "item2", "item3", "item4", "item5"]}}
 }}
 
-Remember: You're challenging for IMPROVEMENT. Agreement with existing classifications is encouraged when they are already good."""
-
+Challenge only for MEANINGFUL improvements that enhance image recognition capability."""
 
 FOOD_SYNTHESIZE_BATCH_PROMPT = """You are an expert food taxonomist creating definitive classifications by synthesizing expert opinions for food image recognition ground truth.
 
@@ -270,24 +208,28 @@ FOOD_SYNTHESIZE_BATCH_PROMPT = """You are an expert food taxonomist creating def
    - For hierarchical conflicts: choose based on primary visual characteristics
    - When uncertain: default to the category that better serves image recognition
 
-**Similar Items Synthesis:**
-1. **Merge and deduplicate** all similar items from both experts
-2. **Score each item** by these criteria:
-   - Visual similarity in photos (highest weight)
-   - Linguistic correctness and common usage
-   - Relevance for image recognition confusion
-3. **Select top 6 items** based on scores
-4. **Remove**: duplicates, self-references, non-English terms, brand names
+**Similar Items Synthesis (CRITICAL FOR IMAGE RECOGNITION):**
+1. **Normalize formatting**: Convert all items to consistent lowercase-with-hyphens format
+2. **Merge semantically unique items**: Treat "chocolate candies" and "chocolate-candies" as the same
+3. **Quality filter**: Remove overly generic terms ("candy", "sweet"), brand names (unless visually distinct), and non-descriptive items
+4. **Score remaining items** by:
+   - Visual similarity in photos (highest weight) - "Would this confuse image recognition?"
+   - Specificity and descriptiveness for identification
+   - Practical relevance for distinguishing the target food
+5. **Select top 4-6 items** based on scores
+6. **Final validation**: Each item should represent something that could realistically be confused with the target in a photo
 
-**Quality Validation:**
-- Final similar_items must be lowercase English terms
-- Each item should answer: "Could this be confused with [item_name] in a photo?"
-- Items should help improve image recognition accuracy
+**Quality Standards:**
+- Prefer specific over generic: "chocolate-chip-cookies" over "cookies"
+- Ensure visual relevance: items should look similar in typical food photos
+- Maintain practical utility: focus on common visual confusion cases
+- Use consistent formatting: lowercase-with-hyphens
 
 ## DECISION LOGIC:
-- **Agreement**: When experts agree, validate their choice
-- **Disagreement**: Synthesize based on which opinion better serves image recognition
-- **Quality over quantity**: Better to have 3 perfect items than 6 mediocre ones
+- **Format-only differences**: Normalize and merge, select best version
+- **Semantic disagreements**: Choose based on visual similarity and image recognition utility
+- **Quality over quantity**: Better to have 4 excellent items than 6 mediocre ones
+- **Visual focus**: Every item should help train better image recognition
 
 ## VALID CATEGORIES:
 {parent_categories_str}
@@ -296,10 +238,9 @@ FOOD_SYNTHESIZE_BATCH_PROMPT = """You are an expert food taxonomist creating def
 {items_to_synthesize_str}
 
 ## RESPONSE FORMAT (JSON ONLY):
-Your entire response must be a single JSON object with a key for each item name:
 {{
-  "item-name-1": {{"parent_category": "Final Category", "similar_items": ["synthesized1", "synthesized2", "synthesized3"]}},
-  "item-name-2": {{"parent_category": "Final Category", "similar_items": ["synthesized1", "synthesized2", "synthesized3"]}}
+  "item-name-1": {{"parent_category": "Final Category", "similar_items": ["specific-item1", "specific-item2", "specific-item3", "specific-item4"]}},
+  "item-name-2": {{"parent_category": "Final Category", "similar_items": ["specific-item1", "specific-item2", "specific-item3", "specific-item4"]}}
 }}
 
-Create the most accurate and useful classifications for image recognition ground truth. Synthesize each item independently using the methodology above."""
+Create the most accurate classifications for image recognition. Prioritize visual similarity and practical utility for food identification in photos."""

@@ -10,7 +10,25 @@ def main():
     config = load_provider_config()
     provider_settings = config['providers']
     available_providers = list(provider_settings.keys())
-    default_params = config.get('default_parameters', {})
+    import argparse
+import json
+
+from models.core.taxonomy import Taxonomy
+from models.core.classifier import run_classification
+from models.core.common import load_provider_config
+from models.configs.config import EvaluationConfig
+
+def main():
+
+    config = load_provider_config()
+    provider_settings = config['providers']
+    available_providers = list(provider_settings.keys())
+
+    try:
+        eval_cfg = EvaluationConfig.from_yaml('models/configs/evaluation_config.yml')
+        default_params = eval_cfg.default_model_parameters or {}
+    except Exception:
+        default_params = config.get('default_parameters', {})
     
     parser = argparse.ArgumentParser(description="Classify a single food image.")
     parser.add_argument("image_path", help="Path to the input image")

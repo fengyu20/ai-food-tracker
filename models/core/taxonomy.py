@@ -2,9 +2,10 @@ import json
 import re
 from difflib import get_close_matches, SequenceMatcher
 from typing import Dict, Any, List, Tuple, Optional
+from functools import lru_cache
 
-# Import the centralized settings
 from .settings import REFINED_TAXONOMY_FILE
+from models.utils.common import normalize_item_name
 
 # Single source of truth for the parent categories
 PARENT_CATEGORIES: List[str] = [
@@ -70,13 +71,34 @@ class Taxonomy:
             self.parent_categories = list(self.mapping.keys())
             self.all_subcategories = []
             self.subcategory_to_parent = {}
+            self.item_details = {}
+            self.by_normalized = {}
 
-            for parent, subcategories in self.mapping.items():
-                for subcategory in subcategories:
-                    self.all_subcategories.append(subcategory)
-                    self.subcategory_to_parent[subcategory] = parent
+            for parent, items in self.mapping.items():
+                for entry in items:
+                    if isinstance(entry, dict):
+                        name = (entry.get("name") or "").strip()
+                        display_name = (entry.get("display_name") or name).strip()
+                        similar_items = entry.get("similar_items", []) or []
+                    else:
+                        name = str(entry).strip()
+                        display_name = name
+                        similar_items = []
 
-            print(f"Taxonomy loaded: {len(self.parent_categories)} parent categories, {len(self.all_subcategories)} subcategories.")
+                    if not name:
+                        continue
+
+                    self.all_subcategories.append(name)
+                    self.subcategory_to_parent[name] = parent
+                    self.item_details[name] = {
+                        "display_name": display_name,
+                        "similar_items": similar_items,
+                        "parent_category": parent
+                    }
+
+                    self.by_normalized[normalize_item_name(name)] = name
+                    if display_name:
+                        self.by_normalized[normalize_item_name(display_name)] = name
         except Exception as e:
             print(f"Critical Error: Failed to load taxonomy from {mapping_file}: {e}")
             self.mapping = {}
@@ -85,15 +107,14 @@ class Taxonomy:
             self.subcategory_to_parent = {}
 
     def build_prompt_text(self) -> str:
-
         if not self.mapping:
             return "No categories available."
 
         text = ""
-        for parent, subcategories in self.mapping.items():
+        for parent, items in self.mapping.items():
             text += f"\n{parent}:\n"
-            text += ", ".join(subcategories)
-            text += "\n"
+            names = [(it["name"] if isinstance(it, dict) else str(it)) for it in items]
+            text += ", ".join(names) + "\n"
         return text
 
     def get_parent_for_subcategory(self, subcategory: str) -> Optional[str]:
@@ -125,64 +146,68 @@ class Taxonomy:
                 unlisted_foods.append(unlisted_item)
 
         return validated_items, unlisted_foods
+    
+    def get_item(self, query: str) -> Optional[Dict[str, Any]]:
+        if not query:
+            return None
+        key = self.by_normalized.get(normalize_item_name(query))
+        if not key:
+            return None
+        item = self.item_details.get(key, {}).copy()
+        if not item:
+            return None
+        item["name"] = key
+        item["parent_category"] = self.subcategory_to_parent.get(key)
+        return item
 
-    def _find_match(
-        self,
-        ai_output: str,
-        confidence: str,
-        reasoning: str,
-        threshold: float
-    ) -> Tuple[Optional[Dict[str, Any]], Optional[Dict[str, Any]]]:
-        """
-        Process the AI result to find the best match.
-        """
-        # 1. Exact Match (case-insensitive)
-        cleaned_output = ai_output.strip().lower()
-        if ai_output in self.all_subcategories:
-            parent = self.get_parent_for_subcategory(ai_output)
-            print(f"  EXACT MATCH: {parent} -> {ai_output}")
+    @lru_cache(maxsize=4096)
+    def _find_match(self, ai_output: str, confidence: str, reasoning: str, threshold: float) -> Tuple[Optional[Dict[str, Any]], Optional[Dict[str, Any]]]:
+        cleaned_output = (ai_output or "").strip()
+        norm = normalize_item_name(cleaned_output)
+
+        # 1) Direct normalized lookup
+        canonical = self.by_normalized.get(norm)
+        if canonical:
+            parent = self.get_parent_for_subcategory(canonical)
             return ({
                 "parent_category": parent,
-                "subcategory": ai_output,
+                "subcategory": canonical,
                 "confidence": confidence,
                 "reasoning": reasoning,
                 "match_type": "exact"
             }, None)
 
-        # 2. Fuzzy Match
-        matches = get_close_matches(cleaned_output,
-                                    [sub.lower() for sub in self.all_subcategories],
-                                    n=1, cutoff=threshold)
+        # 2) Fuzzy on normalized names
+        norm_names = [normalize_item_name(s) for s in self.all_subcategories]
+        matches = get_close_matches(norm, norm_names, n=1, cutoff=threshold)
         if matches:
-            matched_lower = matches[0]
-            # Find original case version
-            for sub in self.all_subcategories:
-                if sub.lower() == matched_lower:
-                    similarity = SequenceMatcher(None, cleaned_output, matched_lower).ratio()
-                    adjusted_confidence = self._adjust_confidence(confidence, similarity)
-                    parent = self.get_parent_for_subcategory(sub)
-                    print(f" FUZZY MATCH: {ai_output} -> {sub} (sim: {similarity:.2f})")
-                    return ({
-                        "parent_category": parent,
-                        "subcategory": sub,
-                        "confidence": adjusted_confidence,
-                        "reasoning": f"{reasoning} (Fuzzy matched from '{ai_output}', similarity: {similarity:.2f})",
-                        "match_type": "fuzzy",
-                        "original_ai_output": ai_output,
-                        "similarity_score": similarity
-                    }, None)
+            matched_norm = matches[0]
+            canonical = self.by_normalized.get(matched_norm)
+            if canonical:
+                similarity = SequenceMatcher(None, norm, matched_norm).ratio()
+                adjusted_confidence = self._adjust_confidence(confidence, similarity)
+                parent = self.get_parent_for_subcategory(canonical)
+                return ({
+                    "parent_category": parent,
+                    "subcategory": canonical,
+                    "confidence": adjusted_confidence,
+                    "reasoning": f"{reasoning} (Fuzzy matched from '{ai_output}', similarity: {similarity:.2f})",
+                    "match_type": "fuzzy",
+                    "original_ai_output": ai_output,
+                    "similarity_score": similarity
+                }, None)
 
-        # 3. Word-based Match
-        words = set(re.findall(r'\w+', cleaned_output))
+        # 3) Word-based match (on normalized hyphenated tokens)
+        words = set(re.findall(r'\w+', norm))
         if len(words) >= 2:
             for sub in self.all_subcategories:
-                sub_words = set(re.findall(r'\w+', sub.lower()))
+                sub_norm = normalize_item_name(sub)
+                sub_words = set(re.findall(r'\w+', sub_norm))
                 if len(sub_words) >= 2 and (words.issubset(sub_words) or sub_words.issubset(words)):
                     similarity = len(words & sub_words) / max(len(words), len(sub_words))
                     if similarity >= threshold:
                         adjusted_confidence = self._adjust_confidence(confidence, similarity)
                         parent = self.get_parent_for_subcategory(sub)
-                        print(f" WORD MATCH: {ai_output} -> {sub} (sim: {similarity:.2f})")
                         return ({
                             "parent_category": parent,
                             "subcategory": sub,
@@ -193,8 +218,7 @@ class Taxonomy:
                             "similarity_score": similarity
                         }, None)
 
-        # 4. No Match Found
-        print(f"UNLISTED: {ai_output} (no close match found)")
+        # 4) No match
         return (None, {
             "ai_subcategory": ai_output,
             "confidence": confidence,

@@ -1,7 +1,20 @@
 import argparse
 import os
 import json
+import re
 from typing import List, Dict
+
+def normalize_item_name(name: str) -> str:
+    """Normalizes an item name for consistent comparison."""
+    # Convert to lowercase
+    name = name.lower()
+    # Remove content in parentheses
+    name = re.sub(r'\s*\([^)]*\)', '', name)
+    # Replace non-alphanumeric characters (except spaces) with a space
+    name = re.sub(r'[^a-z0-9\s]', ' ', name)
+    # Replace multiple spaces with a single hyphen and strip leading/trailing hyphens
+    name = re.sub(r'\s+', '-', name.strip())
+    return name
 
 def setup_arg_parser(description: str) -> argparse.ArgumentParser:
     """Sets up a standard argument parser with --force and --clean flags."""

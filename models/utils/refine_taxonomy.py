@@ -1,9 +1,10 @@
-# TBD: add clear and force flags
+# TBD: understand Jaccard similarity
 
 import json
 import os
 import time
 import argparse
+import datetime
 from typing import List, Dict, Any, Optional, Tuple
 from dataclasses import dataclass
 from collections import Counter
@@ -12,10 +13,8 @@ from collections import Counter
 from models.core.taxonomy import PARENT_CATEGORIES
 from models.core.provider import get_openrouter_client
 from models.core.common import clean_json_response
-from models.utils.common import setup_arg_parser, handle_clean_flag, load_progress, save_progress
+from models.utils.common import setup_arg_parser, handle_clean_flag, load_progress, save_progress, normalize_item_name
 from models.core.prompts import (
-    FOOD_CHALLENGER_PROMPT, 
-    FOOD_SYNTHESIZE_PROMPT,
     FOOD_CHALLENGER_BATCH_PROMPT,
     FOOD_SYNTHESIZE_BATCH_PROMPT
 )
@@ -26,23 +25,44 @@ from models.core.settings import (
     REFINEMENT_REPORT_FILE
 )
 
+def log_failed_response(model_name: str, response_text: str, error: str):
+    """Logs the full text of a failed API response to a file for debugging."""
+    log_dir = "logs/failed_responses"
+    os.makedirs(log_dir, exist_ok=True)
+    safe_model_name = model_name.replace('/', '_')
+    timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S_%f")
+    filename = os.path.join(log_dir, f"{safe_model_name}_{timestamp}.log")
+    with open(filename, 'w') as f:
+        f.write(f"--- Model: {model_name} ---\n")
+        f.write(f"--- Error: {error} ---\n\n")
+        f.write(response_text)
+    print(f"      Logged failed response to: {filename}")
+
+
 try:
     from openai import OpenAI
 except ImportError:
     raise ImportError("Please install the 'openai' library to use this script: pip install openai")
 
 # --- Configuration ---
-# CHALLENGER_MODEL = "meta-llama/llama-4-maverick"
-CHALLENGER_MODEL = "openai/gpt-5-mini"
-# SYNTHESIZER_MODEL = "mistralai/magistral-medium-2506:thinking" 
-SYNTHESIZER_MODEL = "google/gemini-2.5-flash"
+CHALLENGER_MODEL = "anthropic/claude-3.5-haiku"
+SYNTHESIZER_MODEL = "openai/gpt-5-mini"
 
 # Constants are now imported from settings.py
 RATE_LIMIT_DELAY_SECONDS = 1.0
 BATCH_SIZE = 15
 MAX_RETRIES = 3
 MAX_SIMILAR_ITEMS = 6  # Quality control
-SIMILARITY_THRESHOLD = 0.5 # Jaccard distance threshold for triggering synthesizer
+DEFAULT_SIMILARITY_THRESHOLD = 0.4 # Default semantic distance threshold
+
+# Category-specific thresholds for semantic disagreement.
+# Lower threshold means it's more sensitive and more likely to trigger synthesis.
+CATEGORY_THRESHOLDS = {
+    'Raw Ingredient - Fruits': 0.35,
+    'Raw Ingredient - Vegetables': 0.35,
+    'Prepared Dishes': 0.5,
+    'Packaged Goods': 0.55,
+}
 
 
 @dataclass
@@ -76,28 +96,43 @@ class TaxonomyRefiner:
     def __init__(self):
         self.client = get_openrouter_client()
         self.results: List[RefinementResult] = []
-        self.progress = load_progress(REFINEMENT_PROGRESS_FILE)
+        progress_data = load_progress(REFINEMENT_PROGRESS_FILE)
+        self.progress = {
+            "completed_items": progress_data.get("completed_items", []),
+            "failed_items": progress_data.get("failed_items", [])
+        }
+        self.generic_terms = {'food', 'dish', 'item', 'candy', 'sweet', 'sauce', 'dressing'}
+        self.base_item_map: Dict[str, Dict] = {}
         
-    def _load_progress(self) -> Dict:
-        """Load existing progress to resume if interrupted"""
-        try:
-            if os.path.exists(REFINEMENT_PROGRESS_FILE):
-                with open(REFINEMENT_PROGRESS_FILE, 'r') as f:
-                    return json.load(f)
-        except Exception as e:
-            print(f"Could not load progress file: {e}")
-        return {"completed_items": [], "failed_items": []}
     
-    def _save_progress(self):
-        """Save current progress"""
+    def _calculate_disagreement_score(self, base_items: List[str], challenger_items: List[str]) -> float:
+        """Calculate disagreement score using Jaccard similarity."""
+        
+        base_filtered = set(normalize_item_name(item) for item in base_items if item.strip()) - self.generic_terms
+        challenger_filtered = set(normalize_item_name(item) for item in challenger_items if item.strip()) - self.generic_terms
+
+        if not base_filtered and not challenger_filtered:
+            return 0.0
+        if not base_filtered or not challenger_filtered:
+            return 1.0  # Max disagreement if one is empty
+
         try:
-            with open(REFINEMENT_PROGRESS_FILE, 'w') as f:
-                json.dump(self.progress, f, indent=2)
+            intersection = len(base_filtered.intersection(challenger_filtered))
+            union = len(base_filtered.union(challenger_filtered))
+
+            if union == 0:
+                return 0.0
+
+            jaccard_similarity = intersection / union
+            
+            # Disagreement is 1 - similarity
+            return 1.0 - jaccard_similarity
         except Exception as e:
-            print(f"Could not save progress: {e}")
-    
+            print(f"Could not calculate Jaccard similarity: {e}")
+            return 1.0 # Default to max disagreement on error
+
     def _validate_response(self, response_data: Dict, item_name: str) -> Tuple[bool, List[str]]:
-        """Validate LLM response structure and content"""
+        """Enhanced validation with quality and contextual checks"""
         errors = []
         
         if not isinstance(response_data, dict):
@@ -117,9 +152,15 @@ class TaxonomyRefiner:
         else:
             similar_items = response_data["similar_items"]
             
-            # Check for self-reference
-            if any(item.lower() == item_name.lower() for item in similar_items):
+            # Check for self-reference (using normalization)
+            normalized_item_name = normalize_item_name(item_name)
+            if any(normalize_item_name(item) == normalized_item_name for item in similar_items):
                 errors.append("Contains self-reference in similar_items")
+
+            # Check for overly generic terms
+            generic_found = [item for item in similar_items if normalize_item_name(item) in self.generic_terms]
+            if generic_found:
+                errors.append(f"Contains overly generic terms: {generic_found}")
             
             # Check for foreign terms (basic check)
             foreign_chars = set('àáâãäåèéêëìíîïñòóôõöùúûüÿß')
@@ -130,6 +171,19 @@ class TaxonomyRefiner:
             # Check length
             if len(similar_items) > MAX_SIMILAR_ITEMS:
                 errors.append(f"Too many similar_items ({len(similar_items)} > {MAX_SIMILAR_ITEMS})")
+            
+            # Contextual Category Validation
+            proposed_category = response_data.get("parent_category")
+            if proposed_category and self.base_item_map:
+                for s_item in similar_items:
+                    norm_s_item = normalize_item_name(s_item)
+                    if norm_s_item in self.base_item_map:
+                        known_category = self.base_item_map[norm_s_item]['parent_category']
+                        if known_category != proposed_category:
+                            errors.append(
+                                f"Contextual mismatch for '{s_item}': its known category "
+                                f"is '{known_category}', but item's proposed category is '{proposed_category}'"
+                            )
         
         return len(errors) == 0, errors
     
@@ -156,6 +210,7 @@ class TaxonomyRefiner:
         )
 
         for attempt in range(MAX_RETRIES):
+            raw_response_content = ""
             try:
                 response = self.client.chat.completions.create(
                     model=CHALLENGER_MODEL,
@@ -167,7 +222,8 @@ class TaxonomyRefiner:
                     max_tokens=4096,
                     temperature=0.1
                 )
-                response_text = clean_json_response(response.choices[0].message.content)
+                raw_response_content = response.choices[0].message.content
+                response_text = clean_json_response(raw_response_content)
                 data = json.loads(response_text)
                 
                 # Basic validation that all items are in the response
@@ -178,6 +234,8 @@ class TaxonomyRefiner:
 
             except Exception as e:
                 print(f"Challenger batch attempt {attempt + 1} failed: {e}")
+                if raw_response_content:
+                    log_failed_response(CHALLENGER_MODEL, raw_response_content, str(e))
                 time.sleep(1)
         
         print(f"      Challenger batch failed after {MAX_RETRIES} attempts")
@@ -212,6 +270,7 @@ class TaxonomyRefiner:
         )
 
         for attempt in range(MAX_RETRIES):
+            raw_response_content = ""
             try:
                 response = self.client.chat.completions.create(
                     model=SYNTHESIZER_MODEL,
@@ -223,7 +282,8 @@ class TaxonomyRefiner:
                     max_tokens=4096,
                     temperature=0.0
                 )
-                response_text = clean_json_response(response.choices[0].message.content)
+                raw_response_content = response.choices[0].message.content
+                response_text = clean_json_response(raw_response_content)
                 data = json.loads(response_text)
                 
                 if all(item['base']['name'] in data for item in items_for_synthesis):
@@ -233,102 +293,13 @@ class TaxonomyRefiner:
 
             except Exception as e:
                 print(f"Synthesizer batch attempt {attempt + 1} failed: {e}")
+                if raw_response_content:
+                    log_failed_response(SYNTHESIZER_MODEL, raw_response_content, str(e))
                 time.sleep(1)
 
         print(f"Synthesizer batch failed after {MAX_RETRIES} attempts")
         return {}
 
-    def get_challenger_version(self, item_name: str, base_version: Dict) -> Optional[Dict]:
-        """Get challenger model's version with improved prompt"""
-        
-        parent_categories_str = "\n".join([f"- {cat}" for cat in PARENT_CATEGORIES])
-        prompt = FOOD_CHALLENGER_PROMPT.format(
-            item_name=item_name,
-            base_category=base_version.get('parent_category', 'N/A'),
-            base_similar=base_version.get('similar_items', []),
-            parent_categories_list=parent_categories_str
-        )
-
-        for attempt in range(MAX_RETRIES):
-            try:
-                response = self.client.chat.completions.create(
-                    model=CHALLENGER_MODEL,
-                    messages=[
-                        {"role": "system", "content": "You are a food classification expert. Respond only with valid JSON."},
-                        {"role": "user", "content": prompt}
-                    ],
-                    response_format={"type": "json_object"},
-                    max_tokens=1024,
-                    temperature=0.1
-                )
-                
-                response_text = clean_json_response(response.choices[0].message.content)
-                response_data = json.loads(response_text)
-                
-                is_valid, errors = self._validate_response(response_data, item_name)
-                if is_valid:
-                    return response_data
-                else:
-                    print(f" Challenger attempt {attempt + 1} invalid: {'; '.join(errors)}")
-                    
-            except json.JSONDecodeError as e:
-                print(f" Challenger attempt {attempt + 1} failed to parse JSON: {e}")
-            except ValueError as e:
-                print(f" Challenger attempt {attempt + 1} failed: {e}")
-            except Exception as e:
-                print(f" Challenger attempt {attempt + 1} encountered an unexpected error: {e}")
-            
-            time.sleep(1)  # Brief pause between retries
-        
-        print(f"      Challenger failed after {MAX_RETRIES} attempts")
-        return None
-    
-    def get_synthesized_version(self, item_name: str, base: Dict, challenger: Dict) -> Optional[Dict]:
-        """Synthesize best version with improved prompt"""
-        
-        prompt = FOOD_SYNTHESIZE_PROMPT.format(
-            item_name=item_name,
-            base_category=base.get('parent_category', 'Unknown'),
-            base_similar=base.get('similar_items', []),
-            challenger_category=challenger.get('parent_category', 'Unknown'),
-            challenger_similar=challenger.get('similar_items', []),
-            parent_categories_str=f"{', '.join(PARENT_CATEGORIES[:3])}... ({len(PARENT_CATEGORIES)} total)"
-        )
-
-        for attempt in range(MAX_RETRIES):
-            try:
-                response = self.client.chat.completions.create(
-                    model=SYNTHESIZER_MODEL,
-                    messages=[
-                        {"role": "system", "content": "You are an expert food taxonomy synthesizer. Combine the best aspects of both inputs."},
-                        {"role": "user", "content": prompt}
-                    ],
-                    response_format={"type": "json_object"},
-                    max_tokens=1024,
-                    temperature=0.0
-                )
-                
-                response_text = clean_json_response(response.choices[0].message.content)
-                response_data = json.loads(response_text)
-                
-                is_valid, errors = self._validate_response(response_data, item_name)
-                if is_valid:
-                    return response_data
-                else:
-                    print(f" Synthesizer attempt {attempt + 1} invalid: {'; '.join(errors)}")
-                    
-            except json.JSONDecodeError as e:
-                print(f" Synthesizer attempt {attempt + 1} failed to parse JSON: {e}")
-            except ValueError as e:
-                print(f" Synthesizer attempt {attempt + 1} failed: {e}")
-            except Exception as e:
-                print(f" Synthesizer attempt {attempt + 1} encountered an unexpected error: {e}")
-            
-            time.sleep(1)
-        
-        print(f"      Synthesizer failed after {MAX_RETRIES} attempts")
-        return None
-    
     def create_fallback_version(self, item_name: str, base: Dict, challenger: Optional[Dict]) -> FoodItem:
         """Create fallback version when synthesis fails"""
         
@@ -370,7 +341,7 @@ class TaxonomyRefiner:
             print(f"Could not load base taxonomy: {e}")
             return False
         
-        # Create structured item mapping with original categories
+        # Create structured item mapping and populate base_item_map for contextual validation
         base_items = []
         for original_category, items in base_data.items():
             for item in items:
@@ -381,6 +352,8 @@ class TaxonomyRefiner:
                     'similar_items': item.get('similar_items', [])
                 }
                 base_items.append(item_data)
+        
+        self.base_item_map = {normalize_item_name(item['name']): item for item in base_items}
         
         total_items = len(base_items)
         completed_items = set(self.progress.get("completed_items", []))
@@ -429,26 +402,25 @@ class TaxonomyRefiner:
                     processed_in_batch[item_name] = {"errors": validation_errors, "challenger": challenger_version}
                     continue
                 
-                # Calculate disagreement score
+                # Calculate disagreement score with normalization and filtering
                 category_changed = challenger_version.get("parent_category") != base_item.get("parent_category")
                 
-                base_set = set(base_item.get("similar_items", []))
-                challenger_set = set(challenger_version.get("similar_items", []))
+                disagreement_score = self._calculate_disagreement_score(
+                    base_item.get("similar_items", []),
+                    challenger_version.get("similar_items", [])
+                )
                 
-                union_size = len(base_set.union(challenger_set))
-                if union_size > 0:
-                    intersection_size = len(base_set.intersection(challenger_set))
-                    disagreement_score = 1.0 - (intersection_size / union_size) # Jaccard Distance
-                
-                significant_disagreement = category_changed or (disagreement_score > SIMILARITY_THRESHOLD)
+                # Use dynamic threshold for synthesis trigger
+                base_category = base_item.get("parent_category")
+                threshold = CATEGORY_THRESHOLDS.get(base_category, DEFAULT_SIMILARITY_THRESHOLD)
+                significant_disagreement = category_changed or (disagreement_score > threshold)
 
                 if significant_disagreement:
                     items_for_synthesis.append({"base": base_item, "challenger": challenger_version})
-                    print(f"      ! Significant disagreement for '{item_name}' (Score: {disagreement_score:.2f}, Category changed: {category_changed}). Flagged for synthesis.")
+                    print(f"      ! Significant disagreement for '{item_name}' (Score: {disagreement_score:.2f}, Threshold: {threshold}, Category changed: {category_changed}). Flagged for synthesis.")
                     print(f"        - BASE:       Category='{base_item.get('parent_category')}', Similar={base_item.get('similar_items')}")
                     print(f"        - CHALLENGER: Category='{challenger_version.get('parent_category')}', Similar={challenger_version.get('similar_items')}")
                 else:
-                    # Agreement or minor disagreement: Final version is the challenger's
                     processed_in_batch[item_name] = {
                         "final_data": challenger_version,
                         "challenger": challenger_version,
@@ -469,11 +441,10 @@ class TaxonomyRefiner:
                 synthesized_version = synthesizer_batch_results.get(item_name)
 
                 # Recalculate score for reporting consistency
-                base_set = set(base_item.get("similar_items", []))
-                challenger_set = set(challenger_item.get("similar_items", []))
-                union_size = len(base_set.union(challenger_set))
-                score = 1.0 - (len(base_set.intersection(challenger_set)) / union_size) if union_size > 0 else 0.0
-
+                score = self._calculate_disagreement_score(
+                    base_item.get("similar_items", []),
+                    challenger_item.get("similar_items", [])
+                )
                 
                 if synthesized_version:
                     is_valid, validation_errors = self._validate_response(synthesized_version, item_name)

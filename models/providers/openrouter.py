@@ -37,27 +37,35 @@ class OpenRouterProvider(BaseProvider):
 
             base64_image = load_image(image_path, return_type="base64")
 
-            response = self.client.chat.completions.create(
-                model=model_name,
-                messages=[
+            response_args = {
+                "model": model_name,
+                "messages": [
+                    {"role": "system", "content": "Respond with one valid JSON object only."},
                     {
                         "role": "user",
                         "content": [
-                            {
-                                "type": "image_url",
-                                "image_url": f"data:image/jpeg;base64,{base64_image}",
-                            },
-                            {
-                                "type": "text",
-                                "text": prompt,
-                            },
+                            {"type": "image_url", "image_url": f"data:image/jpeg;base64,{base64_image}"},
+                            {"type": "text", "text": prompt},
                         ],
-                    }
+                    },
                 ],
-                **api_params
-            )
-            
+                **api_params,
+            }
+
+            try:
+                # Try strict JSON mode first (many OpenRouter models support this)
+                response = self.client.chat.completions.create(
+                    **response_args, response_format={"type": "json_object"}
+                )
+            except Exception as e:
+                # Fallback to normal mode if json_object not supported
+                if "response_format" in str(e).lower() or "unsupported" in str(e).lower():
+                    response = self.client.chat.completions.create(**response_args)
+                else:
+                    raise
+
             raw_text = response.choices[0].message.content
+
             print(f"Raw OpenRouter Response Length: {len(raw_text)} characters")
 
             try:

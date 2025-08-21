@@ -1,0 +1,20 @@
+
+validation_dir: "content/extracted_food_recognition/validation_full" 
+training_dir: "content/extracted_food_recognition/training"
+output_dir: "output/evaluation_reports"
+dataset_type: "validation"  
+
+
+max_images: 10 
+max_workers: 4
+
+
+providers: [] 
+
+api_key: null
+
+default_model_parameters:
+  temperature: 0.1
+  max_tokens: 10000
+  fuzzy_threshold: 0.8 
+  disable_fuzzy_matching: false 

@@ -1,14 +1,1082 @@
 {
+    "Bakery - Bread & Loaves": [
+        {
+            "name": "white-bread-with-butter-eggs-and-milk",
+            "display_name": "white bread with butter, eggs, and milk",
+            "similar_items": [
+                "buttered-toast",
+                "breakfast-toast",
+                "toast-with-toppings",
+                "enriched-bread"
+            ]
+        }
+    ],
+    "Bakery - Savory Baked Goods": [
+        {
+            "name": "buckwheat-pancake",
+            "display_name": "buckwheat pancake",
+            "similar_items": [
+                "galette",
+                "crepe",
+                "blini",
+                "savory-pancake"
+            ]
+        }
+    ],
+    "Prepared Food - Salads & Cold Dishes": [
+        {
+            "name": "birchermuesli-prepared-no-sugar-added",
+            "display_name": "birchermuesli",
+            "similar_items": [
+                "overnight oats",
+                "muesli",
+                "granola",
+                "cold breakfast mix",
+                "raw oatmeal"
+            ]
+        },
+        {
+            "name": "fruit-salad",
+            "display_name": "fruit salad",
+            "similar_items": [
+                "fruit-bowl",
+                "fruit-cocktail",
+                "fruit-medley",
+                "fresh-cut-fruit",
+                "fruit-platter"
+            ]
+        },
+        {
+            "name": "greek-salad",
+            "display_name": "greek salad",
+            "similar_items": [
+                "feta-salad",
+                "horiatiki-salad",
+                "mediterranean-salad",
+                "cucumber-tomato-salad",
+                "greek-village-salad"
+            ]
+        },
+        {
+            "name": "mixed-salad-chopped-without-sauce",
+            "display_name": "mixed salad",
+            "similar_items": [
+                "chopped-salad",
+                "garden-salad",
+                "mixed-greens-salad",
+                "raw-vegetable-salad",
+                "leafy-green-salad"
+            ]
+        },
+        {
+            "name": "potato-salad-with-mayonnaise-yogurt-dressing",
+            "display_name": "potato salad with mayonnaise and yogurt dressing",
+            "similar_items": [
+                "creamy-potato-salad",
+                "potato-salad",
+                "american-potato-salad",
+                "german-potato-salad",
+                "cold-potato-salad"
+            ]
+        },
+        {
+            "name": "taboule-prepared-with-couscous",
+            "display_name": "tabbouleh",
+            "similar_items": [
+                "couscous-salad",
+                "bulgur-salad",
+                "parsley-couscous-salad",
+                "levantine-salad",
+                "mediterranean-grain-salad"
+            ]
+        }
+    ],
+    "Prepared Food - Pasta & Rice Dishes": [
+        {
+            "name": "high-protein-pasta-made-of-lentils-peas",
+            "display_name": "lentil and pea pasta",
+            "similar_items": [
+                "lentil-pasta",
+                "chickpea-pasta",
+                "pea-pasta",
+                "legume-based-pasta",
+                "plant-protein-pasta"
+            ]
+        },
+        {
+            "name": "pasta",
+            "display_name": "pasta",
+            "similar_items": [
+                "spaghetti",
+                "fettuccine",
+                "macaroni",
+                "lasagna",
+                "fresh-pasta"
+            ]
+        },
+        {
+            "name": "pasta-hornli",
+            "display_name": "hornli pasta",
+            "similar_items": [
+                "elbow-macaroni",
+                "macaroni",
+                "short-tubular-pasta",
+                "curved-pasta",
+                "swiss-style-pasta"
+            ]
+        },
+        {
+            "name": "pasta-in-butterfly-form-farfalle",
+            "display_name": "farfalle pasta",
+            "similar_items": [
+                "farfalle",
+                "bowtie-pasta",
+                "butterfly-pasta",
+                "bow-shaped-pasta"
+            ]
+        },
+        {
+            "name": "pasta-in-conch-form",
+            "display_name": "conch pasta",
+            "similar_items": [
+                "conchiglie",
+                "shell-pasta",
+                "seashell-pasta",
+                "ridged-shell-pasta"
+            ]
+        },
+        {
+            "name": "pasta-linguini-parpadelle-tagliatelle",
+            "display_name": "linguini, parpadelle, tagliatelle pasta",
+            "similar_items": [
+                "tagliatelle",
+                "pappardelle",
+                "fettuccine",
+                "linguine",
+                "wide-ribbon-pasta"
+            ]
+        },
+        {
+            "name": "pasta-noodles",
+            "display_name": "pasta noodles",
+            "similar_items": [
+                "spaghetti",
+                "ramen-noodles",
+                "udon-noodles",
+                "egg-noodles",
+                "wheat-noodles"
+            ]
+        },
+        {
+            "name": "pasta-penne",
+            "display_name": "penne pasta",
+            "similar_items": [
+                "penne",
+                "rigatoni",
+                "ziti",
+                "tube-pasta",
+                "ridged-tube-pasta"
+            ]
+        },
+        {
+            "name": "pasta-ravioli-stuffing",
+            "display_name": "ravioli",
+            "similar_items": [
+                "ravioli",
+                "tortellini",
+                "filled-pasta",
+                "cheese-stuffed-pasta",
+                "meat-stuffed-pasta"
+            ]
+        },
+        {
+            "name": "pasta-spaghetti",
+            "display_name": "spaghetti",
+            "similar_items": [
+                "spaghetti",
+                "long-pasta",
+                "thin-pasta-strands",
+                "wheat-spaghetti"
+            ]
+        },
+        {
+            "name": "pasta-tortelloni-stuffing",
+            "display_name": "tortelloni pasta",
+            "similar_items": [
+                "tortelloni",
+                "tortellini",
+                "ravioli",
+                "meat-filled-pasta",
+                "cheese-stuffed-pasta"
+            ]
+        },
+        {
+            "name": "pasta-twist",
+            "display_name": "twist pasta",
+            "similar_items": [
+                "fusilli",
+                "rotini",
+                "corkscrew pasta",
+                "spiral pasta",
+                "cavatappi"
+            ]
+        },
+        {
+            "name": "pasta-wholemeal",
+            "display_name": "wholemeal pasta",
+            "similar_items": [
+                "whole-wheat-pasta",
+                "whole-grain-pasta",
+                "brown-pasta",
+                "multigrain-pasta"
+            ]
+        },
+        {
+            "name": "potato-gnocchi",
+            "display_name": "potato gnocchi",
+            "similar_items": [
+                "gnocchi",
+                "potato-dumplings",
+                "ricotta-gnocchi",
+                "spinach-gnocchi"
+            ]
+        },
+        {
+            "name": "sauce-carbonara",
+            "display_name": "carbonara sauce",
+            "similar_items": [
+                "alfredo-sauce",
+                "bechamel-sauce",
+                "cream-sauce",
+                "cheese-sauce",
+                "white-sauce"
+            ]
+        }
+    ],
+    "Prepared Food - Main Courses": [
+        {
+            "name": "cantonese-fried-rice",
+            "display_name": "fried rice",
+            "similar_items": [
+                "chinese-fried-rice",
+                "egg-fried-rice",
+                "shrimp-fried-rice",
+                "vegetable-fried-rice"
+            ]
+        },
+        {
+            "name": "chicken-curry-cream-coconut-milk-curry-spices-paste",
+            "display_name": "chicken curry",
+            "similar_items": [
+                "coconut-chicken-curry",
+                "thai-chicken-curry",
+                "indian-chicken-curry",
+                "creamy-coconut-curry",
+                "spicy-chicken-curry"
+            ]
+        },
+        {
+            "name": "chicken-nuggets",
+            "display_name": "chicken nuggets",
+            "similar_items": [
+                "chicken-tenders",
+                "breaded-chicken",
+                "chicken-bites",
+                "fried-chicken-pieces"
+            ]
+        },
+        {
+            "name": "chili-con-carne-prepared",
+            "display_name": "chili con carne",
+            "similar_items": [
+                "beef-chili",
+                "bean-chili",
+                "meat-stew",
+                "mexican-chili"
+            ]
+        },
+        {
+            "name": "cooked-sausage",
+            "display_name": "cooked sausage",
+            "similar_items": [
+                "grilled-sausage",
+                "sausage-links",
+                "bratwurst",
+                "smoked-sausage",
+                "hot-dog"
+            ]
+        },
+        {
+            "name": "cordon-bleu-from-pork-schnitzel-fried",
+            "display_name": "pork cordon bleu",
+            "similar_items": [
+                "pork-cordon-bleu",
+                "chicken-cordon-bleu",
+                "pork-schnitzel",
+                "breaded-meat-cutlet",
+                "stuffed-schnitzel"
+            ]
+        },
+        {
+            "name": "country-fries",
+            "display_name": "country fries",
+            "similar_items": [
+                "french fries",
+                "potato wedges",
+                "home fries",
+                "steak fries",
+                "seasoned potato fries"
+            ]
+        },
+        {
+            "name": "croque-monsieur",
+            "display_name": "croque monsieur",
+            "similar_items": [
+                "club-sandwich",
+                "grilled-cheese-sandwich",
+                "ham-and-cheese-sandwich",
+                "panini",
+                "toastie"
+            ]
+        },
+        {
+            "name": "curry-vegetarian",
+            "display_name": "vegetarian curry",
+            "similar_items": [
+                "vegetable-curry",
+                "chickpea-curry",
+                "tofu-curry",
+                "lentil-curry",
+                "vegetarian-stew"
+            ]
+        },
+        {
+            "name": "dumplings",
+            "display_name": "dumplings",
+            "similar_items": [
+                "gyoza",
+                "momos",
+                "pierogi",
+                "potstickers",
+                "ravioli"
+            ]
+        },
+        {
+            "name": "egg-scrambled-prepared",
+            "display_name": "scrambled egg",
+            "similar_items": [
+                "scrambled-eggs",
+                "omelette",
+                "frittata",
+                "egg-scramble",
+                "quiche"
+            ]
+        },
+        {
+            "name": "fish-crunchies-battered",
+            "display_name": "battered fish crunchies",
+            "similar_items": [
+                "fish-sticks",
+                "breaded-fish",
+                "tempura",
+                "fried-fish-strips"
+            ]
+        },
+        {
+            "name": "fish-fingers-breaded",
+            "display_name": "fish fingers",
+            "similar_items": [
+                "fish-sticks",
+                "breaded-fish",
+                "fish-nuggets",
+                "breaded-chicken",
+                "breaded-shrimp"
+            ]
+        },
+        {
+            "name": "fondue",
+            "display_name": "fondue",
+            "similar_items": [
+                "cheese-fondue",
+                "cheese-dip",
+                "cheese-sauce",
+                "cheese-platter",
+                "melted-cheese"
+            ]
+        },
+        {
+            "name": "ham-cooked",
+            "display_name": "cooked ham",
+            "similar_items": [
+                "cooked-prosciutto",
+                "cooked-bacon",
+                "cooked-salami",
+                "cooked-turkey",
+                "cooked-chicken"
+            ]
+        },
+        {
+            "name": "hamburger",
+            "display_name": "hamburger",
+            "similar_items": [
+                "cheeseburger",
+                "burger",
+                "beef-patty",
+                "hamburger-patty",
+                "veggie-burger"
+            ]
+        },
+        {
+            "name": "hamburger-bread-meat-ketchup",
+            "display_name": "hamburger",
+            "similar_items": [
+                "cheeseburger",
+                "burger",
+                "beef-patty",
+                "hamburger-patty",
+                "veggie-burger"
+            ]
+        },
+        {
+            "name": "kebab-in-pita-bread",
+            "display_name": "kebab in pita",
+            "similar_items": [
+                "shawarma",
+                "gyro",
+                "doner",
+                "wrap",
+                "sandwich"
+            ]
+        },
+        {
+            "name": "lasagne-meat-prepared",
+            "display_name": "meat lasagne",
+            "similar_items": [
+                "meat-lasagna",
+                "lasagna",
+                "lasagna-with-meat",
+                "baked-pasta",
+                "meat-pasta"
+            ]
+        },
+        {
+            "name": "mashed-potatoes-prepared-with-full-fat-milk-with-butter",
+            "display_name": "mashed potatoes",
+            "similar_items": [
+                "mashed-potatoes",
+                "potato-puree",
+                "creamed-potatoes",
+                "potato-mash",
+                "mashed-sweet-potatoes"
+            ]
+        },
+        {
+            "name": "meat-balls",
+            "display_name": "meatballs",
+            "similar_items": [
+                "meatballs",
+                "meatballs-in-sauce",
+                "meatballs-with-pasta",
+                "meatballs-with-rice",
+                "meatball"
+            ]
+        },
+        {
+            "name": "meat-terrine-pate",
+            "display_name": "meat terrine",
+            "similar_items": [
+                "pate",
+                "terrine",
+                "meatloaf",
+                "meat-pie",
+                "meat-casserole"
+            ]
+        },
+        {
+            "name": "meatloaf",
+            "display_name": "meatloaf",
+            "similar_items": [
+                "meatloaf slice",
+                "meatloaf with gravy",
+                "meatloaf with mashed potatoes",
+                "meatloaf with sauce",
+                "meatloaf with vegetables"
+            ]
+        },
+        {
+            "name": "omelette-plain",
+            "display_name": "plain omelette",
+            "similar_items": [
+                "egg pancake",
+                "egg white omelette",
+                "frittata",
+                "scrambled eggs",
+                "spanish tortilla"
+            ]
+        },
+        {
+            "name": "porridge-prepared-with-partially-skimmed-milk",
+            "display_name": "porridge with milk",
+            "similar_items": [
+                "oatmeal",
+                "rice porridge",
+                "congee",
+                "cream of wheat",
+                "hot breakfast cereal"
+            ]
+        },
+        {
+            "name": "potatoes-au-gratin-dauphinois-prepared",
+            "display_name": "potatoes au gratin",
+            "similar_items": [
+                "potatoes-au-gratin",
+                "dauphinois-potatoes",
+                "potato-gratin",
+                "scalloped-potatoes"
+            ]
+        },
+        {
+            "name": "risotto-with-mushrooms-cooked",
+            "display_name": "mushroom risotto",
+            "similar_items": [
+                "mushroom-risotto",
+                "creamy-risotto",
+                "vegetable-risotto",
+                "risotto-without-cheese-cooked"
+            ]
+        },
+        {
+            "name": "risotto-without-cheese-cooked",
+            "display_name": "risotto",
+            "similar_items": [
+                "plain-risotto",
+                "cooked-risotto",
+                "risotto",
+                "risotto-with-mushrooms-cooked"
+            ]
+        },
+        {
+            "name": "rosti",
+            "display_name": "rosti",
+            "similar_items": [
+                "hash-browns",
+                "potato-pancake",
+                "potato-fritter",
+                "swiss-potato-cake"
+            ]
+        },
+        {
+            "name": "sandwich-ham-cheese-and-butter",
+            "display_name": "ham and cheese sandwich",
+            "similar_items": [
+                "ham-and-cheese-sandwich",
+                "ham-sandwich",
+                "cheese-sandwich",
+                "deli-sandwich"
+            ]
+        },
+        {
+            "name": "smoked-cooked-sausage-of-pork-and-beef-meat-sausag",
+            "display_name": "smoked sausage",
+            "similar_items": [
+                "smoked-sausage",
+                "mixed-meat-sausage",
+                "pork-sausage",
+                "cooked-sausage"
+            ]
+        },
+        {
+            "name": "spaetzle",
+            "display_name": "spaetzle",
+            "similar_items": [
+                "german-noodles",
+                "egg-noodles",
+                "gnocchi",
+                "handmade-pasta"
+            ]
+        },
+        {
+            "name": "sushi",
+            "display_name": "sushi",
+            "similar_items": [
+                "maki-rolls",
+                "nigiri",
+                "sashimi",
+                "california-roll"
+            ]
+        },
+        {
+            "name": "tartar-meat",
+            "display_name": "tartar",
+            "similar_items": [
+                "steak tartare",
+                "raw meat dish",
+                "beef tartare",
+                "meat appetizer",
+                "chilled meat preparation"
+            ]
+        },
+        {
+            "name": "tomato-stewed-without-addition-of-fat-without-addition-of-salt",
+            "display_name": "stewed tomato",
+            "similar_items": [
+                "stewed-tomatoes",
+                "canned-tomatoes",
+                "tomato-compote",
+                "tomato-puree"
+            ]
+        },
+        {
+            "name": "veggie-burger",
+            "display_name": "veggie burger",
+            "similar_items": [
+                "plant-based-burger",
+                "vegetable-burger",
+                "vegetarian-burger",
+                "veggie-patty"
+            ]
+        }
+    ],
+    "Prepared Food - Vegetarian Dishes": [
+        {
+            "name": "bread-meat-substitute-lettuce-sauce",
+            "display_name": "meat substitute sandwich",
+            "similar_items": [
+                "lettuce wrap",
+                "veggie burger",
+                "plant-based sandwich",
+                "low-carb sandwich",
+                "protein wrap"
+            ]
+        },
+        {
+            "name": "carrot-steamed-without-addition-of-salt",
+            "display_name": "steamed carrot",
+            "similar_items": [
+                "steamed-carrot",
+                "cooked-carrot",
+                "steamed-vegetable",
+                "boiled-carrot"
+            ]
+        },
+        {
+            "name": "cream-spinach",
+            "display_name": "spinach cream",
+            "similar_items": [
+                "creamed-spinach",
+                "spinach-gratin",
+                "spinach-artichoke-dip",
+                "spinach-side-dish"
+            ]
+        },
+        {
+            "name": "falafel-balls",
+            "display_name": "falafel",
+            "similar_items": [
+                "falafel",
+                "chickpea-balls",
+                "vegetarian-meatballs",
+                "legume-fritters"
+            ]
+        },
+        {
+            "name": "lasagne-vegetable-prepared",
+            "display_name": "vegetable lasagne",
+            "similar_items": [
+                "vegetable-lasagna",
+                "vegetarian-pasta-bake",
+                "layered-vegetable-pasta",
+                "meatless-lasagna"
+            ]
+        },
+        {
+            "name": "mushroom-average-stewed-without-addition-of-fat-without-addition-of-salt",
+            "display_name": "stewed mushrooms",
+            "similar_items": [
+                "cooked-mushrooms",
+                "stewed-mushrooms",
+                "sauteed-mushrooms",
+                "mushroom-medley"
+            ]
+        },
+        {
+            "name": "ratatouille",
+            "display_name": "ratatouille",
+            "similar_items": [
+                "stewed-vegetables",
+                "vegetable-medley",
+                "provencal-vegetable-dish",
+                "vegetable-casserole"
+            ]
+        },
+        {
+            "name": "spinach-steamed-without-addition-of-salt",
+            "display_name": "steamed spinach",
+            "similar_items": [
+                "steamed-spinach",
+                "cooked-spinach",
+                "steamed-leafy-greens",
+                "boiled-spinach"
+            ]
+        },
+        {
+            "name": "vegetable-au-gratin-baked",
+            "display_name": "baked vegetable au gratin",
+            "similar_items": [
+                "vegetable-gratin",
+                "baked-au-gratin",
+                "cheesy-vegetable-casserole",
+                "vegetable-bake"
+            ]
+        },
+        {
+            "name": "zucchini-stewed-without-addition-of-fat-without-addition-of-salt",
+            "display_name": "stewed zucchini",
+            "similar_items": [
+                "stewed-zucchini",
+                "cooked-zucchini",
+                "zucchini-stew",
+                "plain-vegetable-stew"
+            ]
+        }
+    ],
     "Beverage - Non-Alcoholic": [
+        {
+            "name": "cappuccino",
+            "display_name": "cappuccino",
+            "similar_items": [
+                "latte",
+                "cafe-au-lait",
+                "macchiato",
+                "frothy-coffee"
+            ]
+        },
+        {
+            "name": "chocolate-milk-chocolate-drink",
+            "display_name": "chocolate milk",
+            "similar_items": [
+                "chocolate-milk",
+                "chocolate-drink",
+                "chocolate-milkshake",
+                "cocoa-drink"
+            ]
+        },
+        {
+            "name": "coca-cola",
+            "display_name": "coca cola",
+            "similar_items": [
+                "cola-drink",
+                "cola-can",
+                "cola-bottle",
+                "dark-soda"
+            ]
+        },
+        {
+            "name": "coca-cola-zero",
+            "display_name": "coca cola zero",
+            "similar_items": [
+                "zero-sugar-cola",
+                "diet-cola",
+                "sugar-free-soda",
+                "zero-calorie-beverage"
+            ]
+        },
+        {
+            "name": "coffee-decaffeinated",
+            "display_name": "decaf coffee",
+            "similar_items": [
+                "decaf-coffee",
+                "caffeine-free-coffee",
+                "decaffeinated-espresso",
+                "coffee-substitute"
+            ]
+        },
+        {
+            "name": "coffee-with-caffeine",
+            "display_name": "coffee",
+            "similar_items": [
+                "brewed-coffee",
+                "black-coffee",
+                "regular-coffee",
+                "espresso"
+            ]
+        },
+        {
+            "name": "espresso-with-caffeine",
+            "display_name": "espresso",
+            "similar_items": [
+                "espresso",
+                "doppio",
+                "short-black",
+                "black-coffee",
+                "strong-coffee"
+            ]
+        },
+        {
+            "name": "glucose-drink-50g",
+            "display_name": "glucose drink",
+            "similar_items": [
+                "glucose-drink",
+                "sports-drink",
+                "electrolyte-drink",
+                "medical-nutrition-drink",
+                "hydration-beverage"
+            ]
+        },
+        {
+            "name": "herbal-tea",
+            "display_name": "herbal tea",
+            "similar_items": [
+                "chamomile-tea",
+                "peppermint-tea",
+                "rooibos-tea",
+                "hibiscus-tea",
+                "ginger-tea"
+            ]
+        },
+        {
+            "name": "ice-tea",
+            "display_name": "ice tea",
+            "similar_items": [
+                "iced-tea",
+                "sweet-tea",
+                "bottled-tea",
+                "lemonade",
+                "iced-herbal-tea"
+            ]
+        },
+        {
+            "name": "juice-apple",
+            "display_name": "apple juice",
+            "similar_items": [
+                "apple-juice",
+                "apple-cider",
+                "cloudy-apple-juice",
+                "pressed-apple-juice"
+            ]
+        },
+        {
+            "name": "juice-multifruit",
+            "display_name": "multifruit juice",
+            "similar_items": [
+                "fruit-punch",
+                "mixed-fruit-juice",
+                "blended-fruit-drink",
+                "fruit-cocktail"
+            ]
+        },
+        {
+            "name": "juice-orange",
+            "display_name": "orange juice",
+            "similar_items": [
+                "orange-juice",
+                "fresh-orange-juice",
+                "pulp-orange-juice",
+                "pressed-orange-juice",
+                "citrus-juice"
+            ]
+        },
+        {
+            "name": "kefir-drink",
+            "display_name": "kefir",
+            "similar_items": [
+                "kefir",
+                "yogurt-drink",
+                "fermented-milk",
+                "cultured-dairy-beverage",
+                "probiotic-drink"
+            ]
+        },
+        {
+            "name": "latte-macchiato-with-caffeine",
+            "display_name": "latte macchiato",
+            "similar_items": [
+                "caffe-latte",
+                "caffe-macchiato",
+                "espresso-with-milk",
+                "layered-coffee-drink",
+                "milk-coffee"
+            ]
+        },
+        {
+            "name": "ristretto-with-caffeine",
+            "display_name": "ristretto",
+            "similar_items": [
+                "espresso",
+                "short-black-coffee",
+                "concentrated-coffee",
+                "intense-coffee-shot",
+                "caffeine-drink"
+            ]
+        },
+        {
+            "name": "smoothie",
+            "display_name": "smoothie",
+            "similar_items": [
+                "fruit-smoothie",
+                "green-smoothie",
+                "berry-smoothie",
+                "protein-smoothie",
+                "blended-drink"
+            ]
+        },
+        {
+            "name": "soya-drink-soy-milk",
+            "display_name": "soy milk",
+            "similar_items": [
+                "soy-milk",
+                "soy-beverage",
+                "plant-based-milk",
+                "non-dairy-milk",
+                "dairy-alternative-drink"
+            ]
+        },
+        {
+            "name": "syrup-diluted-ready-to-drink",
+            "display_name": "diluted syrup",
+            "similar_items": [
+                "cordial",
+                "fruit-syrup-drink",
+                "flavored-water",
+                "fruit-punch",
+                "lemonade"
+            ]
+        },
+        {
+            "name": "tea",
+            "display_name": "tea",
+            "similar_items": [
+                "black-tea",
+                "green-tea",
+                "herbal-tea",
+                "brewed-tea",
+                "loose-leaf-tea"
+            ]
+        },
+        {
+            "name": "tea-black",
+            "display_name": "black tea",
+            "similar_items": [
+                "english-breakfast-tea",
+                "assam-tea",
+                "darjeeling-tea",
+                "ceylon-tea",
+                "earl-grey-tea"
+            ]
+        },
+        {
+            "name": "tea-fruit",
+            "display_name": "fruit tea",
+            "similar_items": [
+                "apple-tea",
+                "berry-tea",
+                "fruit-tea",
+                "herbal-tea",
+                "peach-tea"
+            ]
+        },
+        {
+            "name": "tea-ginger",
+            "display_name": "ginger tea",
+            "similar_items": [
+                "ginger-tea",
+                "turmeric-tea",
+                "spiced-tea",
+                "chamomile-tea",
+                "herbal-tea"
+            ]
+        },
+        {
+            "name": "tea-green",
+            "display_name": "green tea",
+            "similar_items": [
+                "green-tea",
+                "japanese-green-tea",
+                "matcha",
+                "sencha",
+                "gyokuro"
+            ]
+        },
+        {
+            "name": "tea-peppermint",
+            "display_name": "peppermint tea",
+            "similar_items": [
+                "peppermint-tea",
+                "mint-tea",
+                "spearmint-tea",
+                "herbal-tea"
+            ]
+        },
+        {
+            "name": "tea-rooibos",
+            "display_name": "rooibos tea",
+            "similar_items": [
+                "rooibos-tea",
+                "red-tea",
+                "herbal-tea",
+                "caffeine-free-tea"
+            ]
+        },
+        {
+            "name": "tea-spice",
+            "display_name": "spice tea",
+            "similar_items": [
+                "chai-tea",
+                "masala-tea",
+                "spiced-tea",
+                "ginger-tea"
+            ]
+        },
+        {
+            "name": "tea-verveine",
+            "display_name": "verveine tea",
+            "similar_items": [
+                "lemon-verbena-tea",
+                "verbena-tea",
+                "chamomile-tea",
+                "herbal-tea"
+            ]
+        },
+        {
+            "name": "water",
+            "display_name": "water",
+            "similar_items": [
+                "bottled-water",
+                "tap-water",
+                "distilled-water",
+                "mineral-water",
+                "sparkling-water"
+            ]
+        },
+        {
+            "name": "water-mineral",
+            "display_name": "mineral water",
+            "similar_items": [
+                "mineral-water",
+                "sparkling-water",
+                "bottled-mineral-water",
+                "carbonated-water"
+            ]
+        },
+        {
+            "name": "water-with-lemon-juice",
+            "display_name": "lemon water",
+            "similar_items": [
+                "lemon-water",
+                "lemon-infused-water",
+                "citrus-water",
+                "flavored-water"
+            ]
+        },
         {
             "name": "white-coffee-with-caffeine",
             "display_name": "white coffee",
             "similar_items": [
                 "latte",
-                "flat white",
                 "cappuccino",
-                "black coffee",
-                "espresso"
+                "flat-white",
+                "cafe-au-lait",
+                "milk-coffee"
             ]
         }
     ],
@@ -17,23 +1085,21 @@
             "name": "aperitif-with-alcohol-aperol-spritz",
             "display_name": "aperol spritz",
             "similar_items": [
-                "aperol spritz",
-                "campari spritz",
-                "negroni sbagliato",
-                "orange cocktail",
-                "aperitif",
-                "cocktail"
+                "aperol-spritz",
+                "orange-cocktail",
+                "prosecco-cocktail",
+                "italian-cocktail"
             ]
         },
         {
             "name": "beer",
             "display_name": "beer",
             "similar_items": [
-                "lager",
                 "ale",
+                "lager",
                 "pilsner",
                 "stout",
-                "beer bottle"
+                "wheat-beer"
             ]
         },
         {
@@ -42,10 +1108,8 @@
             "similar_items": [
                 "prosecco",
                 "cava",
-                "sparkling wine",
-                "sparkling cider",
-                "white wine",
-                "champagne flute"
+                "sparkling-wine",
+                "sparkling-white-wine"
             ]
         },
         {
@@ -54,22 +1118,19 @@
             "similar_items": [
                 "martini",
                 "mojito",
-                "mixed drink",
-                "cosmopolitan",
-                "whiskey sour",
-                "alcoholic beverage"
+                "mixed-drink",
+                "tropical-drink"
             ]
         },
         {
             "name": "light-beer",
             "display_name": "light beer",
             "similar_items": [
+                "ale",
+                "beer",
                 "lager",
                 "pilsner",
-                "ale",
-                "stout",
-                "beer",
-                "light lager"
+                "wheat-beer"
             ]
         },
         {
@@ -78,43 +1139,42 @@
             "similar_items": [
                 "champagne",
                 "cava",
-                "sparkling wine",
-                "sparkling white wine",
-                "sparkling ros\u00e9"
+                "sparkling-wine",
+                "sparkling-white-wine",
+                "italian-sparkling-wine"
             ]
         },
         {
             "name": "sekt",
             "display_name": "sekt",
             "similar_items": [
-                "prosecco",
                 "champagne",
-                "cava",
-                "sparkling wine",
-                "sparkling cider"
+                "prosecco",
+                "german-sparkling-wine",
+                "sparkling-wine",
+                "cava"
             ]
         },
         {
             "name": "wine-red",
             "display_name": "red wine",
             "similar_items": [
+                "cabernet",
                 "merlot",
-                "cabernet sauvignon",
-                "pinot noir",
-                "syrah",
-                "red wine",
-                "cabernet"
+                "pinot-noir",
+                "red-wine",
+                "shiraz"
             ]
         },
         {
             "name": "wine-rose",
             "display_name": "rose wine",
             "similar_items": [
-                "ros\u00e9",
-                "blush wine",
-                "pink wine",
-                "ros\u00e9 champagne",
-                "white wine"
+                "blush-wine",
+                "pink-wine",
+                "rose",
+                "rose-wine",
+                "provence-rose"
             ]
         },
         {
@@ -122,10 +1182,10 @@
             "display_name": "white wine",
             "similar_items": [
                 "chardonnay",
-                "sauvignon blanc",
-                "pinot grigio",
+                "pinot-grigio",
                 "riesling",
-                "white wine"
+                "sauvignon-blanc",
+                "white-wine"
             ]
         }
     ],
@@ -134,130 +1194,128 @@
             "name": "balsamic-salad-dressing",
             "display_name": "balsamic dressing",
             "similar_items": [
-                "balsamic vinaigrette",
                 "vinaigrette",
-                "caesar dressing",
-                "italian dressing",
-                "ranch dressing"
+                "italian-dressing",
+                "olive-oil-dressing",
+                "balsamic-glaze",
+                "mediterranean-dressing"
             ]
         },
         {
             "name": "balsamic-vinegar",
             "display_name": "balsamic vinegar",
             "similar_items": [
-                "red wine vinegar",
-                "apple cider vinegar",
-                "white wine vinegar",
-                "balsamic glaze",
-                "vinegar",
-                "soy sauce"
+                "red-wine-vinegar",
+                "apple-cider-vinegar",
+                "white-wine-vinegar",
+                "rice-vinegar",
+                "sherry-vinegar"
             ]
         },
         {
             "name": "bolognaise-sauce",
             "display_name": "bolognaise sauce",
             "similar_items": [
-                "rag\u00f9",
-                "marinara sauce",
-                "meat sauce",
-                "tomato sauce",
-                "spaghetti sauce"
+                "marinara-sauce",
+                "meat-sauce",
+                "pasta-sauce",
+                "tomato-sauce",
+                "ragu"
             ]
         },
         {
             "name": "dips",
             "display_name": "dips",
             "similar_items": [
-                "hummus",
                 "guacamole",
+                "hummus",
                 "salsa",
                 "tzatziki",
-                "spinach dip",
-                "baba ganoush"
+                "spinach-artichoke-dip"
+            ]
+        },
+        {
+            "name": "eggplant-caviar",
+            "display_name": "eggplant caviar",
+            "similar_items": [
+                "melitzanosalata",
+                "baba-ganoush",
+                "eggplant-spread",
+                "roasted-eggplant-spread",
+                "mediterranean-spread"
             ]
         },
         {
             "name": "french-salad-dressing",
             "display_name": "french dressing",
             "similar_items": [
-                "italian dressing",
-                "ranch dressing",
-                "thousand island",
-                "vinaigrette",
-                "catalina dressing",
-                "russian dressing"
+                "thousand-island-dressing",
+                "russian-dressing",
+                "creamy-dressing",
+                "orange-dressing"
             ]
         },
         {
             "name": "fruit-coulis",
             "display_name": "fruit coulis",
             "similar_items": [
-                "applesauce",
-                "berry compote",
-                "fruit puree",
-                "fruit sauce",
-                "berry coulis",
-                "jam"
+                "raspberry-coulis",
+                "berry-sauce",
+                "fruit-puree",
+                "fruit-compote"
             ]
         },
         {
             "name": "guacamole",
             "display_name": "guacamole",
             "similar_items": [
-                "avocado dip",
-                "avocado spread",
-                "salsa",
-                "pico de gallo",
-                "green salsa",
-                "avocado mash"
+                "avocado-dip",
+                "avocado-spread",
+                "avocado-mash",
+                "salsa"
             ]
         },
         {
             "name": "hummus",
             "display_name": "hummus",
             "similar_items": [
-                "baba ganoush",
+                "chickpea-spread",
+                "baba-ganoush",
                 "muhammara",
-                "tahini",
-                "tzatziki",
-                "white bean dip",
-                "falafel"
+                "tahini"
             ]
         },
         {
             "name": "italian-salad-dressing",
             "display_name": "italian salad dressing",
             "similar_items": [
-                "balsamic dressing",
-                "caesar dressing",
-                "french dressing",
-                "ranch dressing",
                 "vinaigrette",
-                "balsamic vinaigrette"
+                "balsamic-vinaigrette",
+                "olive-oil-dressing",
+                "herb-vinaigrette",
+                "caesar-dressing"
             ]
         },
         {
             "name": "ketchup",
             "display_name": "ketchup",
             "similar_items": [
-                "bbq sauce",
-                "chili sauce",
-                "red sauce",
-                "salsa",
-                "tomato sauce",
-                "steak sauce"
+                "tomato-sauce",
+                "marinara-sauce",
+                "chili-sauce",
+                "hot-sauce",
+                "bbq-sauce"
             ]
         },
         {
             "name": "maple-syrup-concentrate",
             "display_name": "maple syrup",
             "similar_items": [
-                "maple syrup",
-                "pancake syrup",
-                "corn syrup",
-                "molasses",
                 "honey",
-                "syrup"
+                "corn-syrup",
+                "agave-nectar",
+                "molasses",
+                "simple-syrup"
             ]
         },
         {
@@ -265,71 +1323,52 @@
             "display_name": "mayonnaise",
             "similar_items": [
                 "aioli",
-                "tartar sauce",
-                "sandwich spread",
-                "ranch dressing",
-                "sour cream",
-                "egg salad"
+                "tartar-sauce",
+                "sandwich-spread",
+                "salad-dressing",
+                "miracle-whip"
             ]
         },
         {
             "name": "mustard",
             "display_name": "mustard",
             "similar_items": [
-                "dijon mustard",
-                "honey mustard",
-                "spicy mustard",
-                "yellow mustard",
-                "whole grain mustard",
-                "stone ground mustard"
+                "yellow-mustard",
+                "dijon-mustard",
+                "honey-mustard",
+                "whole-grain-mustard",
+                "spicy-mustard"
             ]
         },
         {
             "name": "mustard-dijon",
             "display_name": "dijon mustard",
             "similar_items": [
-                "dijon mustard",
-                "spicy mustard",
-                "stone ground mustard",
-                "whole grain mustard",
-                "yellow mustard",
-                "honey mustard"
+                "french-mustard",
+                "spicy-mustard",
+                "whole-grain-mustard",
+                "stone-ground-mustard"
             ]
         },
         {
             "name": "oil-vinegar-salad-dressing",
             "display_name": "oil and vinegar dressing",
             "similar_items": [
-                "vinaigrette",
-                "balsamic vinaigrette",
-                "italian dressing",
-                "french dressing",
-                "olive oil dressing",
-                "salad dressing"
+                "balsamic-vinaigrette",
+                "red-wine-vinaigrette",
+                "olive-oil-dressing",
+                "herb-vinaigrette"
             ]
         },
         {
             "name": "salad-dressing",
             "display_name": "salad dressing",
             "similar_items": [
-                "ranch dressing",
-                "italian dressing",
+                "ranch-dressing",
+                "caesar-dressing",
+                "italian-dressing",
                 "vinaigrette",
-                "thousand island",
-                "caesar dressing",
-                "french dressing"
-            ]
-        },
-        {
-            "name": "sauce-carbonara",
-            "display_name": "carbonara sauce",
-            "similar_items": [
-                "alfredo sauce",
-                "bechamel sauce",
-                "cheese sauce",
-                "creamy pasta sauce",
-                "white sauce",
-                "pasta sauce"
+                "thousand-island-dressing"
             ]
         },
         {
@@ -337,25 +1376,741 @@
             "display_name": "cocktail sauce",
             "similar_items": [
                 "ketchup",
-                "thousand island",
-                "salsa",
-                "seafood sauce",
-                "marinara sauce",
-                "red sauce"
+                "chili-sauce",
+                "tomato-sauce",
+                "marinara-sauce"
+            ]
+        },
+        {
+            "name": "sauce-cream",
+            "display_name": "cream sauce",
+            "similar_items": [
+                "bechamel-sauce",
+                "alfredo-sauce",
+                "white-sauce",
+                "cheese-sauce",
+                "mushroom-cream-sauce"
+            ]
+        },
+        {
+            "name": "sauce-curry",
+            "display_name": "curry sauce",
+            "similar_items": [
+                "curry-sauce",
+                "tikka-masala-sauce",
+                "korma-sauce",
+                "vindaloo-sauce",
+                "curry-paste"
+            ]
+        },
+        {
+            "name": "sauce-mushroom",
+            "display_name": "mushroom sauce",
+            "similar_items": [
+                "mushroom-cream-sauce",
+                "mushroom-gravy",
+                "cream-sauce",
+                "brown-gravy",
+                "mushroom-soup"
+            ]
+        },
+        {
+            "name": "sauce-pesto",
+            "display_name": "pesto sauce",
+            "similar_items": [
+                "basil-pesto",
+                "green-pesto",
+                "red-pesto",
+                "pesto-cream-sauce",
+                "herb-sauce"
+            ]
+        },
+        {
+            "name": "sauce-roast",
+            "display_name": "roast sauce",
+            "similar_items": [
+                "gravy",
+                "brown-gravy",
+                "au-jus",
+                "roast-gravy",
+                "meat-sauce"
+            ]
+        },
+        {
+            "name": "sauce-savoury",
+            "display_name": "savoury sauce",
+            "similar_items": [
+                "barbecue-sauce",
+                "brown-sauce",
+                "chili-sauce",
+                "gravy",
+                "worcestershire-sauce"
+            ]
+        },
+        {
+            "name": "sauce-soya",
+            "display_name": "soy sauce",
+            "similar_items": [
+                "dark-soy-sauce",
+                "light-soy-sauce",
+                "shoyu",
+                "tamari",
+                "ponzu-sauce"
+            ]
+        },
+        {
+            "name": "sauce-sweet-salted-asian",
+            "display_name": "sweet and salty asian sauce",
+            "similar_items": [
+                "hoisin-sauce",
+                "oyster-sauce",
+                "plum-sauce",
+                "sweet-chili-sauce",
+                "teriyaki-sauce"
+            ]
+        },
+        {
+            "name": "sauce-sweet-sour",
+            "display_name": "sweet and sour sauce",
+            "similar_items": [
+                "duck-sauce",
+                "mango-chutney",
+                "pineapple-sauce",
+                "sweet-and-sour-sauce",
+                "tamarind-sauce"
+            ]
+        },
+        {
+            "name": "sugar-glazing",
+            "display_name": "sugar glaze",
+            "similar_items": [
+                "glaze",
+                "honey-glaze",
+                "icing",
+                "simple-syrup",
+                "caramel-sauce"
+            ]
+        },
+        {
+            "name": "tartar-sauce",
+            "display_name": "tartar sauce",
+            "similar_items": [
+                "aioli",
+                "mayonnaise",
+                "remoulade",
+                "thousand-island-dressing",
+                "ranch-dressing"
+            ]
+        },
+        {
+            "name": "tomato-sauce",
+            "display_name": "tomato sauce",
+            "similar_items": [
+                "marinara-sauce",
+                "pasta-sauce",
+                "pomodoro-sauce",
+                "pizza-sauce"
+            ]
+        },
+        {
+            "name": "tzatziki",
+            "display_name": "tzatziki",
+            "similar_items": [
+                "cucumber-yogurt-dip",
+                "greek-yogurt-dip",
+                "raita",
+                "yogurt-dip"
             ]
         }
     ],
     "Condiment - Spreads & Jams": [
         {
-            "name": "eggplant-caviar",
-            "display_name": "eggplant caviar",
+            "name": "butter-spread-puree-almond",
+            "display_name": "almond butter",
             "similar_items": [
-                "baba ganoush",
-                "eggplant dip",
-                "eggplant spread",
-                "melitzanosalata",
-                "muhammara",
-                "ratatouille"
+                "almond-butter",
+                "cashew-butter",
+                "peanut-butter",
+                "sunflower-seed-butter",
+                "walnut-butter"
+            ]
+        },
+        {
+            "name": "cenovis-yeast-spread",
+            "display_name": "yeast spread",
+            "similar_items": [
+                "yeast-extract-spread",
+                "brewers-yeast-spread",
+                "marmite",
+                "vegemite"
+            ]
+        },
+        {
+            "name": "fruit-compotes",
+            "display_name": "fruit compotes",
+            "similar_items": [
+                "fruit-sauce",
+                "fruit-puree",
+                "fruit-jam",
+                "fruit-preserve",
+                "fruit-syrup"
+            ]
+        },
+        {
+            "name": "hazelnut-chocolate-spread-nutella-ovomaltine-caotina",
+            "display_name": "hazelnut chocolate spread",
+            "similar_items": [
+                "chocolate-spread",
+                "hazelnut-spread",
+                "nutella",
+                "ovomaltine",
+                "cocoa-spread"
+            ]
+        },
+        {
+            "name": "jam",
+            "display_name": "jam",
+            "similar_items": [
+                "fruit-preserve",
+                "jelly",
+                "marmalade",
+                "compote"
+            ]
+        },
+        {
+            "name": "peanut-butter",
+            "display_name": "peanut butter",
+            "similar_items": [
+                "almond-butter",
+                "cashew-butter",
+                "sunflower-seed-butter",
+                "peanut-spread"
+            ]
+        }
+    ],
+    "Snack - Savory": [
+        {
+            "name": "chips-french-fries",
+            "display_name": "french fries",
+            "similar_items": [
+                "french-fries",
+                "potato-wedges",
+                "curly-fries",
+                "steak-fries"
+            ]
+        },
+        {
+            "name": "corn-crisps",
+            "display_name": "corn crisps",
+            "similar_items": [
+                "corn-chips",
+                "tortilla-chips",
+                "cheese-puffs",
+                "corn-crackers"
+            ]
+        },
+        {
+            "name": "crackers",
+            "display_name": "crackers",
+            "similar_items": [
+                "saltines",
+                "rice-crackers",
+                "oyster-crackers",
+                "cheese-crackers"
+            ]
+        },
+        {
+            "name": "crisps",
+            "display_name": "crisps",
+            "similar_items": [
+                "potato-chips",
+                "kettle-chips",
+                "tortilla-chips",
+                "pita-chips"
+            ]
+        },
+        {
+            "name": "croutons",
+            "display_name": "croutons",
+            "similar_items": [
+                "breadcrumbs",
+                "garlic-bread",
+                "toasted-bread",
+                "bread-cubes"
+            ]
+        },
+        {
+            "name": "mixed-nuts",
+            "display_name": "mixed nuts",
+            "similar_items": [
+                "roasted-nuts",
+                "salted-nuts",
+                "nut-mix",
+                "assorted-nuts"
+            ]
+        },
+        {
+            "name": "paprika-chips",
+            "display_name": "paprika chips",
+            "similar_items": [
+                "potato-chips",
+                "seasoned-chips",
+                "flavored-chips",
+                "spicy-chips"
+            ]
+        },
+        {
+            "name": "popcorn-salted",
+            "display_name": "salted popcorn",
+            "similar_items": [
+                "salted-popcorn",
+                "buttered-popcorn",
+                "kettle-corn",
+                "movie-popcorn"
+            ]
+        },
+        {
+            "name": "spring-roll-fried",
+            "display_name": "fried spring roll",
+            "similar_items": [
+                "egg-roll",
+                "samosa",
+                "fried-dumpling",
+                "crispy-roll"
+            ]
+        }
+    ],
+    "Snack - Sweet": [
+        {
+            "name": "mix-of-dried-fruits-and-nuts",
+            "display_name": "mixed dried fruits and nuts",
+            "similar_items": [
+                "trail-mix",
+                "fruit-and-nut-mix",
+                "dried-fruit-mix",
+                "energy-mix"
+            ]
+        }
+    ],
+    "Dessert - Cakes & Pastries": [
+        {
+            "name": "apple-crumble",
+            "display_name": "apple crumble",
+            "similar_items": [
+                "apple-crisp",
+                "apple-cobbler",
+                "fruit-crumble",
+                "streusel-topped-dessert"
+            ]
+        },
+        {
+            "name": "apple-pie",
+            "display_name": "apple pie",
+            "similar_items": [
+                "apple-tart",
+                "fruit-pie",
+                "lattice-pie",
+                "double-crust-pie"
+            ]
+        },
+        {
+            "name": "banana-cake",
+            "display_name": "banana cake",
+            "similar_items": [
+                "banana-bread",
+                "loaf-cake",
+                "pound-cake",
+                "moist-cake"
+            ]
+        },
+        {
+            "name": "black-forest-tart",
+            "display_name": "black forest tart",
+            "similar_items": [
+                "black-forest-cake",
+                "chocolate-tart",
+                "cherry-tart",
+                "layered-cake"
+            ]
+        },
+        {
+            "name": "brownie",
+            "display_name": "brownie",
+            "similar_items": [
+                "fudgy-brownie",
+                "chocolate-square",
+                "dense-cake-square",
+                "chocolate-cake"
+            ]
+        },
+        {
+            "name": "cake-chocolate",
+            "display_name": "chocolate cake",
+            "similar_items": [
+                "chocolate-layer-cake",
+                "devils-food-cake",
+                "black-forest-cake",
+                "chocolate-mousse-cake",
+                "chocolate-bundt-cake"
+            ]
+        },
+        {
+            "name": "cake-marble",
+            "display_name": "marble cake",
+            "similar_items": [
+                "marble-cake",
+                "swirl-cake",
+                "zebra-cake",
+                "marble-bundt-cake",
+                "marble-pound-cake"
+            ]
+        },
+        {
+            "name": "cake-oblong",
+            "display_name": "oblong cake",
+            "similar_items": [
+                "loaf-cake",
+                "pound-cake",
+                "sheet-cake",
+                "bar-cake",
+                "rectangular-cake"
+            ]
+        },
+        {
+            "name": "cake-salted",
+            "display_name": "salted cake",
+            "similar_items": [
+                "salted-caramel-cake",
+                "salted-chocolate-cake",
+                "salted-butter-cake",
+                "sea-salt-cake"
+            ]
+        },
+        {
+            "name": "carrot-cake",
+            "display_name": "carrot cake",
+            "similar_items": [
+                "spiced-carrot-cake",
+                "cream-cheese-carrot-cake",
+                "carrot-loaf",
+                "carrot-muffin",
+                "walnut-carrot-cake"
+            ]
+        },
+        {
+            "name": "cheesecake",
+            "display_name": "cheesecake",
+            "similar_items": [
+                "new-york-cheesecake",
+                "no-bake-cheesecake",
+                "fruit-topped-cheesecake",
+                "chocolate-cheesecake",
+                "baked-cheesecake"
+            ]
+        },
+        {
+            "name": "fruit-tart",
+            "display_name": "fruit tart",
+            "similar_items": [
+                "french-fruit-tart",
+                "custard-fruit-tart",
+                "fruit-galette",
+                "fruit-tartlet",
+                "open-fruit-pie"
+            ]
+        },
+        {
+            "name": "lemon-cake",
+            "display_name": "lemon cake",
+            "similar_items": [
+                "lemon-layer-cake",
+                "lemon-drizzle-cake",
+                "lemon-bundt-cake",
+                "lemon-loaf-cake",
+                "lemon-chiffon-cake"
+            ]
+        },
+        {
+            "name": "lemon-pie",
+            "display_name": "lemon pie",
+            "similar_items": [
+                "lemon-meringue-pie",
+                "lemon-tart",
+                "lemon-custard-pie",
+                "lemon-cream-pie",
+                "key-lime-pie"
+            ]
+        },
+        {
+            "name": "mousse",
+            "display_name": "mousse",
+            "similar_items": [
+                "chocolate-mousse",
+                "fruit-mousse",
+                "vanilla-mousse",
+                "light-mousse",
+                "savory-mousse"
+            ]
+        },
+        {
+            "name": "pie-apricot-baked-with-cake-dough",
+            "display_name": "apricot pie",
+            "similar_items": [
+                "apricot-pie",
+                "fruit-pie",
+                "rustic-fruit-tart",
+                "crumble-topped-pie"
+            ]
+        },
+        {
+            "name": "pie-plum-baked-with-cake-dough",
+            "display_name": "plum pie",
+            "similar_items": [
+                "plum-pie",
+                "fruit-pie",
+                "rustic-fruit-tart",
+                "crumble-topped-pie"
+            ]
+        },
+        {
+            "name": "pie-rhubarb-baked-with-cake-dough",
+            "display_name": "rhubarb pie",
+            "similar_items": [
+                "rhubarb-pie",
+                "fruit-pie",
+                "rustic-fruit-tart",
+                "crumble-topped-pie"
+            ]
+        },
+        {
+            "name": "tiramisu",
+            "display_name": "tiramisu",
+            "similar_items": [
+                "coffee-soaked-cake",
+                "mascarpone-dessert",
+                "layered-coffee-cake",
+                "trifle"
+            ]
+        }
+    ],
+    "Dessert - Frozen & Cold": [
+        {
+            "name": "chocolate-mousse",
+            "display_name": "chocolate mousse",
+            "similar_items": [
+                "mousse-au-chocolat",
+                "chocolate-pudding",
+                "chocolate-mousse-cup",
+                "chocolate-mousse-cake"
+            ]
+        },
+        {
+            "name": "dairy-ice-cream",
+            "display_name": "ice cream",
+            "similar_items": [
+                "gelato",
+                "frozen-yogurt",
+                "sorbet",
+                "sherbet"
+            ]
+        },
+        {
+            "name": "panna-cotta",
+            "display_name": "panna cotta",
+            "similar_items": [
+                "creme-brulee",
+                "flan",
+                "custard",
+                "vanilla-pudding"
+            ]
+        },
+        {
+            "name": "sorbet",
+            "display_name": "sorbet",
+            "similar_items": [
+                "granita",
+                "sherbet",
+                "fruit-sorbet",
+                "lemon-sorbet"
+            ]
+        },
+        {
+            "name": "vanille-cream-cooked-custard-creme-dessert",
+            "display_name": "vanilla custard dessert",
+            "similar_items": [
+                "vanilla-pudding",
+                "custard",
+                "creme-anglaise",
+                "egg-custard"
+            ]
+        }
+    ],
+    "Dessert - Candy & Confections": [
+        {
+            "name": "chocolate",
+            "display_name": "chocolate",
+            "similar_items": [
+                "chocolate-bar",
+                "dark-chocolate",
+                "milk-chocolate",
+                "chocolate-pieces"
+            ]
+        },
+        {
+            "name": "chocolate-egg-small",
+            "display_name": "small chocolate egg",
+            "similar_items": [
+                "hollow-chocolate-egg",
+                "solid-chocolate-egg",
+                "chocolate-bunny",
+                "easter-chocolate"
+            ]
+        },
+        {
+            "name": "chocolate-filled",
+            "display_name": "chocolate filled",
+            "similar_items": [
+                "chocolate-truffle",
+                "chocolate-bonbon",
+                "filled-chocolate",
+                "ganache-filled"
+            ]
+        },
+        {
+            "name": "dark-chocolate",
+            "display_name": "dark chocolate",
+            "similar_items": [
+                "bittersweet-chocolate",
+                "semisweet-chocolate",
+                "chocolate-bar",
+                "chocolate-square",
+                "cocoa-percentage-chocolate"
+            ]
+        },
+        {
+            "name": "gummi-bears-fruit-jellies-jelly-babies-with-fruit-essence",
+            "display_name": "fruit jelly bears",
+            "similar_items": [
+                "gummy-bears",
+                "gummy-worms",
+                "fruit-gummies",
+                "jelly-candies"
+            ]
+        },
+        {
+            "name": "m-m-s",
+            "display_name": "m&m's",
+            "similar_items": [
+                "candy-coated-chocolate",
+                "chocolate-candies",
+                "colorful-candies",
+                "round-chocolate-candies"
+            ]
+        },
+        {
+            "name": "macaroon",
+            "display_name": "macaroon",
+            "similar_items": [
+                "coconut-macaroon",
+                "almond-macaroon",
+                "chocolate-dipped-macaroon",
+                "macaron",
+                "meringue-cookie"
+            ]
+        },
+        {
+            "name": "meringue",
+            "display_name": "meringue",
+            "similar_items": [
+                "meringue-cookies",
+                "pavlova",
+                "meringue-shells",
+                "meringue-nest"
+            ]
+        },
+        {
+            "name": "milk-chocolate",
+            "display_name": "chocolate milk",
+            "similar_items": [
+                "chocolate-bar",
+                "milk-chocolate-bar",
+                "milk-chocolate-piece",
+                "chocolate-pieces"
+            ]
+        },
+        {
+            "name": "milk-chocolate-with-hazelnuts",
+            "display_name": "chocolate with hazelnuts",
+            "similar_items": [
+                "chocolate-bar-with-nuts",
+                "hazelnut-chocolate",
+                "praline-chocolate",
+                "chocolate-with-nuts"
+            ]
+        },
+        {
+            "name": "praline",
+            "display_name": "praline",
+            "similar_items": [
+                "chocolate-praline",
+                "nut-praline",
+                "caramelized-nut-candy",
+                "french-praline"
+            ]
+        },
+        {
+            "name": "sweets-candies",
+            "display_name": "candies",
+            "similar_items": [
+                "chocolate-candies",
+                "gummies",
+                "hard-candies",
+                "lollipops",
+                "jelly-beans"
+            ]
+        },
+        {
+            "name": "white-chocolate",
+            "display_name": "white chocolate",
+            "similar_items": [
+                "white-chocolate-bar",
+                "white-chocolate-chips",
+                "white-chocolate-coating",
+                "chocolate-bar"
+            ]
+        }
+    ],
+    "Miscellaneous": [
+        {
+            "name": "butter-herb",
+            "display_name": "herb butter",
+            "similar_items": [
+                "compound-butter",
+                "herb-butter",
+                "garlic-butter",
+                "chive-butter",
+                "parsley-butter"
+            ]
+        },
+        {
+            "name": "ice-cubes",
+            "display_name": "ice cubes",
+            "similar_items": [
+                "crushed-ice",
+                "ice-chips",
+                "ice-block",
+                "ice-shavings"
+            ]
+        },
+        {
+            "name": "sour-cream",
+            "display_name": "sour cream",
+            "similar_items": [
+                "cream-cheese",
+                "greek-yogurt",
+                "creme-fraiche",
+                "yogurt-dip",
+                "cottage-cheese"
             ]
         }
     ]
