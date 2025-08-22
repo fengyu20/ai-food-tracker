@@ -64,9 +64,6 @@ def classify_image(
     """
     start_time = time.time()
 
-    # Extract known parameters for this function, with defaults
-    fuzzy_threshold = kwargs.get('fuzzy_threshold', 90)
-
     # 1. Build the prompt from the template
     subcategory_text = taxonomy.build_prompt_text()
     prompt = FOOD_DETECTION_PROMPT.format(subcategory_text=subcategory_text)
@@ -90,10 +87,20 @@ def classify_image(
     raw_fuzzy = kwargs.get('fuzzy_threshold', 0.8)  # default as decimal for clarity
     fuzzy_threshold_decimal = (raw_fuzzy / 100.0) if raw_fuzzy > 1.0 else raw_fuzzy
 
-    validated_items, unlisted_foods = taxonomy.process_ai_response(
-        raw_ai_result.get("detected_foods", []),
-        fuzzy_threshold_decimal
-    )
+    raw_items = raw_ai_result.get("detected_foods", []) or []
+
+    if any(isinstance(it, dict) and (it.get('match_type') in ('exact_match', 'ai_guess') or 'item_name' in it or 'mapped_item' in it) for it in raw_items):
+        validated_items, unlisted_foods = postprocess_predictions(
+            raw_items,
+            taxonomy=taxonomy,
+            k=kwargs.get('max_items', 4),
+            require_min_conf=kwargs.get('min_confidence', 'medium')
+        )
+    else:
+        validated_items, unlisted_foods = taxonomy.process_ai_response(
+            raw_items,
+            fuzzy_threshold_decimal
+        )
 
     # 4. Calculate final confidence
     final_confidence = calculate_final_confidence(
@@ -115,3 +122,70 @@ def classify_image(
         "latency_ms": latency_ms,
         "raw_response": raw_ai_result
     } 
+
+def _conf_score(label: str) -> int:
+    return {'low': 0, 'medium': 1, 'high': 2}.get(label or 'low', 0)
+
+def _score_to_label(score: int) -> str:
+    return ['low', 'medium', 'high'][max(0, min(2, score))]
+
+def postprocess_predictions(items, taxonomy, k=4, require_min_conf='medium', composite_first=True):
+    if not items:
+        return items
+
+    processed_items = []
+    unlisted_foods = []
+
+    for item in items:
+        mt = item.get('match_type')
+        if mt == 'exact_match' or mt == 'exact':
+            conf = item.get('confidence', 'low')
+            sub = item.get('item_name') or item.get('subcategory')
+            if not sub:
+                continue
+            processed_items.append({
+                'subcategory': sub,
+                'confidence': conf,
+                'match_type': 'exact',
+                'reasoning': item.get('reasoning', '')
+            })
+        elif mt == 'ai_guess' and item.get('mapped_item'):
+            map_conf = item.get('mapping_confidence', 'low')
+            if _conf_score(map_conf) >= _conf_score('medium'):
+                base_conf = item.get('confidence', 'low')
+                final_score = min(_conf_score(base_conf), _conf_score(map_conf))
+                final_conf = _score_to_label(final_score)
+                processed_items.append({
+                    'subcategory': item['mapped_item'],
+                    'confidence': final_conf,
+                    'match_type': 'mapped',
+                    'reasoning': f"AI guess '{item['item_name']}' mapped to '{item['mapped_item']}'"
+                })
+                unlisted_foods.append({
+                    'ai_subcategory': item['item_name'],
+                    'mapping': item['mapped_item'],
+                    'confidence': base_conf,
+                    'mapping_confidence': map_conf
+                })
+    # Deduplicate by subcategory (prefer higher conf; exact > mapped)
+    best = {}
+    for it in processed_items:
+        sub = it['subcategory']
+        prev = best.get(sub)
+        if not prev:
+            best[sub] = it
+            continue
+        s_new, s_old = _conf_score(it['confidence']), _conf_score(prev['confidence'])
+        new_exact = (it['match_type'] == 'exact')
+        old_exact = (prev['match_type'] == 'exact')
+        if (s_new > s_old) or (s_new == s_old and new_exact and not old_exact):
+            best[sub] = it
+
+    deduped = list(best.values())
+
+    deduped = [it for it in deduped if _conf_score(it['confidence']) >= _conf_score(require_min_conf)]
+
+    deduped.sort(key=lambda it: (_conf_score(it['confidence']), it['match_type']=='exact'), reverse=True)
+    deduped = deduped[:k]
+
+    return deduped, unlisted_foods

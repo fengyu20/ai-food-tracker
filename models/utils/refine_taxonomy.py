@@ -50,7 +50,7 @@ SYNTHESIZER_MODEL = "openai/gpt-5-mini"
 
 # Constants are now imported from settings.py
 RATE_LIMIT_DELAY_SECONDS = 1.0
-BATCH_SIZE = 15
+BATCH_SIZE = 20
 MAX_RETRIES = 3
 MAX_SIMILAR_ITEMS = 6  # Quality control
 DEFAULT_SIMILARITY_THRESHOLD = 0.4 # Default semantic distance threshold

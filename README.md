@@ -1,6 +1,8 @@
 
 # Eczema AI Food Tracker: Using YOLO, Local LLM, and Gemini
 
+![overview](/file/overview.jpg)
+
 ## Background
 
 Many people suffer from eczema, and while environmental and dietary factors are known to be common triggers, these triggers are highly individual. What affects one person may not affect another.
@@ -37,6 +39,8 @@ After using YOLO to get rudimentary results, I realized that it would be hard to
 
 But when I tried uploading the food image to different LLMs, they generally returned accurate results. So this project switched to the LLM approach.  
 
+#### Overview
+
 #### File Structure
 ```
 models/                          # LLM-based food image classification
@@ -52,7 +56,7 @@ models/                          # LLM-based food image classification
 │   ├── common.py               # Shared utilities and helpers
 │   └── settings.py             # Configuration paths and constants
 │
-├── providers/                   # LLM providers
+├── providers/                  # LLM providers
 │   ├── gemini.py               # Google Gemini API
 │   ├── openrouter.py           # OpenRouter API  
 │   └── llama.py                # Local Ollama/Llama models
@@ -63,6 +67,8 @@ models/                          # LLM-based food image classification
 │   └── refine_taxonomy.py      # Multi-model taxonomy refinement
 │
 └── configs/
+    ├── config.py               # Normalization and CLI helpers
+    ├── evaluation_config.yml   # Config file
     └── provider_config.json    # Model parameters and settings
 ```
 
@@ -72,14 +78,26 @@ models/                          # LLM-based food image classification
 3. **Multiple Providers - OpenRouter**: After discussing with my mentor, James, from WISJ Summer School, he also recommended using OpenRouter, which is convenient as it provides a central hub to call different LLM providers, charging a small service fee (8%).  
 
 #### How to
-Please first export your own gemini / openrouter key in your local env.
+1. In the root folder, activate the virtual enviroment and install dependencies.
+```
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+2. Then, export your own gemini / openrouter key in your local env.
 ```
 export OPENROUTER_API_KEY="your_key"
 export GEMINI_API_KEY="your_key"
 ```
 
-Then run the following commands:
-- Signle image testing: `python -m models.classify path/to/image.jpg --provider gemini`
+3. (Optional) This repo contains a few images for testing, if you want to use the full (40k+) / sample (4k+) dataset, run the following command:
+```
+python download_dataset.py --type sample / full
+```
+
+4. After that,  run the following commands:
+- Signle image testing: `python -m models.classify content/extracted_food_recognition/validation/img/008108.jpg --provider gemini`
 - Batch evaluation: `python -m models.evaluate --providers gemini openrouter`
     - *Note*: This command will use models provided in [the config file](/models/configs/provider_config.json), update if needed.
 
@@ -148,12 +166,69 @@ This part selects the suitable training model, parameters, and starts training. 
 
 A challenge faced is that YOLO and LLMs produce totally different outputs: YOLO produces a list of `[bounding_box, class_id, confidence_score]`, while LLMs are more open-ended — answers can change a lot depending on the prompt.
 
-### Goal: Extract food items from the image
-This project tries to find a common ground to compare the results by focusing on identifying the food items present in an image.
+This project tries to find a common ground to compare the results by focusing on identifying the food items present in an image, with a focus on comparing LLMs results.
 
-Specifically, YOLO’s final list would be the food categories whose confidence scores pass a certain threshold, and LLMs would follow a specific prompt to return the corresponding food categories in JSON.
+### Challenges Faced 
+1. Label quality: Although around 500 food categories are provided, they sometimes lack a principle (sometimes the label focuses on the compound dish name, sometimes on ingredients); sometimes labels are wrong (mistaking feta for tofu); and sometimes annotations include attributes that cannot be easily detected from the image (with/without salt).  
+2. LLM responses can be wrong: Even though prompts are detailed and we expect the LLM to follow our rules (find the closest category), it can return food outside the category.  
+3. LLM responses are open-ended, but our labels are fixed. Sometimes LLMs return "dried figs," but the original label is "fig-dried," which causes problems.  
 
+### Solutions
+1. Expand ground truth’s rigid labels with similar items: In `populate_taxonomy.py`, we first use an LLM to find the parent category and then some similar items. As it is used as a taxonomy, we then use `refine_taxonomy.py` to have a second LLM challenge the result. When disagreement arises, we use a third LLM to synthesize the final JSON. At last, we use a general normalization strategy, for example, lowercasing and removing punctuation, and removing common preparation methods like "cooked." In this case, we solve the "fig-dried" vs. "dried figs" mismatch.  
+```json
+"fig-dried": {
+    "parent_category": "Raw Ingredient - Fruits",
+    "similar_items": [
+        "dried figs",
+        "prunes",
+        "raisins",
+        "dried apricots",
+        "dried dates"
+    ],
+```
+2. When evaluating, if the previous step fails, it will trigger the next step until the end.
+    - **Exact match:** The project compares the LLM’s predicted items against the expanded taxonomy (including `similar_items`).  
+    - **Lemma Match**: It then checks if the core food concept (lemma), like when comparing "ran" vs "running", we use "run".
+    - **Fuzzy match:** fuzzy matching is used with a threshold.  
+    - **Semantic similarity:** If fuzzy matching fails, a transformer is used to calculate whether the predicted items are close to the ground truth.  
+    
 ### Metrics
-- **Precision**: Of the items the model identified, how many were correct?
-- **Recall**: Of all the items that were actually in the image, how many did the model find?
-- **F1-Score**: The mean of Precision and Recall, giving a single score for recognition accuracy.
+After matching, counts are computed as follows:
+- TP = number of matched food items
+- FN = number of GT food items not matched
+- FP = number of predictions not matched
+Merics:
+- **Precision**: Of the items the model identified, how many were correct?  = TP / (TP + FP)
+- **Recall**: Of all the items that were actually in the image, how many did the model find?  = TP / (TP + FN)
+- **F1-Score**: The mean of Precision and Recall, giving a single score for recognition accuracy. = 2 * Precision * Recall / (Precision + Recall)
+
+
+### Sample Results
+
+For the following image: 
+
+![sample](/file/128200.jpg)
+
+We have the following predictions from the models (the full test run results can be seen here: [evaluation_report_detailed_sample.csv](/output/evaluation_reports/evaluation_report_detailed_sample.csv)): 
+
+|        |                                                    |                                          |                                      |                                                    |                                                    |                                                         |                                                    |                                                              |
+| ------ | -------------------------------------------------- | ---------------------------------------- | ------------------------------------ | -------------------------------------------------- | -------------------------------------------------- | ------------------------------------------------------- | -------------------------------------------------- | ------------------------------------------------------------ |
+| image  | ground_truth_items                                 | anthropic/claude-sonnet-4_detected_items | gemini-1.5-flash_detected_items      | gemini-2.0-flash_detected_items                    | gemini-2.5-flash_detected_items                    | meta-llama/llama-3.2-11b-vision-instruct_detected_items | qwen/qwen2.5-vl-72b-instruct:free_detected_items   | mistralai/mistral-small-3.2-24b-instruct:free_detected_items |
+| 128200 | bagel-without-filling, philadelphia, salmon-smoked | bagel-without-filling, salmon-smoked     | bagel-without-filling, salmon-smoked | bagel-without-filling, cream-cheese, salmon-smoked | bagel-without-filling, cream-cheese, salmon-smoked | bagel, cream cheese, smoked salmon                      | bagel-without-filling, cream-cheese, salmon-smoked | bagel-without-filling, salmon, tomato-raw                    |
+
+From these 50 test images, we have the following performance results for all models:
+
+| Model                                         | Avg F1 (all attempts) | Avg F1 (valid responses) | Good Results (F1≥0.8) (%) | Technical Success Rate (%) | Avg Latency (ms) |
+| --------------------------------------------- | --------------------- | ------------------------ | ------------------------- | -------------------------- | ---------------- |
+| gemini-2.0-flash                              | 0.60                  | 0.60                     | 34                        | 100                        | 3629.46          |
+| gemini-2.5-flash                              | 0.53                  | 0.53                     | 32                        | 100                        | 9742.82          |
+| qwen/qwen2.5-vl-72b-instruct:free             | 0.53                  | 0.53                     | 36                        | 100                        | 11946.22         |
+| gemini-1.5-flash                              | 0.44                  | 0.44                     | 32                        | 100                        | 3334.96          |
+| anthropic/claude-sonnet-4                     | 0.39                  | 0.39                     | 24                        | 100                        | 8073.86          |
+| meta-llama/llama-3.2-11b-vision-instruct      | 0.33                  | 0.35                     | 18                        | 94                         | 20672.53         |
+| mistralai/mistral-small-3.2-24b-instruct:free | 0.17                  | 0.30                     | 8                         | 56                         | 4543.25          |
+
+
+### Takeaways
+1. **Using LLMs:** In the beginning, I thought it was more about prompt engineering. Although that is important, in real life, it’s more important to choose an LLM that meets the needs. The evaluation part has been the most challenging for me.  
+2. **Model selection:** When testing on a smaller batch, GPT-5-mini and Gemini-2.5-pro did not outperform other models. The real choice of model always comes down to balancing needs, efficiency, and cost. 

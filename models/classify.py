@@ -4,18 +4,6 @@ import json
 from models.core.taxonomy import Taxonomy
 from models.core.classifier import run_classification
 from models.core.common import load_provider_config
-
-def main():
-
-    config = load_provider_config()
-    provider_settings = config['providers']
-    available_providers = list(provider_settings.keys())
-    import argparse
-import json
-
-from models.core.taxonomy import Taxonomy
-from models.core.classifier import run_classification
-from models.core.common import load_provider_config
 from models.configs.config import EvaluationConfig
 
 def main():

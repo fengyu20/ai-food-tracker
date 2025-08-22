@@ -1,6 +1,6 @@
 import os
 import json
-from openai import OpenAI
+from openai import OpenAI, APITimeoutError
 from typing import Dict, Any
 
 from models.core.provider import BaseProvider
@@ -17,7 +17,11 @@ class OpenRouterProvider(BaseProvider):
         if not self.api_key:
             raise ValueError("No API key provided. Set OPENROUTER_API_KEY or pass api_key parameter.")
         
-        self.client = OpenAI(base_url="https://openrouter.ai/api/v1", api_key=self.api_key)
+        self.client = OpenAI(
+            base_url="https://openrouter.ai/api/v1",
+            api_key=self.api_key,
+            timeout=60.0,
+        )
         print(f"OpenRouter client configured.")
 
     def classify(
@@ -82,6 +86,9 @@ class OpenRouterProvider(BaseProvider):
                     print(f"Final JSON parsing failed after cleaning: {e}")
                     return {"error": "Failed to parse cleaned JSON response", "raw_response": raw_text}
 
+        except APITimeoutError as e:
+            print(f"Request to OpenRouter timed out: {e}")
+            return {"error": "API request timed out after 60 seconds."}
         except Exception as e:
             print(f"Error during OpenRouter classification: {e}")
             return {"error": str(e)}

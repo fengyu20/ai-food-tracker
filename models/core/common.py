@@ -105,17 +105,7 @@ def clean_json_response(response_text: str) -> str:
 
 
 def create_error_response(request_id: str, start_time: float, error_message: str) -> Dict[str, Any]:
-    """
-    Create a standardized error response dictionary.
 
-    Args:
-        request_id: A unique identifier for the request.
-        start_time: The timestamp (time.time()) when the request began.
-        error_message: A descriptive message for the error.
-
-    Returns:
-        A dictionary matching the standard success response schema but for an error.
-    """
     end_time = time.time()
     latency_ms = int((end_time - start_time) * 1000)
 
@@ -133,7 +123,6 @@ def create_error_response(request_id: str, start_time: float, error_message: str
     }
 
 def calculate_final_confidence(validated_items, unlisted_foods, ai_confidence):
-    """Calculate final confidence considering all factors"""
     if not validated_items and not unlisted_foods:
         return 'low'
     
@@ -150,7 +139,7 @@ def calculate_final_confidence(validated_items, unlisted_foods, ai_confidence):
             penalty = min(0.5, len(unlisted_foods) * 0.1)
             combined_score *= (1 - penalty)
     else:
-        combined_score = base_score * 0.5  # Significant penalty
+        combined_score = base_score * 0.5  
     
     if combined_score >= 2.5:
         return 'high'

@@ -1,5 +1,5 @@
 
-validation_dir: "content/extracted_food_recognition/validation_full" 
+validation_dir: "content/extracted_food_recognition/validation" 
 training_dir: "content/extracted_food_recognition/training"
 output_dir: "output/evaluation_reports"
 dataset_type: "validation"  
@@ -18,3 +18,9 @@ default_model_parameters:
   max_tokens: 10000
   fuzzy_threshold: 0.8 
   disable_fuzzy_matching: false 
+  max_items: 3
+  min_confidence: high
+  composite_first: true
+  disable_fuzzy_matching: false
+  fuzzy_threshold: 0.8
+  semantic_threshold: 0.76

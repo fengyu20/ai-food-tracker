@@ -1,26 +1,21 @@
-# TBD: continue to use openrouter to test more images to see if we can run in a batch
-# check the reason, gemini works for a single image but not in a batch?
 import json
 import random
 import argparse
-import time
-import uuid
-import itertools
 from datetime import datetime
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import List, Dict, Any
 
 import pandas as pd
-import numpy as np
 
 from models.core.taxonomy import Taxonomy
-from models.core.validator import validate_against_ground_truth, VALIDATION_FUZZY_THRESHOLD
-from models.providers import get_provider
-from models.core.classifier import run_classification
+from models.core.validator import VALIDATION_FUZZY_THRESHOLD, calculate_accuracy_metrics
+from models.core.classifier import run_classification, postprocess_predictions
 from models.core.common import load_provider_config
 from models.configs.config import EvaluationConfig
 
+import os
+os.environ["TOKENIZERS_PARALLELISM"] = "false" 
 
 class BatchEvaluator:
     
@@ -29,9 +24,15 @@ class BatchEvaluator:
         self.training_dir = Path(training_dir)
         self.output_dir = Path(output_dir)
         self.api_key = api_key
-        self.taxonomy = Taxonomy() # Initialize the taxonomy once for the entire batch
+        self.taxonomy = Taxonomy() 
         self.output_dir.mkdir(exist_ok=True, parents=True)
         print("BatchEvaluator initialized")
+        
+        try:
+            from models.core.semantic import SemanticFoodMatcher
+            self.semantic_matcher = SemanticFoodMatcher(self.taxonomy, threshold=0.78)
+        except Exception:
+            self.semantic_matcher = None
 
     def discover_image_pairs(self, dataset_type: str, max_images: int = None) -> List[Dict[str, str]]:
 
@@ -74,25 +75,42 @@ class BatchEvaluator:
                 **model_params 
             )
 
+            if "error" not in classification_result and "detected_items" in classification_result:
+                items = classification_result["detected_items"] or []
+                if items and isinstance(items, list) and isinstance(items[0], dict) and 'subcategory' not in items[0]:
+                    mapped_items, mapped_unlisted = postprocess_predictions(
+                        items,
+                        taxonomy=self.taxonomy,
+                        k=model_params.get('max_items', 4),
+                        require_min_conf=model_params.get('min_confidence', 'medium'),
+                        composite_first=model_params.get('composite_first', True)
+                    )
+                    classification_result["detected_items"] = mapped_items
+                    classification_result["unlisted_foods"] = (classification_result.get("unlisted_foods") or []) + (mapped_unlisted or [])
+
             # 2. Validate against ground truth (this will now happen even if there's an error)
             fuzzy_threshold = model_params.get('fuzzy_threshold', VALIDATION_FUZZY_THRESHOLD)
             if fuzzy_threshold > 1.0:
                 fuzzy_threshold = fuzzy_threshold / 100.0
                 
-            validation_result = validate_against_ground_truth(
+            from models.core.validator import enhanced_validate_against_ground_truth
+
+            validation_result = enhanced_validate_against_ground_truth(
                 classification_result,
                 image_info['annotation_path'],
                 self.taxonomy,
                 fuzzy_threshold=fuzzy_threshold,
-                use_fuzzy_matching=use_fuzzy_matching
+                use_fuzzy_matching=use_fuzzy_matching,
+                use_lemma=True,
+                use_semantic=self.semantic_matcher is not None,
+                matcher=self.semantic_matcher,
+                semantic_threshold=model_params.get('semantic_threshold', 0.78)
             )
-            
+
             # 3. Check for errors to log them correctly
             if "error" in classification_result:
                 print(f"Error processing {image_id} with {model_name}: {classification_result['error']}")
-                # We still return the full structure for consistent reporting
             else:
-                # Extract key metrics for logging on success
                 metrics = validation_result.get('validation_results', {}).get('accuracy_metrics', {})
                 f1 = metrics.get('f1_score', 0)
                 precision = metrics.get('precision', 0)
@@ -195,7 +213,6 @@ class BatchEvaluator:
             return
 
         df_data = {}
-        all_models = sorted(list(set(r['model'] for r in results)))
 
         for res in results:
             image_id = res['image_id']
@@ -217,6 +234,7 @@ class BatchEvaluator:
                 df_data[image_id][f'{model_name}_precision'] = 0.0
                 df_data[image_id][f'{model_name}_recall'] = 0.0
                 df_data[image_id][f'{model_name}_latency_ms'] = classification_res.get('latency_ms', 0)
+                df_data[image_id][f'{model_name}_is_correct'] = False
             else:
                 detected_items = classification_res.get('detected_items', [])
                 detected_subcategories = [item['subcategory'] for item in detected_items]
@@ -227,30 +245,34 @@ class BatchEvaluator:
                 df_data[image_id][f'{model_name}_precision'] = metrics.get('precision', 0.0)
                 df_data[image_id][f'{model_name}_recall'] = metrics.get('recall', 0.0)
                 df_data[image_id][f'{model_name}_latency_ms'] = classification_res.get('latency_ms', 0)
+                is_correct = res['validation'].get('validation_results', {}).get('is_correct', False)
+                df_data[image_id][f'{model_name}_is_correct'] = bool(is_correct)
 
-        # Convert the dictionary to a DataFrame
         report_df = pd.DataFrame.from_dict(df_data, orient='index')
         
-        # Reorder columns for better readability
         cols = ['image_path', 'ground_truth_items']
         models = sorted(list(set(res['model'] for res in results)))
         for model in models:
+            cols.append(f'{model}_detected_items')
+
+        for model in models:
             cols.extend([
-                f'{model}_detected_items',
                 f'{model}_f1_score',
                 f'{model}_precision',
                 f'{model}_recall',
                 f'{model}_latency_ms',
+                f'{model}_is_correct',
                 f'{model}_raw_response'
             ])
         
         report_df = report_df.reindex(columns=cols)
 
-        # --- AVERAGES ROW (based on successful runs only) ---
+        error_masks = {model: (report_df[f'{model}_detected_items'] == "ERROR") for model in models}
+
         averages = {}
         for model in models:
             # Identify successful runs (not errored)
-            error_mask = report_df[f'{model}_detected_items'] == "ERROR"
+            error_mask = error_masks[model]
             successful_runs = report_df[~error_mask]
             
             if not successful_runs.empty:
@@ -263,26 +285,34 @@ class BatchEvaluator:
         
         report_df.loc['--- AVERAGES ---'] = pd.Series(averages)
 
-        # --- SUMMARY REPORT (separating success rate from accuracy) ---
-        summary_data = []
-        total_images = len(report_df.index) - 1 # Exclude average row
+        base_df = report_df.iloc[:-1]
+        total_images = len(base_df.index)
+        if total_images <= 0:
+            print("Not enough data to generate a summary report.")
+            return
 
+        summary_data = []
         for model in models:
-            error_mask = report_df[f'{model}_detected_items'].iloc[:-1] == "ERROR"
-            successful_runs = report_df.iloc[:-1][~error_mask]
-            
-            success_count = len(successful_runs)
-            
-            summary_item = {
+            error_mask = error_masks[model]
+            technical_success_count = total_images - error_mask.sum()
+            technical_success_rate = (technical_success_count / total_images) * 100
+
+            good_mask = (base_df[f'{model}_f1_score'] >= 0.8)
+            good_results_rate = (good_mask.sum() / total_images) * 100
+
+            all_attempts_avg_f1 = base_df[f'{model}_f1_score'].mean()
+            valid_responses_df = base_df[~error_mask]
+            valid_responses_avg_f1 = valid_responses_df[f'{model}_f1_score'].mean() if not valid_responses_df.empty else 0.0
+            avg_latency = valid_responses_df[f'{model}_latency_ms'].mean() if not valid_responses_df.empty else 0.0
+
+            summary_data.append({
                 "Model": model,
-                "Success Rate (%)": (success_count / total_images) * 100 if total_images > 0 else 0,
-                "Successful Evals": f"{success_count}/{total_images}",
-                "Avg F1 (on success)": successful_runs[f'{model}_f1_score'].mean() if success_count > 0 else 0,
-                "Avg Precision (on success)": successful_runs[f'{model}_precision'].mean() if success_count > 0 else 0,
-                "Avg Recall (on success)": successful_runs[f'{model}_recall'].mean() if success_count > 0 else 0,
-                "Avg Latency (on success, ms)": successful_runs[f'{model}_latency_ms'].mean() if success_count > 0 else 0,
-            }
-            summary_data.append(summary_item)
+                "Avg F1 (all attempts)": all_attempts_avg_f1,
+                "Avg F1 (valid responses)": valid_responses_avg_f1,
+                "Good Results (F1≥0.8) (%)": good_results_rate,
+                "Technical Success Rate (%)": technical_success_rate,
+                "Avg Latency (ms)": avg_latency,
+            })
 
         summary_df = pd.DataFrame(summary_data)
         
@@ -303,7 +333,6 @@ class BatchEvaluator:
             json.dump(results, f, indent=2)
         print(f"Raw results log saved to: {raw_log_filename}")
 
-
 def main():
     """Main function to run the batch evaluation from the command line."""
     parser = argparse.ArgumentParser(description="Run batch evaluation for food classification models.")
@@ -321,7 +350,6 @@ def main():
     # Load base configuration from YAML
     config = EvaluationConfig.from_yaml(args.config)
 
-    # --- Override config with CLI arguments if provided ---
     if args.max_images is not None:
         config.max_images = args.max_images
     if args.providers is not None:
@@ -352,7 +380,6 @@ def main():
     if not models_by_provider:
         raise ValueError("No valid providers selected or no models found for the selected providers.")
         
-    # CLI parameters are now just for overrides, the base comes from the config object
     cli_params = config.default_model_parameters
 
     evaluator = BatchEvaluator(

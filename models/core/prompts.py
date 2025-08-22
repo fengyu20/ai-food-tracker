@@ -2,14 +2,42 @@ FOOD_DETECTION_PROMPT = """
 You are an expert food identification AI. Analyze the provided image and identify ALL specific food items using the exact subcategory names from the comprehensive list below. Your entire output must be the raw JSON.
 
 ## CRITICAL RULES:
-1. **Systematically scan the entire image**, from corner to corner. Identify every single food item visible, no matter how small or partially obscured. This includes main dishes, side items, ingredients, sauces, condiments, garnishes, and beverages.
+1. **Systematically scan the entire image** for all in-focus food items that are part of the main meal. Ignore blurry or irrelevant background items.
 2. Your response MUST be a valid JSON object with NO extra text or markdown.
-3. **Use the EXACT subcategory name** from the list below for each item you identify. Do not invent new names.
-4. **Composite-first approach**: If a composite dish subcategory exists in the list and is identifiable, output the composite dish. Additionally, list any ingredients that are clearly visible as distinct, separate items alongside the composite dish (not merely components integrated into the dish). If no suitable composite subcategory exists, decompose the visible dish into ingredients using exact subcategories.
-5. **Prioritize specificity (with caution)**: Always choose the most specific subcategory that you can confidently identify. If you are only confident in a more general aspect (e.g., you can identify 'butter' but not 'herb-butter'), select the most general appropriate category from the list. Do not guess specifics.
-6. **Be conservative but thorough**: Only include items you can reasonably identify. If uncertain about the exact type, choose the broader category but still include the item with lower confidence.
-7. **Check backgrounds and edges**: Food items may be partially visible at image edges or in the background of plates/bowls.
-8. **Look for layers**: In layered foods (sandwiches, lasagna, etc.), identify ingredients in each visible layer only if no composite dish category applies.
+3. **For EACH food item you identify, you must create one object** in the `detected_foods` array following these steps:
+4. **Step A: Determine Match Type**. First, try to find an **EXACT name** for the item in the `COMPLETE SUBCATEGORY LIST`.
+5. **Step B: Populate Fields**.
+    - If an exact match is found: Set the `"item_name"` to the name from the list and set `"match_type"` to `"exact_match"`.
+    - If no suitable match is found: Set `"item_name"` to your best general, common name for the food and set `"match_type"` to `"ai_guess"`.
+6. **Composite-first approach**: For composite dishes, first try to find a match in the list. If one exists, classify it as an `"exact_match"`. If not, classify it as an `"ai_guess"`.
+7. **Prioritize specificity (with caution)**: For items with an `"exact_match"`, always choose the most specific subcategory you can confidently identify from the list.
+8. **Be conservative but thorough**: Only include items you can reasonably identify. If uncertain about the exact type, choose the broader category but still include the item with lower confidence.
+9. **Check backgrounds and edges for relevant, in-focus food items.**: Food items may be partially visible at image edges or in the background of plates/bowls. 
+10. **Look for layers**: In layered foods (sandwiches, lasagna, etc.), identify ingredients in each visible layer only if no composite dish category applies.
+11. **Single raw ingredient dominance**: If a single raw ingredient dominates the visible surface (e.g., sesame seeds), prefer the raw ingredient subcategory over a generic/ambiguous composite.
+
+## MATCHING STRATEGY:
+
+### **Step A: Exact Matching**
+- Search the subcategory list for EXACT matches
+- Use `match_type: "exact_match"` 
+- Be conservative with confidence levels
+
+### **Step B: AI Guessing (Fallback)**
+- If no exact match exists, describe what you see in `item_name`
+- Use `match_type: "ai_guess"`
+- **REQUIRED**: Map to the closest available subcategory in `mapped_item`
+- **Quality gate**: Only include if `mapping_confidence` ≥ "medium"
+
+## CONFIDENCE GUIDELINES:
+- **High**: 95%+ certain, clear visual evidence
+- **Medium**: 70-95% certain, some ambiguity
+- **Low**: 50-70% certain, significant uncertainty
+
+## MAPPING RULES:
+- **No duplicates**: If `mapped_item` equals an existing `exact_match`, omit the ai_guess
+- **Conservative mapping**: Better to map to a broader category than guess wrong
+- **Reasoning required**: Explain both what you see AND why you chose that mapping
 
 ## SYSTEMATIC SCANNING PROCESS:
 - **Step 1**: Identify the main/central food items
@@ -31,23 +59,23 @@ You are an expert food identification AI. Analyze the provided image and identif
 {{
     "detected_foods": [
         {{
-            "subcategory": "exact-name-1-from-list",
+            "item_name": "exact-name-from-list",
+            "match_type": "exact_match",
             "confidence": "high",
-            "reasoning": "brief visual justification (max ~160 chars)"
+            "reasoning": "Justification for matching this item to the provided list."
         }},
         {{
-            "subcategory": "exact-name-2-from-list",
-            "confidence": "medium", 
-            "reasoning": "brief visual justification (max ~160 chars)"
-        {{
-            "subcategory": "lettuce",
-            "confidence": "high",
-            "reasoning": "brief visual justification (max ~160 chars)"
+            "item_name": "your-best-food-description", 
+            "match_type": "ai_guess",
+            "mapped_item": "closest-subcategory-from-list",
+            "mapping_confidence": "medium",
+            "reasoning": "Visual description and justification for why it's not in the provided list."
         }}
     ],
     "overall_confidence": "high",
-    "description": "brief visual justification (max ~160 chars)"
+    "description": "A brief summary of all visible food items."
 }}
+
 
 ## VISUAL ANALYSIS TIPS:
 - **Texture**: smooth, rough, crispy, soft, creamy, grainy, fibrous, flaky
@@ -196,7 +224,8 @@ For each item below, critically evaluate the existing classification and provide
 
 Challenge only for MEANINGFUL improvements that enhance image recognition capability."""
 
-FOOD_SYNTHESIZE_BATCH_PROMPT = """You are an expert food taxonomist creating definitive classifications by synthesizing expert opinions for food image recognition ground truth.
+FOOD_SYNTHESIZE_BATCH_PROMPT = """
+You are an expert food taxonomist creating definitive classifications by synthesizing expert opinions for food image recognition ground truth.
 
 ## SYNTHESIS METHODOLOGY:
 
@@ -244,3 +273,4 @@ FOOD_SYNTHESIZE_BATCH_PROMPT = """You are an expert food taxonomist creating def
 }}
 
 Create the most accurate classifications for image recognition. Prioritize visual similarity and practical utility for food identification in photos."""
+
